@@ -12,6 +12,6 @@ generated: { by: codex/gpt-5, at: "2026-08-25T21:20:00-07:00" }
 - Do not add, rewrite, renumber, move, or delete standards.
 - Preserve stable rule IDs cited by existing audit and operations records.
 - Follow the active project's `AGENTS.md` for current working instructions.
-- Use Raintree's organization `.github/AGENTS.md` as the short shared agreement.
+- Use the active project's `AGENTS.md` and the user's global agent instructions.
 - If an old rule conflicts with current project behavior, report the conflict; do
   not treat this archive as authority for new work.
