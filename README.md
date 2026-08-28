@@ -1,11 +1,5 @@
 # Raintree Standards
 
-> [!NOTE]
-> This repository is an archived reference. Raintree now keeps shared working
-> rules in the organization `.github` repository and project-specific instructions
-> in each project's `AGENTS.md`. Existing rule IDs remain here so historical audit
-> and operations records continue to resolve.
-
 <!-- project-record: raintree-standards -->
 
 **Pre-1.0 open-source standards library · CC BY 4.0 and MIT**

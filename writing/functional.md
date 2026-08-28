@@ -50,6 +50,10 @@ sources:
     resource: https://docs.devin.ai/product-guides/creating-playbooks
     title: Creating Playbooks
     author: organization:cognition
+  - id: simon-willison-llm-cliche-highlighter
+    resource: https://tools.simonwillison.net/llm-cliche-highlighter
+    title: LLM cliché highlighter
+    author: human:simon-willison
 ---
 
 # Functional writing
@@ -126,7 +130,7 @@ State the result, decision, request, or main claim first. Start each paragraph w
 
 ### WRITING-FUNCTIONAL-005 — Write direct, complete sentences
 
-**Level:** recommended  
+**Level:** recommended
 **Applies when:** Writing explanatory prose or instructions.
 
 Prefer short, common words, active voice, present tense, and explicit subjects. Keep one main instruction or claim in each sentence. Remove filler, unexplained idioms, figurative language, and unnecessary noun forms.
@@ -290,6 +294,65 @@ State the trigger and scope, desired outcome, prerequisites and required user in
 
 **Exceptions:** A one-time low-risk request can remain conversational when its outcome and limits are clear and no durable reuse is expected.
 
+### WRITING-FUNCTIONAL-015 — Review formulaic AI-writing patterns
+
+**Level:** recommended
+
+**Applies when:** Reviewing AI-assisted functional writing or prose whose authorship or quality needs evaluation.
+
+Check the text for repeated rhetorical templates, inflated claims, vague attribution, promotional filler, chatbot artifacts, and vocabulary clusters associated with formulaic AI writing. Use Simon Willison's *LLM cliché highlighter* pattern catalog as a review aid. Treat matches as signals to inspect in context, not proof of AI authorship or defects. Rewrite a match only when it obscures meaning, weakens evidence, repeats a structure unnecessarily, or conflicts with another applicable rule.
+
+**Why:** Formulaic patterns can make writing sound staged, vague, or promotional, but many also occur naturally in clear human prose. Contextual review improves the artifact without turning a heuristic into an unsupported authorship claim.
+
+**Pattern catalog:**
+
+1. **“No X, no Y” chains** — Two or more consecutive items introduced by “no.”
+2. **“That’s the whole …”** — A claim that something is the whole point, game, idea, or thing.
+3. **“Did not X, did not Y” chains** — Two or more consecutive clauses introduced by “did not” or “didn’t.”
+4. **“Don’t VERB it … VERB it”** — A negated verb applied to “it,” followed by the same positive verb.
+5. **“Sit with that”** — An invitation to sit with an idea, feeling, discomfort, or moment.
+6. **“You already know”** — An assertion that the reader already knows the answer or necessary action.
+7. **“Is the entire …”** — A subject described as the entire point, game, or business model.
+8. **“The entire … is”** — An opener that defines the entire point, game, or business model.
+9. **“Is real … and / not”** — A claim that something is real followed by a contrast or qualification.
+10. **“The punchline is”** — A staged conclusion introduced as a punchline.
+11. **“Worth naming”** — A claim that a feeling, loss, issue, or fact deserves to be named.
+12. **“That’s not nothing”** — A litotic claim that something is not insignificant.
+13. **“Is the whole …”** — Any subject described as the whole point, trick, pitch, or idea.
+14. **Echoing sentence runs** — Consecutive sentences built from the same syntactic skeleton.
+15. **Performative honesty** — Announced sincerity such as “I’ll be honest,” “to be clear,” or an initial “Honestly” or “Look.”
+16. **“That’s the part …”** — A favored detail introduced as “the part” instead of being stated directly.
+17. **“The only X I trust”** — A reveal framed as the only thing trusted, needed, or important.
+18. **“Don’t take my word for it”** — A stock invitation for the reader to verify a claim.
+19. **“Turns out …”** — A tidy conclusion introduced as a casual revelation.
+20. **“Fits in your head”** — Simplicity boilerplate such as “batteries included,” “zero config,” “sane defaults,” or “it just works.”
+21. **Stacked rhetorical questions** — Two or more consecutive questions used to create momentum rather than request answers.
+22. **Repeated sentence openers** — Three or more consecutive sentences beginning with the same meaningful word.
+23. **Colon into a triple** — A colon followed by three or more comma-separated items.
+24. **“Here’s the twist”** — A stage-managed reveal introduced as the thing, twist, catch, kicker, or rub.
+25. **“X is dead”** — An obituary-style declaration, including “dead; long live” constructions.
+26. **“That’s why X mattered”** — A retrospective statement that assigns significance to an earlier detail.
+27. **Stranded auxiliary contrast** — A reversal that ends on a bare auxiliary such as “did,” “didn’t,” “would,” or “wouldn’t.”
+28. **AI vocabulary words** — Clusters of terms disproportionately associated with AI prose, including “delve,” “tapestry,” “meticulous,” “pivotal,” “intricate,” “interplay,” “underscore,” “garner,” “bolster,” “vibrant,” “bustling,” “multifaceted,” “seamless,” and “ever-evolving.”
+29. **“Not just X, but Y”** — Negative parallelism such as “not only … but also” or “it’s not X—it’s Y.”
+30. **“It’s important to note”** — Didactic hedging that announces what is important, notable, worth considering, or worth asking.
+31. **“Stands as a testament”** — Inflated significance framed as a testament or reminder.
+32. **“Plays a crucial role”** — Importance asserted through a crucial, pivotal, vital, key, or significant role.
+33. **“Ever-evolving landscape”** — Generic scene-setting about a changing landscape or fast-paced world.
+34. **“Experts argue”** — Claims attributed vaguely to unnamed experts, critics, observers, or reports.
+35. **“Despite these challenges”** — Formulaic challenges-and-outlook language, including unresolved challenges and “time will tell.”
+36. **Participle sentence tails** — Superficial analysis appended with participles such as “highlighting,” “underscoring,” “showcasing,” or “reflecting.”
+37. **Promotional boilerplate** — Brochure language such as “nestled in,” “in the heart of,” “hidden gem,” “boasts,” “breathtaking,” or “stunning views.”
+38. **Chatbot leftovers** — Model disclaimers, knowledge-cutoff language, citation debris, internal reference tokens, or tracking parameters copied from generated output.
+
+**Verify:**
+
+- Review matches from the current pattern catalog, including rhetorical chains, repeated sentence structures, stock contrasts and reveals, vague authority claims, inflated significance, promotional language, and chatbot leftovers.
+- Inspect repeated or clustered matches before isolated matches, and record only changes that improve clarity, evidence, tone, or structure.
+- Confirm the review does not label a writer or passage as AI-generated solely because it matches a listed pattern.
+
+**Exceptions:** Preserve an exact quotation, required interface label, established term, or deliberate rhetorical device when it remains accurate and appropriate for the intended reader.
+
 ## Guidance
 
 Use about 20 words as a review trigger for an instruction and about 25 words for a descriptive sentence. These are diagnostic thresholds, not correctness tests. A six-sentence paragraph and a noun phrase with more than three nouns also deserve review.
@@ -331,3 +394,4 @@ Compliant: “Add rate limits to sign-in attempts”
 - World Wide Web Consortium, [Writing for Web Accessibility](https://www.w3.org/WAI/tips/writing/). Reviewed August 13, 2026.
 - OpenAI, [Custom instructions with AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md). Reviewed August 13, 2026.
 - Cognition, [Creating Playbooks](https://docs.devin.ai/product-guides/creating-playbooks). Reviewed August 13, 2026.
+- Simon Willison, [LLM cliché highlighter](https://tools.simonwillison.net/llm-cliche-highlighter), pattern catalog. Reviewed August 28, 2026.

@@ -197,10 +197,10 @@ documents:
     next_review: 2027-02-13
   - id: WRITING-FUNCTIONAL
     owner: content
-    source_version: document source set reviewed 2026-08-13
-    reviewed_on: 2026-08-13
+    source_version: document source set plus Simon Willison's LLM cliché highlighter pattern catalog reviewed 2026-08-28
+    reviewed_on: 2026-08-28
     volatility: medium
-    next_review: 2027-02-13
+    next_review: 2027-02-28
   - id: PRIVACY-DATA
     owner: privacy
     source_version: document source set reviewed 2026-08-13
