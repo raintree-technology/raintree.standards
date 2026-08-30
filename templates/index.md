@@ -8,3 +8,4 @@
 * [Comprehension review](comprehension-review.md) - Representative-reader tasks, observations, revisions, and retest evidence.
 * [Independent review](independent-review.md) - Qualified reviewer scope, findings, decisions, and residual risk.
 * [Security response exercise](security-response-exercise.md) - Vulnerability and incident response authority, exercise results, and closure evidence.
+* [Testing records](testing-records.md) - Copyable behavior maps, suite inventories, smoke contracts, size declarations, quarantine records, compatibility matrices, exercise plans, canary decisions, and retirement records.

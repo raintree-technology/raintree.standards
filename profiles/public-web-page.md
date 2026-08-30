@@ -12,7 +12,7 @@ stale_after: 2027-02-17
 applies_to: [public-web-page, landing-page, marketing-site]
 tags: [profile, web, seo]
 depends_on: [WEB-QUALITY, SEO-FOUNDATIONS, FND-ACCESSIBILITY, FND-TRUST, FND-EVIDENCE, AGENT-VERIFICATION]
-generated: { by: codex/gpt-5, at: "2026-08-17T08:30:41Z" }
+generated: { by: codex/gpt-5, at: "2026-08-30T20:00:00Z" }
 ---
 
 # Public web page profile
@@ -32,6 +32,7 @@ The front-matter `depends_on` list is the authoritative machine-readable route. 
 
 ## Conditional standards
 
+- Software implementation, bug fix, refactor, or test-suite change → `PROFILE-SOFTWARE-CHANGE`
 - JavaScript or TypeScript implementation → `ENGINEERING-JS-QUALITY`
 - Browser logs, errors, or operational events sent off the device → `OPERATIONS-LOGGING`
 - Experiment or personalization → `GROWTH-EXPERIMENTS` and `ANALYTICS-MEASUREMENT`

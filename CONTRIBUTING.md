@@ -30,11 +30,13 @@ The validators use only the Ruby standard library. You do not need to install a 
 ```sh
 ruby scripts/validate_catalog.rb
 ruby scripts/validate_integrations.rb
+ruby scripts/validate_testing_reference.rb
 ruby scripts/test_schema_drift.rb
 ruby scripts/test_workflows.rb
 ruby scripts/test_standards_lib.rb
 ruby scripts/test_validate_catalog.rb
 ruby scripts/test_validate_integrations.rb
+ruby scripts/test_validate_testing_reference.rb
 ruby scripts/test_project_readme.rb
 ```
 

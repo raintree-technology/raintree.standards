@@ -49,6 +49,9 @@ repository, package, example, evidence, or maintainer-guide structure.
 
 ## Common entry points
 
+- [Software change profile](profiles/software-change.md)
+- [Test strategy and suite design](playbooks/test-strategy.md)
+- [Testing field guide](testing/field-guide.md)
 - [Functional writing profile](profiles/functional-writing.md)
 - [Public web page profile](profiles/public-web-page.md)
 - [Product feature profile](profiles/product-feature.md)
@@ -83,6 +86,7 @@ Key machine-readable surfaces:
 - [`schema/standard.schema.json`](schema/standard.schema.json) defines standard frontmatter.
 - [`schema/project-showcase-record.schema.json`](schema/project-showcase-record.schema.json) defines canonical public project records.
 - [`source-register.yaml`](source-register.yaml) records source owners and freshness policy.
+- [`testing/routes.yaml`](testing/routes.yaml) maps testing questions, types, stages, rules, recipes, and copyable records.
 
 Tools must preserve unknown frontmatter fields because Raintree does not define the
 complete OKF vocabulary.
@@ -106,11 +110,13 @@ that boundary.
 ```bash
 ruby scripts/validate_catalog.rb
 ruby scripts/validate_integrations.rb
+ruby scripts/validate_testing_reference.rb
 ruby scripts/test_schema_drift.rb
 ruby scripts/test_workflows.rb
 ruby scripts/test_standards_lib.rb
 ruby scripts/test_validate_catalog.rb
 ruby scripts/test_validate_integrations.rb
+ruby scripts/test_validate_testing_reference.rb
 ruby scripts/test_project_readme.rb
 ```
 

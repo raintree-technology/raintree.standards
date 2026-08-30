@@ -12,7 +12,7 @@ stale_after: 2027-02-13
 applies_to: [software-change, service-change]
 tags: [engineering, architecture, testing, dependencies]
 depends_on: [FND-EVIDENCE, FND-CHANGE, AGENT-VERIFICATION]
-generated: { by: codex/gpt-5, at: "2026-08-17T06:11:16Z" }
+generated: { by: codex/gpt-5, at: "2026-08-30T20:00:00Z" }
 sources:
   - id: nist-ssdf-11
     resource: https://csrc.nist.gov/pubs/sp/800/218/final
@@ -71,7 +71,7 @@ Give each component a focused responsibility, explicit interface, minimum requir
 **Level:** required  
 **Applies when:** A change creates or modifies behavior that can regress.
 
-Map material behavior and risk to deterministic unit, contract, integration, end-to-end, property, performance, security, or manual checks at the lowest layer that can prove the claim.
+Map material behavior and risk to deterministic checks at the lowest layer that can prove the claim. Apply `ENGINEERING-TESTING` for test-layer names, smoke-test scope, deterministic execution, failure coverage, fixtures, flake handling, and local through production evidence when that post-v1 draft is adopted by the project.
 
 **Why:** One test layer either misses integrated behavior or makes all feedback slow and fragile.
 

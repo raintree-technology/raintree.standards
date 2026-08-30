@@ -37,6 +37,7 @@ choose a profile under **Task profiles**.
 * [Security](security/) - Application security design, implementation, and verification standards.
 * [Task profiles](profiles/) - Progressive entry points for common work types.
 * [Templates](templates/) - OKF-compatible authoring templates.
+* [Testing reference](testing/) - Fast test selection, recipes, records, worked examples, and machine-readable routes.
 * [Web](web/) - Public web quality standards.
 * [Writing](writing/) - Standards for functional writing and change summaries.
 
@@ -47,6 +48,7 @@ choose a profile under **Task profiles**.
 * [Authority and requirement levels](governance/authority.md) - Meaning of required, recommended, contextual, optional, avoid, and prohibited.
 * [Coverage roadmap](roadmap.md) - Authored v1 domains, approval state, and post-v1 extensions.
 * [Version 1 coverage matrix](coverage.md) - Bounded task coverage and approval status.
+* [Testing field guide](testing/field-guide.md) - Rapid test-type, stage, smoke, synthetic, shadow, canary, and anti-pattern decisions.
 
 ## Task profiles
 
@@ -65,6 +67,7 @@ choose a profile under **Task profiles**.
 * [Reliability and incident](profiles/reliability-incident.md) - Service operation, incident response, recovery, and learning requirements.
 * [Redis change](profiles/redis-change.md) - Redis workload, memory, client, security, availability, recovery, and messaging requirements.
 * [Secrets and Infisical change](profiles/secrets-management.md) - Infisical adoption, access, delivery, precedence, rotation, exposure, operation, recovery, and migration requirements.
+* [Software change](profiles/software-change.md) - Engineering, testing, safe-change, evidence, and verification requirements for ordinary software work.
 * [Programmatic interface and service change](profiles/service-api-change.md) - Contract, security, reliability, and release requirements for APIs, libraries, SDKs, and services.
 * [Specialist marketing](profiles/specialist-marketing.md) - Paid media, outreach, public engagement, revenue operations, app-store, media, and distribution requirements.
 * [User interface feature](profiles/ui-feature.md) - Cross-platform interaction, accessibility, content, and product requirements.
@@ -86,6 +89,7 @@ choose a profile under **Task profiles**.
 * [Data quality and lifecycle](data/quality.md) - Meaning, ownership, lineage, validation, reconciliation, and lifecycle.
 * [Redis design and operation](data/redis.md) - Workload contracts, memory, data models, clients, security, availability, recovery, and messaging.
 * [Engineering quality](engineering/quality.md) - Architecture, testing, dependencies, review, provenance, and release readiness.
+* [Software testing and verification](engineering/testing.md) - Risk-based test layers, bounded smoke tests, deterministic execution, failure coverage, fixtures, flakes, and release evidence.
 * [Safe code removal](engineering/code-removal.md) - Knip, Ruff, deptry, contextual Vulture, analyzer canaries, bounded deletion, and final graph verification.
 * [JavaScript and TypeScript quality with Biome, Trellis, and anti-slop](engineering/javascript-quality.md) - Shared Biome, Trellis, Oxlint, and anti-slop policy for repository scope, type evidence, continuous integration, suppressions, and agent handoffs.
 * [Error messages](error-messages.md) - User-facing failure content and review criteria.
@@ -127,6 +131,15 @@ choose a profile under **Task profiles**.
 * [Google Search Console operations](playbooks/google-search-console.md) - Ownership, discovery, inspection, monitoring, controlled action, and release evidence backed by a validated [capability map](integrations/google-search-console/).
 * [Stripe](playbooks/stripe.md), [Plaid](playbooks/plaid.md), [Vercel](playbooks/vercel.md), [Resend](playbooks/resend.md), [Neon](playbooks/neon.md), and [Cloudflare](playbooks/cloudflare.md) - Separate provider procedures backed by discoverable manifests, official sources, workflows, evaluations, and optional agent-skill routes.
 * [Standards conformance audit](playbooks/standards-audit.md) - Source-neutral profile routing, evidence inspection, rule findings, exceptions, and scoped conformance reporting.
+* [Test strategy and suite design](playbooks/test-strategy.md) - Procedure for mapping behavior and risk to test layers and designing bounded smoke, CI, release, and production checks.
+
+## Testing reference
+
+* [Field guide](testing/field-guide.md) - Thirty-second routing, comparison tables, stage placement, and anti-pattern lookup.
+* [Situation recipes](testing/recipes.md) - Minimum evidence for common changes, investigations, exercises, and releases.
+* [Testing records](templates/testing-records.md) - Copyable evidence and decision records.
+* [Worked examples and pilot findings](testing/worked-examples.md) - Applied website, service, and data-pipeline strategies.
+* [Machine-readable routes](testing/routes.yaml) - Test-type, situation, rule, stage, recipe, and template mappings.
 
 ## Maintenance
 
@@ -145,6 +158,7 @@ choose a profile under **Task profiles**.
 * [Comprehension review template](templates/comprehension-review.md) - Evidence for representative-reader understanding.
 * [Independent review template](templates/independent-review.md) - Evidence for qualified review independent of authorship.
 * [Security response exercise template](templates/security-response-exercise.md) - Evidence for vulnerability and incident response exercises.
+* [Testing records](templates/testing-records.md) - Evidence maps, suite contracts, quarantine, compatibility, exercise, canary, and retirement records.
 * [Security policy](SECURITY.md) - Private and public reporting paths for security concerns.
 * [Source register](source-register.yaml) - Review owners, source-set versions, volatility, and next review dates.
 * [Third-party notices](THIRD_PARTY_NOTICES.md) - Attribution and license notices for upstream sources.

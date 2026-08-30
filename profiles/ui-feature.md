@@ -12,7 +12,7 @@ stale_after: 2027-02-17
 applies_to: [user-interface, product-feature]
 tags: [profile, ui, design, accessibility]
 depends_on: [DESIGN-INTERACTION, FND-ACCESSIBILITY, CONTENT-INTERFACE, PRODUCT-DELIVERY, FND-TRUST, AGENT-VERIFICATION]
-generated: { by: codex/gpt-5, at: "2026-08-17T08:30:41Z" }
+generated: { by: codex/gpt-5, at: "2026-08-30T20:00:00Z" }
 ---
 
 # User interface feature profile
@@ -32,6 +32,7 @@ The front-matter `depends_on` list is the authoritative machine-readable route. 
 
 ## Conditional standards
 
+- Software implementation, bug fix, refactor, or test-suite change → `PROFILE-SOFTWARE-CHANGE`
 - JavaScript or TypeScript implementation → `ENGINEERING-JS-QUALITY`
 - Client logs, errors, or operational events sent off the device → `OPERATIONS-LOGGING`
 - Public or browser-delivered page → `PROFILE-PUBLIC-WEB-PAGE`

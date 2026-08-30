@@ -1,5 +1,5 @@
 version: 1
-updated: 2026-08-17
+updated: 2026-08-30
 description: Review ownership and freshness controls for external source sets used by governed documents.
 
 documents:
@@ -63,6 +63,12 @@ documents:
     reviewed_on: 2026-08-13
     volatility: medium
     next_review: 2027-02-13
+  - id: ENGINEERING-TESTING
+    owner: engineering
+    source_version: Google SRE testing, canary, and data-pipeline guidance; Google SMURF and Test Sizes; GitHub flaky-build reduction; Uber E2E shift-left; Meta autonomous and predictive testing; Netflix automated canary analysis; Spotify selective builds; Stripe test clocks; AWS chaos engineering; GitLab quarantine process; and NIST SSDF 1.1 reviewed 2026-08-30
+    reviewed_on: 2026-08-30
+    volatility: medium
+    next_review: 2027-02-28
   - id: ENGINEERING-CODE-REMOVAL
     owner: engineering
     source_version: Knip first-cleanup, project-file, production, workspace, issue-resolution, auto-fix, and CI guidance; Ruff configuration, linter, F401, and F841 documentation; deptry rules and configuration; Vulture 2.16; Python import reference; and PyPA entry-point specification reviewed 2026-08-17
