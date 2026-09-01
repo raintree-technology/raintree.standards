@@ -6,13 +6,13 @@ type: profile
 status: draft
 governance_status: draft
 owners: [ai, product, engineering, security, privacy]
-last_reviewed: 2026-08-13
-review_by: 2027-02-13
-stale_after: 2027-02-13
+last_reviewed: 2026-09-01
+review_by: 2027-03-01
+stale_after: 2027-03-01
 applies_to: [agentic-system]
 tags: [profile, ai, agents]
 depends_on: [AI-AGENTS, ENGINEERING-QUALITY, FND-EVIDENCE, FND-TRUST, FND-CHANGE, AGENT-VERIFICATION]
-generated: { by: codex/gpt-5, at: "2026-08-30T20:00:00Z" }
+generated: { by: codex/gpt-5, at: "2026-09-01T00:00:00-07:00" }
 ---
 
 # Agentic system profile
@@ -39,6 +39,7 @@ The front-matter `depends_on` list is the authoritative machine-readable route. 
 - New events, traces, quality metrics, cost metrics, or dashboards → `ANALYTICS-MEASUREMENT`
 - Google Analytics 4 implementation → `PLAYBOOK-GA4`
 - User interface → `PROFILE-UI-FEATURE`; Apple-platform interface → `PROFILE-APPLE-INTERFACE`
+- Reusable agent guidance for interface generation or review → `PLAYBOOK-AGENT-DESIGN-GUIDANCE`
 - Browser interface or public agent surface → `WEB-QUALITY`
 - Service or API boundary → `PROFILE-SERVICE-API`
 - Production operation, reliability exercise, or incident response → `PROFILE-RELIABILITY-INCIDENT`

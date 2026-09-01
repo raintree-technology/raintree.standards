@@ -51,6 +51,7 @@ repository, package, example, evidence, or maintainer-guide structure.
 
 - [Software change profile](profiles/software-change.md)
 - [Test strategy and suite design](playbooks/test-strategy.md)
+- [Agent design guidance and evaluation](playbooks/agent-design-guidance.md)
 - [Testing field guide](testing/field-guide.md)
 - [Functional writing profile](profiles/functional-writing.md)
 - [Public web page profile](profiles/public-web-page.md)

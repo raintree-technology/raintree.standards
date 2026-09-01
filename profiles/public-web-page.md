@@ -11,8 +11,8 @@ review_by: 2027-02-17
 stale_after: 2027-02-17
 applies_to: [public-web-page, landing-page, marketing-site]
 tags: [profile, web, seo]
-depends_on: [WEB-QUALITY, SEO-FOUNDATIONS, FND-ACCESSIBILITY, FND-TRUST, FND-EVIDENCE, AGENT-VERIFICATION]
-generated: { by: codex/gpt-5, at: "2026-08-30T20:00:00Z" }
+depends_on: [WEB-QUALITY, SEO-FOUNDATIONS, DESIGN-INTERACTION, FND-ACCESSIBILITY, FND-TRUST, FND-EVIDENCE, AGENT-VERIFICATION]
+generated: { by: codex/gpt-5, at: "2026-09-01T00:00:00-07:00" }
 ---
 
 # Public web page profile
@@ -25,6 +25,7 @@ The front-matter `depends_on` list is the authoritative machine-readable route. 
 
 - `WEB-QUALITY` — document, accessibility, performance, resilience, security, and privacy quality
 - `SEO-FOUNDATIONS` — crawling, indexing, canonicalization, and content purpose
+- `DESIGN-INTERACTION` — product-specific visual quality, representative content, coherent visual rules, and anti-slop review
 - `FND-ACCESSIBILITY` — declared accessibility target and cross-input verification
 - `FND-TRUST` — truthful claims and informed choices
 - `FND-EVIDENCE` — factual and comparative claims
@@ -54,6 +55,14 @@ The front-matter `depends_on` list is the authoritative machine-readable route. 
 ## Completion evidence
 
 - `SEO-FOUNDATIONS-001` and `FND-TRUST-001` — The page record identifies its audience and purpose, and the final page presents material consequences before commitment.
+- `DESIGN-INTERACTION-009` through `DESIGN-INTERACTION-012` — The page has a product-specific rationale, representative content and proof, a coherent visual system, and an independent anti-slop review.
+- When motion exists, `DESIGN-INTERACTION-013` — Its purpose, frequency, timing, interruption, performance, and reduced-motion behavior are verified.
+- When the problem or direction is materially uncertain, `DESIGN-INTERACTION-014` — User evidence, distinct directions, feedback, and the selection decision are recorded.
+- When interaction affects the design, `DESIGN-INTERACTION-015` — A working prototype covers input, interruption, reversal, cancellation, and constrained performance.
+- `DESIGN-INTERACTION-016` and `DESIGN-INTERACTION-017` — Typography and simplicity preserve hierarchy, legibility, capability, and discoverability.
+- `DESIGN-INTERACTION-018` — The final running page matches the approved behavior and visual system or records each material deviation.
+- When reusable agent guidance creates or reviews the page, `DESIGN-INTERACTION-019`, `DESIGN-INTERACTION-020`, and `PLAYBOOK-AGENT-DESIGN-GUIDANCE` — Routing, matched baselines, held-out and regression scenarios, mixed graders, correction ownership, and production feedback are recorded.
+- When agent-interface evaluation supports a release or quality claim, `DESIGN-INTERACTION-021` and `DESIGN-INTERACTION-022` — Sampling, uncertainty, baseline governance, layered rendered checks, accessibility evaluation, and independent human judgment are recorded.
 - `WEB-QUALITY-001`, `WEB-QUALITY-002`, and `WEB-QUALITY-015` — Delivered document semantics and rendered behavior were inspected across the declared representative environments.
 - `WEB-QUALITY-003`, `WEB-QUALITY-004`, and `WEB-QUALITY-005` — Keyboard, focus, names, labels, alternatives, errors, contrast, zoom, reflow, and appropriate assistive behavior were checked.
 - `SEO-FOUNDATIONS-002`, `SEO-FOUNDATIONS-003`, `SEO-FOUNDATIONS-004`, `SEO-FOUNDATIONS-006`, and `SEO-FOUNDATIONS-008` — Indexability, protocol status, canonical signals, structured data, titles, headings, and links are intentional and consistent.
