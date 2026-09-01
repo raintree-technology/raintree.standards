@@ -95,7 +95,7 @@ choose a profile under **Task profiles**.
 * [Error messages](error-messages.md) - User-facing failure content and review criteria.
 * [Functional writing](writing/functional.md) - Clear, consistent, actionable documentation, explanations, summaries, interface text, reports, and messages.
 * [Growth experiments](growth/experiments.md) - Hypotheses, assignment, guardrails, stopping, and learning.
-* [Interaction design](design/interaction.md) - Complete flows, forms, states, responsive behavior, and design systems.
+* [Interface and interaction design](design/interaction.md) - Product-specific visual quality, complete flows, responsive behavior, design systems, and anti-slop review.
 * [Interface content](content/interface.md) - Labels, guidance, states, confirmations, inclusive language, and localization.
 * [Organizational knowledge systems](knowledge/organizational-knowledge.md) - Source authority, provenance, authorization, lifecycle, retrieval, answers, evaluation, and operation for company-brain systems.
 * [Published legal terms and notices](legal/published-terms-and-notices.md) - Scope, accuracy, presentation, assent, versioning, change control, and operation of public legal documents.
@@ -132,6 +132,7 @@ choose a profile under **Task profiles**.
 * [Stripe](playbooks/stripe.md), [Plaid](playbooks/plaid.md), [Vercel](playbooks/vercel.md), [Resend](playbooks/resend.md), [Neon](playbooks/neon.md), and [Cloudflare](playbooks/cloudflare.md) - Separate provider procedures backed by discoverable manifests, official sources, workflows, evaluations, and optional agent-skill routes.
 * [Standards conformance audit](playbooks/standards-audit.md) - Source-neutral profile routing, evidence inspection, rule findings, exceptions, and scoped conformance reporting.
 * [Test strategy and suite design](playbooks/test-strategy.md) - Procedure for mapping behavior and risk to test layers and designing bounded smoke, CI, release, and production checks.
+* [Agent design guidance and evaluation](playbooks/agent-design-guidance.md) - Procedure for maintaining repository design guidance, bounded primitives, matched evaluations, and production-feedback correction loops.
 
 ## Testing reference
 
