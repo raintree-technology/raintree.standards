@@ -55,9 +55,11 @@ The front-matter `depends_on` list is the authoritative machine-readable route. 
 - `ENGINEERING-TESTING-006` and `ENGINEERING-TESTING-007` when smoke or end-to-end suites are active — Their claims, budgets, real boundaries, exclusions, data, and diagnostics are explicit and proportionate.
 - `ENGINEERING-TESTING-008` through `ENGINEERING-TESTING-013` — Contract ownership, isolated data, flake handling, coverage interpretation, known-defect evidence, and fixtures are reviewable.
 - `ENGINEERING-TESTING-014` and `ENGINEERING-QUALITY-008` — Local through post-deployment evidence is correctly staged, deferred checks retain owners and release deadlines, and exact-artifact evidence binds to the release decision.
+- `ENGINEERING-QUALITY-009` when engineering workflow or gate behavior changes — Human wait and work, compute cost, support burden, escaped risk, and any deferred-check ownership are measured together.
 - `ENGINEERING-TESTING-015` — Representative failures identify the governed behavior and provide bounded, safe reproduction evidence.
 - `ENGINEERING-TESTING-016` through `ENGINEERING-TESTING-019` — Test resource contracts, stable ownership and health, production-derived data controls, and the architecture-aware test portfolio are recorded where applicable.
 - `ENGINEERING-TESTING-020` through `ENGINEERING-TESTING-025` — Selective execution, temporal behavior, compatibility windows, high-fidelity exercises, canary promotion, and test lifecycle decisions are controlled where applicable.
 - `FND-CHANGE-001`, `FND-CHANGE-005`, `FND-CHANGE-007`, and `FND-CHANGE-008` — Failure boundary, rollout authority, recovery, owners, and final state are recorded.
+- `FND-CHANGE-010` when a production route is added or changed — The effective change-path inventory, common control contract, bypass evidence, and detection and mitigation measures include that route.
 - `AGENT-VERIFICATION-002`, `AGENT-VERIFICATION-004`, and `AGENT-VERIFICATION-005` — The final artifact was inspected in its intended form and the handoff records results, limitations, exceptions, and next actions.
 - When a conditional standard is active, include its rule-level completion evidence before declaring the change complete.

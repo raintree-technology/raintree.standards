@@ -83,6 +83,7 @@ v0.2 frontmatter with a stricter Raintree application profile.
 
 Key machine-readable surfaces:
 
+- [`llms.txt`](llms.txt) gives agents an explicit route to canonical Markdown sources.
 - [`catalog.yaml`](catalog.yaml) indexes governed documents.
 - [`schema/standard.schema.json`](schema/standard.schema.json) defines standard frontmatter.
 - [`schema/project-showcase-record.schema.json`](schema/project-showcase-record.schema.json) defines canonical public project records.

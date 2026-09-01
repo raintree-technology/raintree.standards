@@ -33,6 +33,10 @@ sources:
     resource: https://scale.com/blog/swe-bench-pro
     title: SWE-Bench Pro - Raising the Bar for Agentic Coding
     author: organization:scale-ai
+  - id: openai-deployment-simulation
+    resource: https://openai.com/index/deployment-simulation/
+    title: Predicting model behavior before release by simulating deployment
+    author: organization:openai
 ---
 
 # Evidence and claims
@@ -206,6 +210,39 @@ Define each criterion independently, identify the evidence available to the grad
 
 **Exceptions:** Exact deterministic criteria can omit human calibration when they directly inspect the required outcome.
 
+### FND-EVIDENCE-011 — Validate the evaluation harness and deployment resemblance
+
+**Level:** required
+**Applies when:** An evaluation result supports release, comparison, safety, capability, or reliability claims for a system whose behavior depends on tools, state, external services, traffic shape, or a multi-step environment.
+
+Treat the harness, fixtures, tools, permissions, state, timing, failures, and grader as part of the evaluated system. Compare them with the target deployment and record material mismatches. Test for reward shortcuts, impossible or broken tasks, evaluation awareness, missing side effects, unrealistic tool responses, and hidden information available only in evaluation. Use safe production-shaped traces or a validated simulation when synthetic tasks do not reproduce the target context.
+
+**Why:** A capable system can score well in an artificial or exploitable harness while failing the deployed task, and a broken harness can make a correct system appear weak.
+
+**Verify:**
+
+- Trace representative evaluation tasks to observed deployment task families, environments, tools, authority, state transitions, latency, and failure modes.
+- Run known-success, known-failure, shortcut, malformed-environment, and no-solution controls and confirm the harness and grader classify them correctly.
+- Compare a safe sample of simulated and real trajectories or outcomes and record where simulation fidelity changes the decision.
+- Revalidate the harness after material model, tool, permission, environment, scorer, or production-distribution changes.
+
+**Exceptions:** A narrow component test can omit deployment resemblance when its claim is explicitly limited to that deterministic component and no end-to-end conclusion is drawn.
+
+## Operational coverage
+
+Match the evidence record to the decision. Do not use a stronger label than the design supports.
+
+| Decision type | Minimum design | Required record | Common invalid inference |
+|---|---|---|---|
+| Descriptive or diagnostic | Defined population, time window, measure, missingness, and comparison basis | Query or procedure, source snapshot, exclusions, denominator, uncertainty, and reproducible result | Treating an observed association as a cause |
+| Controlled causal | Predeclared treatment, assignment unit, estimand, power or sensitivity basis, guardrails, and stopping rule | Assignment audit, treatment-delivery check, analysis version, effect with interval, attrition, and deviations | Choosing the metric or stopping point after seeing results |
+| Qualitative | Purposeful sampling rationale, interview or observation protocol, consent and privacy controls, and saturation or stopping rationale | Raw-note provenance, coding method, negative cases, researcher role, participant context, and traceable synthesis | Turning frequency in a convenience sample into prevalence |
+| Mixed evidence | Explicit role for each method and a rule for resolving convergence, complementarity, or conflict | Joined evidence map, incompatible findings, weighting rationale, decision threshold, and unresolved uncertainty | Averaging incompatible measures into false precision |
+| Expert or policy judgment | Named authority, scope, assumptions, conflicts, alternatives, and review date | Signed or attributable decision, source set, dissent, conditions, and expiration trigger | Presenting accountable judgment as measured fact |
+| Automated or model evaluation | Representative task set, versioned system, reference or rubric, grader calibration, repeated trials, and failure taxonomy | Inputs, outputs, trajectory or trace, scorer version, human adjudication, variance, and regressions | Treating one benchmark score or model grader as general capability |
+
+When evidence conflicts, preserve the conflict and identify what new observation would change the decision. When no feasible design can answer the question, narrow the claim instead of manufacturing certainty.
+
 ## Guidance
 
 Use the narrowest claim supported by the evidence. A passing check supports the behavior, inputs, and environment it exercised; it does not prove the entire system correct. A metric movement is an observation until the design supports a causal interpretation.
@@ -237,3 +274,4 @@ Compliant: “Keyboard navigation and 400% reflow passed on the checkout flow. S
 - Anthropic, [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents), January 9, 2026. Reviewed August 13, 2026.
 - OpenAI, [Evaluation best practices](https://developers.openai.com/api/docs/guides/evaluation-best-practices). Reviewed August 13, 2026.
 - Scale AI, [SWE-Bench Pro: Raising the Bar for Agentic Coding](https://scale.com/blog/swe-bench-pro), September 19, 2025. Reviewed August 13, 2026.
+- OpenAI, [Predicting model behavior before release by simulating deployment](https://openai.com/index/deployment-simulation/). Reviewed September 1, 2026.

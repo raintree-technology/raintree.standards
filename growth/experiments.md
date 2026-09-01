@@ -233,6 +233,21 @@ Before interpreting outcomes or expanding exposure, verify assignment, persisten
 
 **Exceptions:** A non-user-facing offline experiment can substitute representative input and pipeline verification for browser and device coverage.
 
+## Operational coverage
+
+Select the design before assignment. If the feasible design cannot identify the stated effect, narrow the question or label the result observational.
+
+| Design | Required controls | Required evidence |
+|---|---|---|
+| Individual randomized test | Stable assignment, power or sensitivity basis, treatment-delivery check, guardrails, and predeclared analysis | Assignment balance, exposure, attrition, effect and interval, multiplicity treatment, and deviations |
+| Cluster or geo experiment | Cluster definition, contamination model, cluster count, baseline balance, spillover boundary, and cluster-level analysis | Cluster assignments, intracluster assumptions, exposure and interference checks, weighted result, and sensitivity |
+| Sequential or adaptive experiment | Valid monitoring method, decision thresholds, allocation rule, maximum duration or sample, and operational guardrails | Interim looks, allocation history, corrected inference, stop reason, treatment drift, and final estimate |
+| Switchback or time-based test | Period length, washout, seasonality control, carryover model, random schedule, and outage handling | Schedule, period exclusions, carryover checks, time trend sensitivity, and unit-level result |
+| Quasi-experiment | Counterfactual rationale, identifying assumptions, pre-trend or overlap checks, concurrent-change inventory, and falsification tests | Model specification, diagnostics, robustness analyses, alternative explanations, and bounded causal language |
+| Heterogeneous or high-impact outcome | Predeclared groups, minimum support, harm thresholds, privacy-preserving measurement, and escalation | Slice denominators, uncertainty, guardrail effects, practical consequence, and stop or remediation decision |
+
+Persist the intended treatment separately from delivered treatment. Analyze assignment for the primary causal claim unless the approved estimand explicitly requires another population.
+
 ## Guidance
 
 Randomize at the level where treatment can be kept stable and interference is acceptably low. For collaborative products, account or workspace assignment may be safer than person assignment. Match analysis to the assignment design.

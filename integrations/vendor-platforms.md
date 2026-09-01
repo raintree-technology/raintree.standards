@@ -14,6 +14,19 @@ applies_to: [product-feature, service-change, api-change, database-change, deplo
 tags: [integrations, vendors, platforms, callbacks, recovery]
 depends_on: [FND-EVIDENCE, FND-CHANGE, API-CONTRACTS, OPERATIONS-RELIABILITY, PRIVACY-DATA, SECURITY-APPLICATION, SECURITY-SECRETS, AGENT-VERIFICATION]
 generated: { by: codex/gpt-5, at: "2026-08-17T17:28:10Z" }
+sources:
+  - id: nist-sp-800-161r1
+    resource: https://csrc.nist.gov/pubs/sp/800/161/r1/final
+    title: Cybersecurity Supply Chain Risk Management Practices for Systems and Organizations
+    author: organization:nist
+  - id: nist-sp-800-53r5
+    resource: https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final
+    title: Security and Privacy Controls for Information Systems and Organizations
+    author: organization:nist
+  - id: cisa-third-party-risk
+    resource: https://www.cisa.gov/topics/cyber-threats-and-advisories/secure-by-design
+    title: Secure by Design
+    author: organization:cisa
 ---
 
 # External platform integrations
@@ -253,6 +266,23 @@ Maintain and exercise response for provider outage and degradation, quota or cos
 
 **Exceptions:** A replaceable low-impact provider may use a documented shutdown-and-disable exercise instead of a migration rehearsal.
 
+## Operational coverage
+
+Apply every route affected by the integration. Preserve provider-neutral evidence in the integration record and provider-specific evidence in the active playbook.
+
+| Route | Required scenarios | Completion evidence |
+|---|---|---|
+| Synchronous API or SDK | Timeout, rate limit, malformed response, partial result, incompatible version, revoked credential, and provider degradation | Contract and version, request boundary, retry and timeout behavior, error mapping, telemetry, authority test, and fallback result |
+| Webhook, event, or callback | Invalid signature, replay, duplicate, reordering, missing event, delayed event, endpoint rotation, and reconciliation | Raw-body verification, event identity, deduplication state, ordering policy, retry ledger, reconciliation query, and secret rotation |
+| Managed data or AI service | Region, recipient, training or secondary use, retention, deletion, model or engine change, export, and provider access | Data-flow and purpose map, contractual settings, effective configuration, output evaluation, deletion exercise, export result, and subprocessor review |
+| Identity, payment, or other consequential service | Account takeover, authorization mismatch, duplicate effect, disputed action, outage, manual repair, and provider suspension | End-to-end authority trace, idempotency evidence, ledger reconciliation, user notice, recovery exercise, and support escalation |
+| Build, deployment, or control-plane service | Compromised token, poisoned artifact, unavailable control plane, stale configuration, unauthorized release, and region loss | Workload identity, artifact provenance, approval boundary, effective settings, rollback or continuity exercise, and audit log |
+| Vendor change or exit | Price or quota change, deprecation, export, replacement, contract end, deleted tenant, orphaned DNS or secrets, and retained data | Dependency and cost inventory, migration rehearsal, exported and reconciled data, revoked authority, deletion confirmation, and final ownership |
+
+### Worked vendor-neutral evidence record
+
+For a callback-driven external service, the record must identify the provider account and environment, callback URL, event types, signing scheme and secret owner, raw-payload boundary, idempotency key and retention, retry contract, reconciliation source, telemetry, data categories, cost guardrail, support route, failure owner, and exit procedure. The release exercise must reject an invalid signature, accept one valid event, make a duplicate repeat-safe, recover a delayed or missing event through reconciliation, rotate the secret, and confirm the final external and internal states. A unit test alone does not satisfy this record.
+
 ## Guidance
 
 Activate every provider playbook whose platform is present. More than one playbook can apply to the same flow; for example, a Vercel service using Neon, Stripe, and Resend activates all four. The provider playbook supplies product routing, stop conditions, current skill mappings, workflow fixtures, and completion evidence. Cross-cutting standards remain additive.
@@ -267,4 +297,8 @@ Compliant: Preview uses isolated provider resources and credentials. Released ha
 
 ## Sources
 
-Provider-specific factual sources and freshness schedules are owned by the applicable playbooks and supporting integration bundles. This standard depends on the source and verification rules in `FND-EVIDENCE`, `FND-CHANGE`, `API-CONTRACTS`, `OPERATIONS-RELIABILITY`, `PRIVACY-DATA`, `SECURITY-APPLICATION`, `SECURITY-SECRETS`, and `AGENT-VERIFICATION`.
+Provider-specific factual sources and freshness schedules are owned by the applicable playbooks and supporting integration bundles. The following sources support the cross-provider ownership, external-service, and supply-chain controls. This standard also depends on the source and verification rules in `FND-EVIDENCE`, `FND-CHANGE`, `API-CONTRACTS`, `OPERATIONS-RELIABILITY`, `PRIVACY-DATA`, `SECURITY-APPLICATION`, `SECURITY-SECRETS`, and `AGENT-VERIFICATION`.
+
+- National Institute of Standards and Technology, [Cybersecurity Supply Chain Risk Management Practices for Systems and Organizations](https://csrc.nist.gov/pubs/sp/800/161/r1/final). Reviewed September 1, 2026.
+- National Institute of Standards and Technology, [Security and Privacy Controls for Information Systems and Organizations](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final). Reviewed September 1, 2026.
+- Cybersecurity and Infrastructure Security Agency, [Secure by Design](https://www.cisa.gov/topics/cyber-threats-and-advisories/secure-by-design). Reviewed September 1, 2026.

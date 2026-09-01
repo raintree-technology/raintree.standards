@@ -46,6 +46,7 @@ The front-matter `depends_on` list is the authoritative machine-readable route. 
 - `FND-CHANGE-003`, `FND-CHANGE-005`, and `FND-CHANGE-007` — Containment, stop conditions, authority, and promotion decisions are explicit.
 - `OPERATIONS-RELIABILITY-006` and `FND-CHANGE-008` — Recovery meets measured objectives and the final state is reconciled.
 - `OPERATIONS-RELIABILITY-007` — The factual review produces owned corrective work and a later effectiveness check.
+- `OPERATIONS-RELIABILITY-010` and `OPERATIONS-RELIABILITY-011` when overload or shared fate is plausible — Evidence covers admission, retry and queue stability, recovery capacity, critical-function priority, isolation, and stable backlog drain.
 - `OPERATIONS-LOGGING-002` through `OPERATIONS-LOGGING-014` when active — Collected Pino events preserve safe structure, context, errors, lifecycle evidence, pipeline health, protected storage, client trust boundaries, and supportable audit claims.
 - `OPERATIONS-RELIABILITY-008` and `CONTENT-ERRORS-001` when active — Affected users and support receive accurate impact, next actions, and resolution.
 - `AGENT-VERIFICATION-005` — The handoff records impact, timeline, actions, checks, remaining risk, owners, and follow-up dates.

@@ -162,6 +162,21 @@ Inspect the final text with realistic data, layout, states, input methods, and a
 
 **Exceptions:** None for consequential or frequently used interfaces.
 
+## Operational coverage
+
+Test interface content in the rendered state, at the decision point, with representative readers and constraints.
+
+| Route | Required scenarios | Completion evidence |
+|---|---|---|
+| Compact visual interface | Default, loading, empty, error, disabled, truncated, narrow viewport, large text, and localization expansion | Rendered-state review, label-to-action match, accessible name, truncation behavior, and terminology check |
+| Form or consequential flow | Entry, validation, correction, review, submission, duplicate action, timeout, cancellation, and recovery | Complete journey, preserved input, error association, consequence disclosure, confirmation, and reversal or support path |
+| Voice or conversational interface | Recognition error, ambiguity, interruption, repetition, sensitive context, no-screen use, and handoff | Prompt and response transcripts, confirmation policy, repair success, privacy cues, latency behavior, and human escalation |
+| Expert or regulated domain | Novice and expert comprehension, material qualification, uncertainty, prohibited interpretation, and urgent escalation | Terminology authority, comprehension findings, qualified review, traceable claims, and residual ambiguity |
+| Personalized or generated content | Missing context, wrong inference, stale profile, unsupported claim, unsafe suggestion, correction, and opt-out | Input and rule provenance, rendered variants, evaluation results, correction propagation, and user control |
+| Multilingual and bidirectional content | Long translation, plural and gender variation, non-Latin text, right-to-left layout, locale formats, and mixed literals | Translation context, linguistic review, rendered locales, accessible reading order, and fallback behavior |
+
+Space limits do not justify removing a material condition or next action. Restructure the interaction or add a clearly reachable detail layer when essential meaning does not fit.
+
 ## Guidance
 
 Prefer familiar words and direct sentences. Put the outcome before background. Coordinate interface content with product behavior so the message does not promise recovery, timing, access, or completion the system cannot provide.

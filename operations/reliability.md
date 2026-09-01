@@ -30,6 +30,10 @@ sources:
     resource: https://csrc.nist.gov/pubs/sp/800/161/r1/final
     title: Cybersecurity Supply Chain Risk Management Practices for Systems and Organizations
     author: organization:nist
+  - id: aws-reliability-pillar
+    resource: https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html
+    title: Reliability Pillar - AWS Well-Architected Framework
+    author: organization:amazon-web-services
 ---
 
 # Operations and reliability
@@ -182,6 +186,57 @@ Record purpose, owner, data and authority, contract and service expectations, co
 
 **Exceptions:** Commodity low-impact services may use a standardized review when impact and replaceability are proven.
 
+### OPERATIONS-RELIABILITY-010 — Keep overload from becoming self-amplifying
+
+**Level:** required
+**Applies when:** Traffic, retries, fan-out, queues, caches, batch work, tenants, or dependencies can exhaust a finite resource.
+
+Define admission, concurrency, queue, timeout, retry, memory, connection, and cost budgets from measured capacity and request value. Reject, shed, defer, degrade, or isolate work before the system accumulates stale backlog or synchronized retries. Place retries at an owned layer, limit attempts and total elapsed time, require idempotency where effects can repeat, and use backoff and jitter for retryable remote failures. Preserve capacity for recovery, health, and critical work.
+
+**Why:** Overload controls that activate too late can create retry storms, unbounded queues, cache refill spikes, and recovery work that keeps the service unstable after the original demand falls.
+
+**Verify:**
+
+- Load beyond each budget with realistic request cost, skew, fan-out, retry, and dependency degradation.
+- Confirm low-value or stale work is rejected before critical journeys, recovery controls, and health signals lose capacity.
+- Measure admitted, rejected, queued, expired, retried, completed, and abandoned work plus time to stable recovery.
+- Exercise cold start, cache loss, worker restart, and backlog drain without creating a second overload event.
+
+**Exceptions:** A bounded offline job may queue all work when storage, completion time, cancellation, and downstream recovery capacity are proven.
+
+### OPERATIONS-RELIABILITY-011 — Isolate critical journeys and failure domains
+
+**Level:** required
+**Applies when:** Optional features, tenants, regions, workloads, or dependencies share resources with a critical journey.
+
+Classify critical, degradable, and optional function and identify shared fate across compute, data, queues, credentials, deploy paths, control planes, and dependencies. Use cells, partitions, bulkheads, quotas, separate pools, feature isolation, or another measured boundary where one population or optional function could exhaust or fail the critical path. Define the degraded experience and prevent fallback from overloading a weaker dependency.
+
+**Why:** A component diagram can suggest separation while hidden shared resources allow one tenant, region, experiment, or optional feature to impair every user.
+
+**Verify:**
+
+- Build a shared-fate map and compare it with runtime dependency, resource, identity, and deployment evidence.
+- Saturate or fail each material domain and confirm impact remains within the declared population and critical functions remain usable.
+- Disable optional behavior and verify the critical journey no longer depends on its code, data, startup, or control path.
+- Exercise recovery of one domain without synchronized load or state corruption in healthy domains.
+
+**Exceptions:** Shared infrastructure is allowed when capacity, prioritization, failure behavior, and recovery prove that the critical objective remains protected.
+
+## Operational coverage
+
+Build reliability evidence around user journeys and dependency failure, not only service averages.
+
+| Route | Required scenarios | Completion evidence |
+|---|---|---|
+| Capacity and saturation | Expected peak, burst, skew, degraded dependency, queue growth, autoscaling lag, and hard limit | Load model, saturation point, resource and latency curves, overload behavior, capacity margin, and owner decision |
+| Distributed dependency failure | Timeout, retry storm, partial response, stale data, region or zone loss, clock skew, and recovery ordering | Dependency map, trace and metric evidence, bounded retry behavior, failover result, reconciliation, and residual risk |
+| Incident response | Detection, triage, containment, communication, handoff, recovery, recurrence, and user remediation | Timeline, roles, decision log, affected users, restored state, support actions, and follow-up owners |
+| Change-related reliability | Canary, progressive rollout, rollback, mixed versions, schema or config skew, and observability loss | Release correlation, stop signal, rollback duration, final version state, error-budget effect, and temporary-control cleanup |
+| Toil and operational load | Recurring manual work, alert load, queue age, interruption cost, access burden, and automation risk | Time and volume baseline, ownership, eliminated or bounded work, automation guardrails, and follow-up measure |
+| Vendor or control-plane outage | Provider unavailability, stale state, quota, rate limit, credential failure, and exit or manual continuity | Contracted and observed behavior, cached or fallback state, communication path, reconciliation, and vendor escalation |
+
+An average service-level result cannot hide a failed critical journey, region, tenant, or user group. Preserve disaggregated failure evidence where the consequence differs.
+
 ## Guidance
 
 Use service objectives to make tradeoffs, not to excuse preventable harm. Prefer fewer meaningful alerts and rehearsed actions. Treat incidents as user and business events as well as technical failures, and preserve privacy when collecting operational evidence.
@@ -200,3 +255,4 @@ Compliant: Delivery outcomes are monitored, affected messages are reconciled, th
 - National Institute of Standards and Technology, [Incident Response Recommendations and Considerations for Cybersecurity Risk Management](https://csrc.nist.gov/pubs/sp/800/61/r3/final), SP 800-61 Rev. 3. Reviewed August 13, 2026.
 - Google, [Site Reliability Engineering](https://sre.google/sre-book/table-of-contents/). Reviewed August 13, 2026.
 - National Institute of Standards and Technology, [Cybersecurity Supply Chain Risk Management Practices for Systems and Organizations](https://csrc.nist.gov/pubs/sp/800/161/r1/final), SP 800-161 Rev. 1. Reviewed August 13, 2026.
+- Amazon Web Services, [Reliability Pillar — AWS Well-Architected Framework](https://docs.aws.amazon.com/wellarchitected/latest/reliability-pillar/welcome.html). Reviewed September 1, 2026.

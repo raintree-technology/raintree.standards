@@ -1,0 +1,48 @@
+# Raintree Standards
+
+> A pre-1.0 open-source standards library that turns product, engineering, security, data, content, and marketing tasks into testable requirements and evidence.
+
+Every repository content page is available at its explicit `.md` source URL. `catalog.yaml` is the complete governed-document inventory, and the linked indexes cover supporting pages. This file is a discovery route, not a substitute for the governed documents, approval, or certification.
+
+## Apply the library correctly
+
+1. Define the task, intended outcome, system boundary, and material risk.
+2. Select the closest task profile from `profiles/index.md`.
+3. Read every standard in the profile's `depends_on` field.
+4. Activate every conditional route whose stated condition is true.
+5. Apply rule-level requirement labels from `governance/authority.md`; prose intensity does not change a rule's level.
+6. Preserve document status, applicability, dependencies, exceptions, sources, review dates, and stable rule IDs.
+7. Resolve conflicts through repository precedence and record missing evidence as unknown. Do not invent approval, verification, or certification.
+8. Cite the exact governed file and stable rule ID that support the result.
+
+Marketing Skills and other third-party procedures are informative task aids. They do not override Raintree rules or current primary platform documentation.
+
+## Start here
+
+- [Repository guide](https://raw.githubusercontent.com/raintree-technology/raintree.standards/main/README.md): How to select a profile, apply rules, and collect evidence.
+- [Library index](https://raw.githubusercontent.com/raintree-technology/raintree.standards/main/index.md): Browse standards, profiles, playbooks, patterns, and templates.
+- [Coverage matrix](https://raw.githubusercontent.com/raintree-technology/raintree.standards/main/coverage.md): Map recurring work areas to governed routes and approval state.
+- [Standards catalog](https://raw.githubusercontent.com/raintree-technology/raintree.standards/main/catalog.yaml): Machine-readable index of governed documents.
+- [Task profile index](https://raw.githubusercontent.com/raintree-technology/raintree.standards/main/profiles/index.md): Select the closest task route before loading standards.
+
+## Search and public web
+
+- [Search foundations](https://raw.githubusercontent.com/raintree-technology/raintree.standards/main/seo/foundations.md): Search discovery, indexing, machine-readable representations, crawler evidence, and agent-ready routes.
+- [Public web page profile](https://raw.githubusercontent.com/raintree-technology/raintree.standards/main/profiles/public-web-page.md): Required standards and completion evidence for public pages.
+- [Web quality](https://raw.githubusercontent.com/raintree-technology/raintree.standards/main/web/quality.md): Document, accessibility, performance, privacy, security, and machine-readiness requirements.
+- [Google Search Console playbook](https://raw.githubusercontent.com/raintree-technology/raintree.standards/main/playbooks/google-search-console.md): Governed use of Search Console evidence and operations.
+
+## Marketing
+
+- [Marketing Skills coverage map](https://raw.githubusercontent.com/raintree-technology/raintree.standards/main/marketing/coverage.md): Routes the external Marketing Skills task inventory to Raintree standards.
+- [Marketing lifecycle](https://raw.githubusercontent.com/raintree-technology/raintree.standards/main/marketing/lifecycle.md): Positioning, research, claims, offers, targeting, measurement, and lifecycle controls.
+- [Specialist marketing profile](https://raw.githubusercontent.com/raintree-technology/raintree.standards/main/profiles/specialist-marketing.md): Routes paid media, outreach, public engagement, sales, distribution, app-store, and media work.
+
+## Governance and use
+
+- [Authority and requirement levels](https://raw.githubusercontent.com/raintree-technology/raintree.standards/main/governance/authority.md): Binding levels, precedence, conflicts, and freshness.
+- [Evidence and claims](https://raw.githubusercontent.com/raintree-technology/raintree.standards/main/foundations/evidence.md): Provenance, uncertainty, source authority, and evaluation requirements.
+- [Exceptions](https://raw.githubusercontent.com/raintree-technology/raintree.standards/main/governance/exceptions.md): Required scope, approval, expiry, and return-to-compliance record.
+- [Agent instructions](https://raw.githubusercontent.com/raintree-technology/raintree.standards/main/AGENTS.md): Read-only default and maintenance requirements.
+- [Contribution requirements](https://raw.githubusercontent.com/raintree-technology/raintree.standards/main/CONTRIBUTING.md): Required checks and review process.
+- [License and attribution](https://raw.githubusercontent.com/raintree-technology/raintree.standards/main/LICENSE.md): CC BY 4.0 and MIT licensing boundaries.

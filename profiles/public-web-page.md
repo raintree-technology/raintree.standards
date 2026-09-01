@@ -6,13 +6,13 @@ type: profile
 status: draft
 governance_status: draft
 owners: [web, design, seo, content]
-last_reviewed: 2026-08-17
+last_reviewed: 2026-09-01
 review_by: 2027-02-17
 stale_after: 2027-02-17
 applies_to: [public-web-page, landing-page, marketing-site]
 tags: [profile, web, seo]
 depends_on: [WEB-QUALITY, SEO-FOUNDATIONS, DESIGN-INTERACTION, FND-ACCESSIBILITY, FND-TRUST, FND-EVIDENCE, AGENT-VERIFICATION]
-generated: { by: codex/gpt-5, at: "2026-09-01T00:00:00-07:00" }
+generated: { by: codex/gpt-5, at: "2026-09-01T12:55:52-07:00" }
 ---
 
 # Public web page profile
@@ -70,6 +70,12 @@ The front-matter `depends_on` list is the authoritative machine-readable route. 
 - `WEB-QUALITY-011` — Actual storage and network behavior was inspected before consent, after consent, and after withdrawal where applicable.
 - `SEO-FOUNDATIONS-011` — The page or generated page family has an identified audience, owner, source basis, and distinct user value rather than ranking-only variation.
 - When localized, `SEO-FOUNDATIONS-012` and `WEB-QUALITY-012` — Locale URLs, content, language metadata, reciprocal alternates, fallback, layout, and locale switching were verified.
+- For measuring machine clients, `SEO-FOUNDATIONS-013` — Request-boundary evidence identifies the observed path, client claim, response, time, cache boundary, and limitations without treating browser analytics as crawler evidence.
+- For public informational pages, `SEO-FOUNDATIONS-014` and `SEO-FOUNDATIONS-015` — The complete route inventory, recorded exclusions, `describedby` and `alternate` links, Markdown responses, negotiation, cache behavior, locale and version scope, and source parity were verified without representing `llms.txt` as access control or a ranking signal.
+- When a JavaScript widget contains material public meaning, `SEO-FOUNDATIONS-016` — Its essential inputs, outputs, states, sources, and claims remain addressable through server-visible content, stable URLs, or a documented interface.
+- When machine representations carry decision-governing content, `SEO-FOUNDATIONS-017` — Stable IDs, authority, status, level, applicability, dependencies, exceptions, dates, provenance, and canonical identity remain intact.
+- When routes are intended for agent use, `SEO-FOUNDATIONS-018` — Repeated end-to-end tasks verify correct source selection, dependency traversal, rejection of irrelevant material, citations, decisions, latency, failures, and unsupported assumptions.
+- When crawler policy changes, `SEO-FOUNDATIONS-019` — Each provider client is classified by current documented purpose, exercised at delivery boundaries, reconciled with indexing and access controls, and assigned a revalidation owner.
 - When motion, timing, dragging, or gesture behavior exists, `WEB-QUALITY-016` — Reduced motion, control, time adjustment, and simpler input alternatives were exercised.
 - For consequential submissions, `WEB-QUALITY-017` and `CONTENT-ERRORS-012` — Reversal, validation and correction, or review and confirmation prevents material input errors.
 - When browser permissions are requested, `WEB-QUALITY-018` — Grant, denial, revocation, embedded capability, and fallback behavior were inspected.

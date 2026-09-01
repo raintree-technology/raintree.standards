@@ -13,6 +13,19 @@ applies_to: [project-portfolio, project-page, repository-readme, public-profile]
 tags: [marketing, open-source, portfolio, evidence]
 depends_on: [FND-EVIDENCE, FND-TRUST, WRITING-FUNCTIONAL, WEB-QUALITY]
 generated: { by: codex/gpt-5, at: "2026-08-20T18:19:31Z" }
+sources:
+  - id: github-readmes
+    resource: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes
+    title: About READMEs
+    author: organization:github
+  - id: w3c-clear-content
+    resource: https://www.w3.org/WAI/WCAG2/supplemental/objectives/o3-clear-content/
+    title: Use Clear and Understandable Content
+    author: organization:w3c
+  - id: schema-software-application
+    resource: https://schema.org/SoftwareApplication
+    title: SoftwareApplication
+    author: organization:schema-org
 ---
 
 # Public project showcase
@@ -245,6 +258,21 @@ worked application example.
 | Limit or support boundary | When material | Required when omission could mislead |
 | Ecosystem relationship | Overview can supply it | Link to overview or concise map |
 
+## Operational coverage
+
+Verify the canonical record and every projection as one publication system.
+
+| Project route | Required scenarios | Completion evidence |
+|---|---|---|
+| Active product | First-time visitor, eligible and ineligible user, unavailable service, changed price or capability, support request, and shutdown | Canonical record revision, rendered pages, claim sources, working primary action, current limits, support route, and retirement owner |
+| Open-source package or library | Clean install, supported and unsupported runtime, minimal example, dependency failure, security report, contribution, and archive | Package and repository identity, tested quick start, compatibility matrix, license and policy links, maintenance state, and release provenance |
+| Developer tool or service | Authentication, quota, data handling, error recovery, integration example, version change, and deletion | End-to-end example, API or command output, terms and data boundary, limits, versioned docs, and failure path |
+| Research, prototype, or experiment | Incomplete behavior, synthetic or limited data, unsupported claim, external dependency, replication, and project end | Explicit status, method and evidence, known limits, reproducible artifact where available, no-production warning, and archive decision |
+| Archived or transferred project | Stale links, vulnerable dependency, package availability, successor, ownership change, user data, and residual support | Visible lifecycle state, replacement or migration path, package and domain disposition, security contact, retained records, and last-reviewed date |
+| Multi-surface projection | Company page, personal profile, repository, package registry, app store, social profile, and structured data | Projection inventory, canonical identifiers, link check, claim and status parity, structured-data validation, and correction propagation |
+
+A polished page does not compensate for a broken first action, unsupported claim, hidden lifecycle state, or conflicting project identity. Test comprehension and action separately.
+
 ## Guidance
 
 Use one shared factual catalog and let each surface choose its depth. A company
@@ -285,5 +313,10 @@ draft.
 ## Sources
 
 This standard defines Raintree's internal public-project presentation contract. Its
-evidence, trust, writing, and web-delivery dependencies provide the governing source
-basis for the individual requirements.
+requirements also use the following external documentation and accessibility
+references. These sources inform discoverability and comprehension; they do not make
+Raintree's project-record fields universal requirements.
+
+- GitHub, [About READMEs](https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-readmes). Reviewed September 1, 2026.
+- World Wide Web Consortium, [Use Clear and Understandable Content](https://www.w3.org/WAI/WCAG2/supplemental/objectives/o3-clear-content/). Reviewed September 1, 2026.
+- Schema.org, [SoftwareApplication](https://schema.org/SoftwareApplication). Reviewed September 1, 2026.

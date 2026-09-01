@@ -279,6 +279,21 @@ Apply `PRIVACY-DATA`, `FND-TRUST`, and the governing employment, human-resources
 
 **Exceptions:** A person may publish a self-declared expertise profile for an approved directory purpose when access, correction, withdrawal, and prohibited downstream uses remain governed.
 
+## Operational coverage
+
+Test each knowledge system from source authority through retrieval, answer or action, correction, and deletion.
+
+| Route | Required scenarios | Completion evidence |
+|---|---|---|
+| Authoritative internal knowledge | Current, superseded, conflicting, restricted, and deleted records | Authority map, source revision, access evaluation, conflict behavior, citation trace, and deletion propagation |
+| Search or retrieval-augmented generation | Exact, paraphrased, ambiguous, adversarial, out-of-scope, and no-answer queries | Corpus snapshot, retrieval metrics by slice, cited answer trace, unsupported-claim rate, latency, and failure taxonomy |
+| Connector or synchronization | Create, update, move, permission change, deletion, outage, replay, and provider API change | Cursor and checkpoint state, reconciliation, permission parity, tombstone result, retry ledger, and drift alert |
+| User-contributed or collaborative knowledge | Draft, review, dispute, abuse, correction, attribution, and retirement | Contributor authority, moderation record, revision history, dispute outcome, and retained provenance |
+| Agent memory or learned preference | Explicit instruction, inferred preference, contradiction, expiration, user correction, and cross-context isolation | Memory source, scope, confidence, consent or authority, retrieval trace, correction result, and deletion test |
+| Workforce or high-impact knowledge use | Sensitive inference, access request, appeal, human review, and prohibited downstream use | Purpose and necessity review, access log, outcome audit, representative harm analysis, and qualified approval |
+
+Measure retrieval and downstream task success separately. A relevant passage does not prove a grounded answer, and a fluent answer does not prove authorized source use.
+
 ## Guidance
 
 Meet knowledge where it is created when that preserves useful work patterns and source ownership. A central index can improve discovery, but centralization also concentrates permission, privacy, retention, and incident risk. Choose physical replication, federated queries, or a mixture according to measured needs and the accepted failure boundary.

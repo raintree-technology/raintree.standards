@@ -55,8 +55,10 @@ The front-matter `depends_on` list is the authoritative machine-readable route. 
 - `AI-AGENTS-004`, `AI-AGENTS-005`, and `AI-AGENTS-020` — Effective context, tool contracts, retrieved knowledge, and versioned reusable instructions are inspectable and scoped.
 - `AI-AGENTS-009`, `AI-AGENTS-010`, and `FND-CHANGE-002` — Environmental outcome checks, stop conditions, repeat safety, recovery, and interruption behavior are exercised.
 - `AI-AGENTS-012` through `AI-AGENTS-016` — The exact configuration, representative tasks, held-out design, repeated trials, outcome graders, trace review, and human calibration support the release claim.
+- `FND-EVIDENCE-011` — The evaluation harness, tools, state, authority, failure behavior, controls, and deployment resemblance support the intended release claim.
 - `AI-AGENTS-017` and `SECURITY-APPLICATION-015` when active — Adversarial cases and integrated security verification cover prompt injection, data leakage, tool misuse, and permission boundaries.
 - `AI-AGENTS-018` — Traces, alerts, cost and latency limits, safety events, and operator stop controls work for representative runs.
+- `AI-AGENTS-021` for recurring released use — Offline claims map to production detection, monitoring coverage, response objectives, containment, and a privacy-controlled incident-to-regression loop.
 - `AI-AGENTS-019` when parallel or multi-agent — Scope isolation, conflicts, partial failure, synthesis, and measured benefit are recorded.
 - `AGENT-VERIFICATION-005` — The handoff identifies the configuration, evaluation suite, released artifact, checks, outcomes, exceptions, and unresolved risks.
 - When a conditional standard is active, include its rule-level completion evidence before declaring the system complete.

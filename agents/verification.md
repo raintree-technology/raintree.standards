@@ -230,6 +230,21 @@ Update the repository's governed agent instructions, skill, playbook, or knowled
 
 **Exceptions:** Do not persist one-time user data, secrets, temporary workarounds, or preferences that have no durable owner.
 
+## Operational coverage
+
+Scale the verification record to the artifact and consequence. Preserve failed checks and partial results; they are evidence, not noise.
+
+| Work type | Minimum final inspection | Required handoff evidence |
+|---|---|---|
+| Code or configuration | Relevant automated checks, changed-path exercise, final diff, runtime or rendered behavior, and cleanup | Commands or check names, results, environment, untested paths, user work preserved, and remaining risk |
+| Data, analysis, or research | Source trace, calculation or extraction replay, denominator and uncertainty review, contradictory evidence, and final-format inspection | Evidence cutoff, methods, source versions, reproducible inputs, limitations, and decision boundary |
+| Document, interface, or media | Rendered artifact, structure and accessibility, factual and terminology review, links or assets, and representative reader task | Final artifact location, review medium, accessibility result, unresolved editorial issues, and approval needed |
+| External or delegated action | Effective authority, preview or dry run when available, external-state readback, side effects, and revocation | Target, time, actor, resulting state, receipts or identifiers, rollback status, and any external dependency |
+| Long-running or partial work | Durable checkpoint, current state, completed and uncompleted obligations, restart instructions, and stale-state check | Exact continuation point, preserved outputs, blockers, failed attempts, expiration risk, and next safe action |
+| Failed verification | Failure reproduced or bounded, expected versus observed result, diagnostic evidence, and no false completion claim | Failed check, impact, workarounds considered, artifacts left in place, and accountable escalation |
+
+Verification is complete only when the evidence supports the user-visible claim. Passing a proxy check does not establish an unobserved final state.
+
 ## Guidance
 
 Start verification from the acceptance criteria, not from whichever checks are easiest to run. A syntax validator is appropriate evidence for syntax; it does not prove user behavior. Prefer deterministic, repeatable checks, then add manual inspection where meaning or presentation requires judgment.
