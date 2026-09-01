@@ -30,6 +30,10 @@ sources:
     resource: https://dev.mysql.com/doc/refman/8.4/en/backup-and-recovery.html
     title: MySQL Backup and Recovery
     author: organization:mysql
+  - id: stripe-online-migrations
+    resource: https://stripe.com/blog/online-migrations
+    title: Online migrations at scale
+    author: organization:stripe
 ---
 
 # Database changes
@@ -235,6 +239,39 @@ Grant only the operations, objects, environments, and duration required. Separat
 
 **Exceptions:** An engine or managed service can require a broader built-in role; document the unavailable granularity and add compensating approval, network, or audit controls.
 
+### DATA-DATABASE-013 — Make each migration phase observable and independently safe
+
+**Level:** required
+**Applies when:** A migration changes read or write authority across old and new schemas, stores, indexes, formats, or services over more than one release step.
+
+Define the source of truth, permitted readers and writers, compatibility state, comparison signal, stop condition, recovery action, and contraction criterion for every reachable phase. Change one authority boundary at a time where practical. During dual read or write, detect missing, divergent, stale, duplicated, and reordered state continuously and identify which side can repair the other. Do not contract until runtime evidence shows that old readers, writers, jobs, replays, and rollback paths no longer require the old state.
+
+**Why:** A migration can appear healthy at its final target while an intermediate phase silently diverges or leaves a rollback path that writes incompatible state.
+
+**Verify:**
+
+- Interrupt before and after each read and write cutover and confirm the declared source of truth and recovery action remain valid.
+- Inject divergent, delayed, duplicate, and missing records and verify comparison, alerting, quarantine or repair, and final reconciliation.
+- Inspect runtime queries, jobs, consumers, deploy history, and access telemetry before removing an old field, table, store, or compatibility path.
+- Bind the contraction decision to a stated observation window and retained reconciliation result.
+
+**Exceptions:** A demonstrated atomic replacement with all writers stopped can use one phase when rollback and restoration cannot reintroduce the old authority.
+
+## Operational coverage
+
+Select a route for each affected engine and data path. A single change can require more than one route.
+
+| Route | Required scenarios | Completion evidence |
+|---|---|---|
+| Additive online schema change | Old and new application versions, replica lag, lock acquisition, retry, and rollback | Engine/version, generated plan, lock and duration observations, mixed-version test, and post-change invariants |
+| Destructive or semantic change | Existing readers and writers, retained historical data, rollback after new writes, and legal retention constraints | Recovery point, transformed and rejected records, reconciliation, irreversible boundary, and approved deletion evidence |
+| Large backfill or repair | Resume, duplicate execution, throttling, hot partitions, late writes, cancellation, and source changes during execution | Checkpoint ledger, throughput and load, idempotency proof, before/after reconciliation, and residual queue |
+| Index or query-plan change | Representative parameter values, cold and warm cache, concurrent load, statistics drift, and plan regression | Plans, timings, resource use, lock behavior, production-shaped distribution, and rollback threshold |
+| Multi-store or event migration | Duplicate, missing, delayed, reordered, and conflicting writes plus consumer-version skew | Source-of-truth decision, event and row reconciliation, replay result, cutover ledger, and retired paths |
+| Backup and restore | Full and incremental recovery, key or credential loss, corrupted input, regional loss, and target-time recovery | Restored isolated environment, integrity checks, measured recovery point and time, access test, and owner sign-off |
+
+Engine-specific playbooks may strengthen these routes. They must not weaken the invariants, recovery proof, or mixed-version requirements in this standard.
+
 ## Guidance
 
 Treat migrations as distributed-system changes, even when they are expressed as one SQL file. Application versions, workers, replicas, caches, and external consumers can observe different states at different times.
@@ -269,3 +306,4 @@ A production database change must identify affected invariants, compatibility st
 - PostgreSQL Global Development Group, [CREATE INDEX](https://www.postgresql.org/docs/current/sql-createindex.html), PostgreSQL documentation. Reviewed August 13, 2026.
 - PostgreSQL Global Development Group, [Backup and Restore](https://www.postgresql.org/docs/current/backup.html), PostgreSQL documentation. Reviewed August 13, 2026.
 - Oracle, [MySQL Backup and Recovery](https://dev.mysql.com/doc/refman/8.4/en/backup-and-recovery.html), MySQL 8.4 Reference Manual. Reviewed August 13, 2026.
+- Stripe, [Online migrations at scale](https://stripe.com/blog/online-migrations). Reviewed September 1, 2026.

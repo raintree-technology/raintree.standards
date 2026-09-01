@@ -10,3 +10,5 @@
 * [Neon Postgres integration review](neon.md) - Neon connections, pooling, branches, migrations, and recovery.
 * [Cloudflare platform integration review](cloudflare.md) - Cloudflare Workers, bindings, caching, traffic controls, and deployment.
 * [Standards conformance audit](standards-audit.md) - Source-neutral rule routing, evidence inspection, finding status, exception review, and scoped conformance reporting.
+* [Test strategy and suite design](test-strategy.md) - Behavior-to-check mapping, truthful test layers, bounded smoke coverage, and local through production execution design.
+* [Agent design guidance and evaluation](agent-design-guidance.md) - Repository design guidance, bounded primitives, matched evaluations, correction routing, and production-feedback maintenance.

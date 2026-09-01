@@ -15,6 +15,7 @@
 * [Reliability and incident](reliability-incident.md) - Routes service operation and incidents to response, recovery, and learning requirements.
 * [Redis change](redis-change.md) - Routes Redis design, configuration, client, cache, stream, and operational changes.
 * [Secrets and Infisical change](secrets-management.md) - Routes Infisical adoption, access, delivery, precedence, rotation, exposure, operation, recovery, and migration.
+* [Software change](software-change.md) - Routes ordinary fixes, maintenance, refactoring, implementation, and test-suite changes to engineering and verification requirements.
 * [Programmatic interface and service change](service-api-change.md) - Routes APIs, libraries, SDKs, and services to contract, security, reliability, and release requirements.
 * [Specialist marketing](specialist-marketing.md) - Routes channel, sales, app-store, media, referral, and distribution work to specialist standards.
 * [User interface feature](ui-feature.md) - Routes cross-platform interface work to interaction, accessibility, content, and product requirements.

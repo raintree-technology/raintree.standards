@@ -1,9 +1,12 @@
 version: 1
 okf_version: "0.2"
 bundle_index: index.md
-updated: 2026-08-20
+updated: 2026-09-01
 target_release: "1.0.0"
 release_status: approval-pending
+
+reference_routes:
+  testing: testing/routes.yaml
 
 governance:
   - path: governance/authority.md
@@ -35,6 +38,8 @@ standards:
     path: data/redis.md
   - id: ENGINEERING-QUALITY
     path: engineering/quality.md
+  - id: ENGINEERING-TESTING
+    path: engineering/testing.md
   - id: ENGINEERING-CODE-REMOVAL
     path: engineering/code-removal.md
   - id: ENGINEERING-JS-QUALITY
@@ -123,6 +128,10 @@ playbooks:
     path: playbooks/cloudflare.md
   - id: PLAYBOOK-STANDARDS-AUDIT
     path: playbooks/standards-audit.md
+  - id: PLAYBOOK-TEST-STRATEGY
+    path: playbooks/test-strategy.md
+  - id: PLAYBOOK-AGENT-DESIGN-GUIDANCE
+    path: playbooks/agent-design-guidance.md
 
 profiles:
   - id: PROFILE-APPLE-INTERFACE
@@ -149,6 +158,8 @@ profiles:
     path: profiles/redis-change.md
   - id: PROFILE-SECRETS-MANAGEMENT
     path: profiles/secrets-management.md
+  - id: PROFILE-SOFTWARE-CHANGE
+    path: profiles/software-change.md
   - id: PROFILE-SERVICE-API
     path: profiles/service-api-change.md
   - id: PROFILE-SPECIALIST-MARKETING

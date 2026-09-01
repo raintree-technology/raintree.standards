@@ -1,11 +1,5 @@
 # Raintree Standards
 
-> [!NOTE]
-> This repository is an archived reference. Raintree now keeps shared working
-> rules in the organization `.github` repository and project-specific instructions
-> in each project's `AGENTS.md`. Existing rule IDs remain here so historical audit
-> and operations records continue to resolve.
-
 <!-- project-record: raintree-standards -->
 
 **Pre-1.0 open-source standards library · CC BY 4.0 and MIT**
@@ -55,6 +49,10 @@ repository, package, example, evidence, or maintainer-guide structure.
 
 ## Common entry points
 
+- [Software change profile](profiles/software-change.md)
+- [Test strategy and suite design](playbooks/test-strategy.md)
+- [Agent design guidance and evaluation](playbooks/agent-design-guidance.md)
+- [Testing field guide](testing/field-guide.md)
 - [Functional writing profile](profiles/functional-writing.md)
 - [Public web page profile](profiles/public-web-page.md)
 - [Product feature profile](profiles/product-feature.md)
@@ -85,10 +83,12 @@ v0.2 frontmatter with a stricter Raintree application profile.
 
 Key machine-readable surfaces:
 
+- [`llms.txt`](llms.txt) gives agents an explicit route to canonical Markdown sources.
 - [`catalog.yaml`](catalog.yaml) indexes governed documents.
 - [`schema/standard.schema.json`](schema/standard.schema.json) defines standard frontmatter.
 - [`schema/project-showcase-record.schema.json`](schema/project-showcase-record.schema.json) defines canonical public project records.
 - [`source-register.yaml`](source-register.yaml) records source owners and freshness policy.
+- [`testing/routes.yaml`](testing/routes.yaml) maps testing questions, types, stages, rules, recipes, and copyable records.
 
 Tools must preserve unknown frontmatter fields because Raintree does not define the
 complete OKF vocabulary.
@@ -112,11 +112,13 @@ that boundary.
 ```bash
 ruby scripts/validate_catalog.rb
 ruby scripts/validate_integrations.rb
+ruby scripts/validate_testing_reference.rb
 ruby scripts/test_schema_drift.rb
 ruby scripts/test_workflows.rb
 ruby scripts/test_standards_lib.rb
 ruby scripts/test_validate_catalog.rb
 ruby scripts/test_validate_integrations.rb
+ruby scripts/test_validate_testing_reference.rb
 ruby scripts/test_project_readme.rb
 ```
 

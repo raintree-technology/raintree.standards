@@ -3,7 +3,7 @@ type: Reference
 title: Version 1 coverage matrix
 description: Maps the bounded Raintree v1 task surface to governed standards, profiles, playbooks, and remaining approval work.
 tags: [coverage, v1, standards, profiles]
-generated: { by: codex/gpt-5, at: "2026-08-17T17:08:47Z" }
+generated: { by: codex/gpt-5, at: "2026-08-30T21:20:00Z" }
 ---
 
 # Version 1 coverage matrix
@@ -19,6 +19,7 @@ routes exist; it does not mean that independent or qualified approval is complet
 | Programmatic interfaces and services | `API-CONTRACTS`, `ENGINEERING-QUALITY`, `ENGINEERING-JS-QUALITY` for JavaScript and TypeScript, `OPERATIONS-LOGGING` for TypeScript logging, `OPERATIONS-RELIABILITY`, programmatic-interface/service profile | Trellis for JavaScript and TypeScript; vendored anti-slop through Oxlint for TypeScript | Authored; qualified review pending |
 | Database and data | `DATA-DATABASE`, `DATA-QUALITY`, `DATA-REDIS`, database-change and Redis-change profiles; `ENGINEERING-JS-QUALITY` for JavaScript and TypeScript tooling | Trellis for JavaScript and TypeScript; vendored anti-slop through Oxlint for TypeScript; GA4 when an analytics implementation | Authored; Redis draft and qualified review pending |
 | Product delivery | `PRODUCT-DELIVERY`, product-feature profile; `ENGINEERING-JS-QUALITY` for JavaScript and TypeScript | Trellis for JavaScript and TypeScript; vendored anti-slop through Oxlint for TypeScript | Authored; qualified review pending |
+| Ordinary software changes and test strategy | `ENGINEERING-QUALITY`, `ENGINEERING-TESTING`, software-change profile; `ENGINEERING-JS-QUALITY` for JavaScript and TypeScript | Testing field guide, recipes, records, and test-strategy playbook; Trellis for JavaScript and TypeScript; vendored anti-slop through Oxlint for TypeScript | Post-v1 draft; representative-reader and independent engineering, quality, and operations review pending |
 | Universal UI and content | `DESIGN-INTERACTION`, `FND-ACCESSIBILITY`, `CONTENT-INTERFACE`, UI-feature profile; `ENGINEERING-JS-QUALITY` for JavaScript and TypeScript | Trellis for JavaScript and TypeScript; vendored anti-slop through Oxlint for TypeScript | Authored; accessibility review pending |
 | Apple interfaces | Universal UI corpus and Apple-interface profile | Apple HIG audit | Authored; platform review pending |
 | Public web and search | `WEB-QUALITY`, `SEO-FOUNDATIONS`, public-web profile; `ENGINEERING-JS-QUALITY` for JavaScript and TypeScript | Trellis for JavaScript and TypeScript; vendored anti-slop through Oxlint for TypeScript; Search Console | Authored; source and accessibility review pending |

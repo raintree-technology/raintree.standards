@@ -6,13 +6,13 @@ type: profile
 status: draft
 governance_status: draft
 owners: [web, design, seo, content]
-last_reviewed: 2026-08-17
+last_reviewed: 2026-09-01
 review_by: 2027-02-17
 stale_after: 2027-02-17
 applies_to: [public-web-page, landing-page, marketing-site]
 tags: [profile, web, seo]
-depends_on: [WEB-QUALITY, SEO-FOUNDATIONS, FND-ACCESSIBILITY, FND-TRUST, FND-EVIDENCE, AGENT-VERIFICATION]
-generated: { by: codex/gpt-5, at: "2026-08-17T08:30:41Z" }
+depends_on: [WEB-QUALITY, SEO-FOUNDATIONS, DESIGN-INTERACTION, FND-ACCESSIBILITY, FND-TRUST, FND-EVIDENCE, AGENT-VERIFICATION]
+generated: { by: codex/gpt-5, at: "2026-09-01T12:55:52-07:00" }
 ---
 
 # Public web page profile
@@ -25,6 +25,7 @@ The front-matter `depends_on` list is the authoritative machine-readable route. 
 
 - `WEB-QUALITY` — document, accessibility, performance, resilience, security, and privacy quality
 - `SEO-FOUNDATIONS` — crawling, indexing, canonicalization, and content purpose
+- `DESIGN-INTERACTION` — product-specific visual quality, representative content, coherent visual rules, and anti-slop review
 - `FND-ACCESSIBILITY` — declared accessibility target and cross-input verification
 - `FND-TRUST` — truthful claims and informed choices
 - `FND-EVIDENCE` — factual and comparative claims
@@ -32,6 +33,7 @@ The front-matter `depends_on` list is the authoritative machine-readable route. 
 
 ## Conditional standards
 
+- Software implementation, bug fix, refactor, or test-suite change → `PROFILE-SOFTWARE-CHANGE`
 - JavaScript or TypeScript implementation → `ENGINEERING-JS-QUALITY`
 - Browser logs, errors, or operational events sent off the device → `OPERATIONS-LOGGING`
 - Experiment or personalization → `GROWTH-EXPERIMENTS` and `ANALYTICS-MEASUREMENT`
@@ -53,6 +55,14 @@ The front-matter `depends_on` list is the authoritative machine-readable route. 
 ## Completion evidence
 
 - `SEO-FOUNDATIONS-001` and `FND-TRUST-001` — The page record identifies its audience and purpose, and the final page presents material consequences before commitment.
+- `DESIGN-INTERACTION-009` through `DESIGN-INTERACTION-012` — The page has a product-specific rationale, representative content and proof, a coherent visual system, and an independent anti-slop review.
+- When motion exists, `DESIGN-INTERACTION-013` — Its purpose, frequency, timing, interruption, performance, and reduced-motion behavior are verified.
+- When the problem or direction is materially uncertain, `DESIGN-INTERACTION-014` — User evidence, distinct directions, feedback, and the selection decision are recorded.
+- When interaction affects the design, `DESIGN-INTERACTION-015` — A working prototype covers input, interruption, reversal, cancellation, and constrained performance.
+- `DESIGN-INTERACTION-016` and `DESIGN-INTERACTION-017` — Typography and simplicity preserve hierarchy, legibility, capability, and discoverability.
+- `DESIGN-INTERACTION-018` — The final running page matches the approved behavior and visual system or records each material deviation.
+- When reusable agent guidance creates or reviews the page, `DESIGN-INTERACTION-019`, `DESIGN-INTERACTION-020`, and `PLAYBOOK-AGENT-DESIGN-GUIDANCE` — Routing, matched baselines, held-out and regression scenarios, mixed graders, correction ownership, and production feedback are recorded.
+- When agent-interface evaluation supports a release or quality claim, `DESIGN-INTERACTION-021` and `DESIGN-INTERACTION-022` — Sampling, uncertainty, baseline governance, layered rendered checks, accessibility evaluation, and independent human judgment are recorded.
 - `WEB-QUALITY-001`, `WEB-QUALITY-002`, and `WEB-QUALITY-015` — Delivered document semantics and rendered behavior were inspected across the declared representative environments.
 - `WEB-QUALITY-003`, `WEB-QUALITY-004`, and `WEB-QUALITY-005` — Keyboard, focus, names, labels, alternatives, errors, contrast, zoom, reflow, and appropriate assistive behavior were checked.
 - `SEO-FOUNDATIONS-002`, `SEO-FOUNDATIONS-003`, `SEO-FOUNDATIONS-004`, `SEO-FOUNDATIONS-006`, and `SEO-FOUNDATIONS-008` — Indexability, protocol status, canonical signals, structured data, titles, headings, and links are intentional and consistent.
@@ -60,6 +70,12 @@ The front-matter `depends_on` list is the authoritative machine-readable route. 
 - `WEB-QUALITY-011` — Actual storage and network behavior was inspected before consent, after consent, and after withdrawal where applicable.
 - `SEO-FOUNDATIONS-011` — The page or generated page family has an identified audience, owner, source basis, and distinct user value rather than ranking-only variation.
 - When localized, `SEO-FOUNDATIONS-012` and `WEB-QUALITY-012` — Locale URLs, content, language metadata, reciprocal alternates, fallback, layout, and locale switching were verified.
+- For measuring machine clients, `SEO-FOUNDATIONS-013` — Request-boundary evidence identifies the observed path, client claim, response, time, cache boundary, and limitations without treating browser analytics as crawler evidence.
+- For public informational pages, `SEO-FOUNDATIONS-014` and `SEO-FOUNDATIONS-015` — The complete route inventory, recorded exclusions, `describedby` and `alternate` links, Markdown responses, negotiation, cache behavior, locale and version scope, and source parity were verified without representing `llms.txt` as access control or a ranking signal.
+- When a JavaScript widget contains material public meaning, `SEO-FOUNDATIONS-016` — Its essential inputs, outputs, states, sources, and claims remain addressable through server-visible content, stable URLs, or a documented interface.
+- When machine representations carry decision-governing content, `SEO-FOUNDATIONS-017` — Stable IDs, authority, status, level, applicability, dependencies, exceptions, dates, provenance, and canonical identity remain intact.
+- When routes are intended for agent use, `SEO-FOUNDATIONS-018` — Repeated end-to-end tasks verify correct source selection, dependency traversal, rejection of irrelevant material, citations, decisions, latency, failures, and unsupported assumptions.
+- When crawler policy changes, `SEO-FOUNDATIONS-019` — Each provider client is classified by current documented purpose, exercised at delivery boundaries, reconciled with indexing and access controls, and assigned a revalidation owner.
 - When motion, timing, dragging, or gesture behavior exists, `WEB-QUALITY-016` — Reduced motion, control, time adjustment, and simpler input alternatives were exercised.
 - For consequential submissions, `WEB-QUALITY-017` and `CONTENT-ERRORS-012` — Reversal, validation and correction, or review and confirmation prevents material input errors.
 - When browser permissions are requested, `WEB-QUALITY-018` — Grant, denial, revocation, embedded capability, and fallback behavior were inspected.

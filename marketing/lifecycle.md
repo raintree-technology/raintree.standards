@@ -178,6 +178,21 @@ Record the version, audience, exposure, result, limitations, decision, and reusa
 
 **Exceptions:** Archived material may remain when clearly dated, non-operative, and excluded from active journeys.
 
+## Operational coverage
+
+Route every program by channel, audience relationship, jurisdiction, data use, and commitment consequence before launch.
+
+| Lifecycle route | Required scenarios | Completion evidence |
+|---|---|---|
+| Audience and positioning research | Prospective, current, lost, dissatisfied, inaccessible, and non-adopting audiences | Research provenance, recruitment and consent, negative cases, segment limits, claim candidates, and unresolved uncertainty |
+| Acquisition and offer | Organic, paid, partner, referral, direct, localized, unavailable, and ineligible paths | Channel authority, rendered claims and terms, destination parity, audience controls, cost basis, and stop conditions |
+| Activation and onboarding | First use, delayed use, failed setup, assisted use, abandonment, and inaccessible flow | Time-to-value, completion and failure denominators, support burden, accessibility result, and recovery path |
+| Engagement and lifecycle messaging | Transactional, service, educational, promotional, personalized, suppressed, and withdrawn states | Message classification, permission basis, preference state, frequency, value measure, and suppression propagation |
+| Retention, expansion, and advocacy | Renewal, downgrade, cancellation, win-back, referral, review, and incentive disclosure | Commercial terms, cohort value and harm, exit exercise, incentive record, and non-causal measurement limits |
+| Retirement | Expired offer, stale claim, ended partnership, revoked permission, deleted audience, and discontinued product | Channel and asset inventory, disabled automation, data disposition, final reconciliation, and accountable sign-off |
+
+Platform tools and marketing automation do not determine legal authority, user value, or causal effect. Preserve those decisions outside the vendor account.
+
 ## Guidance
 
 Use community skill libraries to discover recurring tasks and workflow gaps, not as authority for policy. Keep specialist channels outside this v1 standard unless their rules are independently sourced and reviewed. A good lifecycle connects the promise, product experience, measurement, support, and exit rather than optimizing each surface independently.

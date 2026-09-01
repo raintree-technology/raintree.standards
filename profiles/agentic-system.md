@@ -6,13 +6,13 @@ type: profile
 status: draft
 governance_status: draft
 owners: [ai, product, engineering, security, privacy]
-last_reviewed: 2026-08-13
-review_by: 2027-02-13
-stale_after: 2027-02-13
+last_reviewed: 2026-09-01
+review_by: 2027-03-01
+stale_after: 2027-03-01
 applies_to: [agentic-system]
 tags: [profile, ai, agents]
 depends_on: [AI-AGENTS, ENGINEERING-QUALITY, FND-EVIDENCE, FND-TRUST, FND-CHANGE, AGENT-VERIFICATION]
-generated: { by: codex/gpt-5, at: "2026-08-17T08:21:30Z" }
+generated: { by: codex/gpt-5, at: "2026-09-01T00:00:00-07:00" }
 ---
 
 # Agentic system profile
@@ -32,12 +32,14 @@ The front-matter `depends_on` list is the authoritative machine-readable route. 
 
 ## Conditional standards
 
+- Software implementation, bug fix, refactor, or test-suite change → `PROFILE-SOFTWARE-CHANGE`
 - JavaScript or TypeScript implementation → `ENGINEERING-JS-QUALITY`
 - Personal, confidential, regulated, or proprietary data in prompts, context, traces, evaluation, feedback, or tools → `PRIVACY-DATA`
 - Untrusted content, code execution, network access, private data access, external communication, durable side effects, authentication, authorization, or privileged tools → `SECURITY-APPLICATION`
 - New events, traces, quality metrics, cost metrics, or dashboards → `ANALYTICS-MEASUREMENT`
 - Google Analytics 4 implementation → `PLAYBOOK-GA4`
 - User interface → `PROFILE-UI-FEATURE`; Apple-platform interface → `PROFILE-APPLE-INTERFACE`
+- Reusable agent guidance for interface generation or review → `PLAYBOOK-AGENT-DESIGN-GUIDANCE`
 - Browser interface or public agent surface → `WEB-QUALITY`
 - Service or API boundary → `PROFILE-SERVICE-API`
 - Production operation, reliability exercise, or incident response → `PROFILE-RELIABILITY-INCIDENT`
@@ -53,8 +55,10 @@ The front-matter `depends_on` list is the authoritative machine-readable route. 
 - `AI-AGENTS-004`, `AI-AGENTS-005`, and `AI-AGENTS-020` — Effective context, tool contracts, retrieved knowledge, and versioned reusable instructions are inspectable and scoped.
 - `AI-AGENTS-009`, `AI-AGENTS-010`, and `FND-CHANGE-002` — Environmental outcome checks, stop conditions, repeat safety, recovery, and interruption behavior are exercised.
 - `AI-AGENTS-012` through `AI-AGENTS-016` — The exact configuration, representative tasks, held-out design, repeated trials, outcome graders, trace review, and human calibration support the release claim.
+- `FND-EVIDENCE-011` — The evaluation harness, tools, state, authority, failure behavior, controls, and deployment resemblance support the intended release claim.
 - `AI-AGENTS-017` and `SECURITY-APPLICATION-015` when active — Adversarial cases and integrated security verification cover prompt injection, data leakage, tool misuse, and permission boundaries.
 - `AI-AGENTS-018` — Traces, alerts, cost and latency limits, safety events, and operator stop controls work for representative runs.
+- `AI-AGENTS-021` for recurring released use — Offline claims map to production detection, monitoring coverage, response objectives, containment, and a privacy-controlled incident-to-regression loop.
 - `AI-AGENTS-019` when parallel or multi-agent — Scope isolation, conflicts, partial failure, synthesis, and measured benefit are recorded.
 - `AGENT-VERIFICATION-005` — The handoff identifies the configuration, evaluation suite, released artifact, checks, outcomes, exceptions, and unresolved risks.
 - When a conditional standard is active, include its rule-level completion evidence before declaring the system complete.

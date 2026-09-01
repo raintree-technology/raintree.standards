@@ -25,6 +25,10 @@ sources:
     resource: https://www.anthropic.com/engineering/building-effective-agents
     title: Building effective agents
     author: organization:anthropic
+  - id: slack-deploy-safety
+    resource: https://slack.engineering/deploy-safety/
+    title: Deploy Safety - Reducing customer impact from change
+    author: organization:slack
 ---
 
 # Safe and reversible change
@@ -179,6 +183,38 @@ Set explicit limits for scope, targets, privileges, time, steps, retries, concur
 
 **Exceptions:** A read-only bounded analysis can use lighter controls when resource use and data disclosure remain limited and observable.
 
+### FND-CHANGE-010 — Govern every production change path
+
+**Level:** required
+**Applies when:** A system can change production through more than one deployer, pipeline, configuration service, flag system, migration tool, scheduler, control plane, or manual route.
+
+Inventory every effective production change path and apply a common minimum contract for identity, review or authorization, artifact or input provenance, staged exposure where applicable, health evaluation, stop and recovery, audit evidence, and final-state verification. Measure control adoption, bypasses, change-attributed incidents, time and exposure before detection, and time to mitigation by path. Do not report one well-governed pipeline as deployment safety when other active routes can bypass it.
+
+**Why:** Reliability programs fail at portfolio boundaries when unmeasured configuration, data, infrastructure, or legacy paths retain weaker controls than the primary code pipeline.
+
+**Verify:**
+
+- Reconcile the change-path inventory with production identities, audit logs, schedulers, deployment systems, administrative tools, and incident records.
+- Exercise detection, pause, rollback or containment, and operator recovery for each material path.
+- Sample production changes and confirm each used the declared path and retained the common contract evidence.
+- Review exceptions, bypasses, and incident attribution until every material route is governed or explicitly blocked.
+
+**Exceptions:** An emergency path may use fewer pre-change steps only when its authority, use, telemetry, containment, retrospective review, and closure are governed and regularly exercised.
+
+## Operational coverage
+
+Choose a change route before execution and bind its stop, recovery, and closure evidence to the exact revision and environment.
+
+| Change route | Required preconditions | Failure exercise | Closure evidence |
+|---|---|---|---|
+| Application or configuration rollout | Compatibility window, bounded cohort, health signals, owner, and rollback or forward-fix decision | Bad configuration, dependency failure, partial rollout, and rollback signal failure | Final version distribution, health comparison, rollback readiness, and temporary-control removal |
+| Data or schema migration | Invariants, mixed-version behavior, backup and restore evidence, reconciliation query, and write-path ownership | Interrupted backfill, duplicate work, old binary, lock contention, and rollback with new writes present | Row and semantic reconciliation, old-path retirement, backup disposition, and migration owner sign-off |
+| Infrastructure or regional change | Capacity model, blast-radius boundary, dependency map, access, failover route, and vendor assumptions | Region or zone loss, capacity exhaustion, control-plane loss, and observability degradation | Capacity and error-budget state, failover restoration, drift check, and emergency-access review |
+| Security or access change | Threat or exposure statement, effective-policy inspection, break-glass path, and revocation plan | Lockout, excessive privilege, stale credential, compromised operator, and audit-log loss | Effective authorization, revoked legacy paths, credential rotation, and reviewed access evidence |
+| Autonomous or scheduled change | Explicit authority, input bounds, budget, dry run, idempotency, stop signal, and human escalation | Repeated trigger, stale input, partial external effect, unavailable approver, and runaway cost | Action ledger, final external state, budget result, disabled temporary authority, and exception disposition |
+
+A successful command or deployment event is not closure. Closure requires the intended final state, user and system health, reconciled side effects, and removal of temporary authority.
+
 ## Guidance
 
 Scale controls to both likelihood and impact. A rare failure that can delete durable data deserves stronger recovery evidence than a frequent but harmless visual defect.
@@ -206,3 +242,4 @@ Compliant: “Disable new writes, redeploy the compatible application version, r
 - Google, [Canarying Releases](https://sre.google/workbook/canarying-releases/), Site Reliability Engineering Workbook. Reviewed August 13, 2026.
 - National Institute of Standards and Technology, [Security and Privacy Controls for Information Systems and Organizations](https://csrc.nist.gov/pubs/sp/800/53/r5/upd1/final), SP 800-53 Revision 5. Reviewed August 13, 2026.
 - Anthropic, [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents), December 19, 2024. Reviewed August 13, 2026.
+- Slack, [Deploy Safety: Reducing customer impact from change](https://slack.engineering/deploy-safety/). Reviewed September 1, 2026.

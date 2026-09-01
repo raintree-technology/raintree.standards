@@ -12,7 +12,7 @@ stale_after: 2027-02-17
 applies_to: [service-change, api-change, library-api-change]
 tags: [profile, service, api, library, sdk]
 depends_on: [API-CONTRACTS, ENGINEERING-QUALITY, OPERATIONS-RELIABILITY, SECURITY-APPLICATION, FND-CHANGE, AGENT-VERIFICATION]
-generated: { by: codex/gpt-5, at: "2026-08-17T08:25:04Z" }
+generated: { by: codex/gpt-5, at: "2026-08-30T20:00:00Z" }
 ---
 
 # Programmatic interface and service change profile
@@ -32,6 +32,7 @@ The front-matter `depends_on` list is the authoritative machine-readable route. 
 
 ## Conditional standards
 
+- Software implementation, bug fix, refactor, or test-suite change → `PROFILE-SOFTWARE-CHANGE`
 - JavaScript or TypeScript implementation → `ENGINEERING-JS-QUALITY`
 - Personal, confidential, or regulated data → `PRIVACY-DATA`
 - Database, schema, query, or backfill change → `PROFILE-DATABASE-CHANGE`

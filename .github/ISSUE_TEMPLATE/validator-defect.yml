@@ -12,8 +12,12 @@ body:
       label: Validator
       options:
         - Catalog
-        - Integration
+        - Integration capability
+        - Testing reference
+        - Schema drift
+        - Repository README
         - GitHub Actions workflow
+        - Shared validator library
         - Other
     validations:
       required: true

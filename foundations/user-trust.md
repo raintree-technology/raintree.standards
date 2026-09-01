@@ -192,6 +192,20 @@ Let the person see and change the objective, important assumptions, scope, recip
 
 **Exceptions:** A pre-authorized, low-impact recurring action can proceed within a visible scope, limit, duration, and revocation control.
 
+## Operational coverage
+
+Review trust at the point where a person forms an expectation, makes a choice, commits money or data, delegates authority, receives an automated judgment, and exits. Test the complete path, not only the disclosure text.
+
+| Route | Required scenarios | Evidence |
+|---|---|---|
+| Choice and consent | Accept, decline, defer, revisit, withdraw, and continue with the least invasive available option | Rendered states, comprehension findings, effective preference state, downstream propagation, and withdrawal result |
+| Commercial commitment | Initial price, total price, renewal, cancellation, refund, scarcity, comparison, and unavailable offer | Claim substantiation, final transaction path, billing record, cancellation exercise, and correction or refund procedure |
+| Automated judgment | Typical, edge, low-confidence, disputed, appealed, and human-review cases | Model or rule version, inputs and limitations, explanation shown, outcome distribution, appeal result, and accountable owner |
+| Delegated action | Preview, approval, bounded execution, partial failure, revocation, retry, and recovery | Authority grant, action trace, confirmation, side effects, stop result, and restored state |
+| Vulnerable or high-impact context | Stress, disability, language difference, urgency, power imbalance, and material consequence | Representative research, harm analysis, qualified review, safeguards, and approved residual risk |
+
+Absence of complaints is not proof of informed choice or comprehension. Evidence must show what people saw, what they reasonably understood, what the system did, and how they could recover.
+
 ## Guidance
 
 Evaluate the whole journey, not one screen. A clear button does not repair a misleading acquisition claim, a hidden recurring charge, or a cancellation path that requires a different channel.

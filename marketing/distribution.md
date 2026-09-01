@@ -147,6 +147,21 @@ Report total cost, incentive and partner fees, reach, qualified outcomes, overla
 
 **Exceptions:** Directional measures are permitted when uncertainty and non-causal limits are stated.
 
+## Operational coverage
+
+Use a distribution annex for each directory, marketplace, referral system, contest, or lead exchange. Record the platform, jurisdiction, economic relationship, data flow, and exit path.
+
+| Route | Required scenarios | Completion evidence |
+|---|---|---|
+| Directory or marketplace listing | Initial listing, duplicate, inaccurate third-party edit, ranking claim, review, outage, and delisting | Ownership proof, canonical facts, platform policy version, rendered listing, correction route, monitoring, and retirement result |
+| Referral or affiliate program | Self-referral, duplicate attribution, incentive disclosure, restricted claim, fraud, refund, and partner termination | Terms, participant identity, disclosure samples, attribution logic, payout reconciliation, enforcement, and suppression |
+| Sweepstakes, contest, or promotion | Eligibility, geographic exclusion, no-purchase path, prize substitution, tie, cancellation, tax, and winner publicity | Qualified jurisdiction review, official rules, entry ledger, selection method, notices, fulfillment, and record retention |
+| Lead exchange or co-marketing | Collection notice, named recipients, consent or other authority, duplicate lead, rejection, onward transfer, and deletion | Data-flow map, partner contract, rendered notice, transfer receipt, suppression and deletion test, and quality reconciliation |
+| Deal, coupon, or incentive listing | Expiration, limited inventory, stacking, employee or partner use, price change, redemption failure, and refund | Material terms, system-of-record value, channel render, redemption and error test, financial reconciliation, and removal |
+| Syndicated content or feed | Schema change, stale cache, localization, unauthorized modification, source correction, and consumer retirement | Feed contract, provenance, freshness measure, downstream inventory, correction propagation, and termination confirmation |
+
+The distributor's approval does not establish legal compliance, claim accuracy, or valid data authority. Verify the final representation and downstream behavior independently.
+
 ## Guidance
 
 Treat directories and partners as external publishers, not passive pipes. Keep a destination inventory and a canonical record for material facts. Do not use incentives to manufacture praise, and do not infer permission for unrelated contact from asset delivery or referral participation.

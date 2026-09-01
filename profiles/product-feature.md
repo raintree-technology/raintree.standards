@@ -12,7 +12,7 @@ stale_after: 2027-02-13
 applies_to: [product-feature]
 tags: [profile, product]
 depends_on: [PRODUCT-DELIVERY, ENGINEERING-QUALITY, FND-TRUST, FND-CHANGE, FND-EVIDENCE, AGENT-VERIFICATION]
-generated: { by: codex/gpt-5, at: "2026-08-17T08:21:30Z" }
+generated: { by: codex/gpt-5, at: "2026-08-30T20:00:00Z" }
 ---
 
 # Product feature profile
@@ -32,6 +32,7 @@ The front-matter `depends_on` list is the authoritative machine-readable route. 
 
 ## Conditional standards
 
+- Software implementation, bug fix, refactor, or test-suite change → `PROFILE-SOFTWARE-CHANGE`
 - JavaScript or TypeScript implementation → `ENGINEERING-JS-QUALITY`
 - User interface → `PROFILE-UI-FEATURE`
 - Browser interface → `WEB-QUALITY`

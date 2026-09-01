@@ -53,6 +53,9 @@ jobs:
       - name: Validate integration capability bundles
         run: ruby scripts/validate_integrations.rb
 
+      - name: Validate testing reference routes
+        run: ruby scripts/validate_testing_reference.rb
+
       - name: Check JSON Schemas against the handwritten validators
         run: ruby scripts/test_schema_drift.rb
 
@@ -67,6 +70,9 @@ jobs:
 
       - name: Test integration validator behaviour
         run: ruby scripts/test_validate_integrations.rb
+
+      - name: Test testing-reference validator behaviour
+        run: ruby scripts/test_validate_testing_reference.rb
 
       - name: Check the repository landing page contract
         run: ruby scripts/test_project_readme.rb

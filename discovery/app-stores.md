@@ -151,6 +151,21 @@ Track review communication, status, phased availability, crashes, store health, 
 
 **Exceptions:** None for active listings.
 
+## Operational coverage
+
+Maintain separate Apple and Google evidence even when one release uses the same product copy and assets. Pin the policy snapshot and submission identity for each store.
+
+| Route | Required scenarios | Completion evidence |
+|---|---|---|
+| Initial listing | New account, new app, age and content rating, privacy declarations, regional availability, accessibility, and review credentials | Store-policy snapshot, build identity, signed metadata record, rendered locales, reviewer path, and accountable approval |
+| App update | Feature addition, removed feature, permission or SDK change, subscription change, new region, and staged rollout | Build-to-metadata diff, privacy and data-safety diff, screenshots, review notes, rollout controls, and monitoring |
+| Product-page or listing experiment | New claim, reordered screenshots, custom page, localized variant, small sample, novelty, and guardrail regression | Hypothesis, assignment and exposure, exact variants, store metrics with limits, product outcomes, and stop decision |
+| Reviews and ratings | Authentic review, support issue, incentivized review, suspected manipulation, abusive review, developer response, and deletion | Platform rule, solicitation text, material connection, response and escalation log, aggregate denominator, and no-manipulation check |
+| Rejection, suspension, or policy change | Ambiguous rejection, urgent fix, repeated rejection, account warning, appeal, removed capability, and store outage | Submission and message archive, policy citation, root cause, approved response, user continuity plan, and final disposition |
+| Retirement or transfer | Delisting, app transfer, developer-account change, subscription continuity, data export or deletion, and unsupported installed build | User and store notice, ownership transfer, service behavior, data and billing disposition, support window, and final listing state |
+
+Store acceptance is evidence of platform review at one point in time. It is not proof of legal compliance, product quality, accessibility, or continuing policy conformance.
+
 ## Guidance
 
 Treat store optimization as truthful discovery, not keyword or review manipulation. Use official store documentation as the current authority and keep Apple and Google requirements separate where their interfaces and rules differ.

@@ -1,5 +1,5 @@
 version: 1
-updated: 2026-08-17
+updated: 2026-09-01
 description: Review ownership and freshness controls for external source sets used by governed documents.
 
 documents:
@@ -11,10 +11,10 @@ documents:
     next_review: 2026-11-13
   - id: FND-EVIDENCE
     owner: standards
-    source_version: document source set reviewed 2026-08-13
-    reviewed_on: 2026-08-13
+    source_version: NIST measurement guidance plus Anthropic, OpenAI, and Scale AI evaluation and deployment-simulation sources reviewed 2026-09-01
+    reviewed_on: 2026-09-01
     volatility: medium
-    next_review: 2027-02-13
+    next_review: 2027-03-01
   - id: FND-TRUST
     owner: product
     source_version: document source set reviewed 2026-08-13
@@ -23,10 +23,10 @@ documents:
     next_review: 2027-02-13
   - id: FND-CHANGE
     owner: engineering
-    source_version: document source set reviewed 2026-08-13
-    reviewed_on: 2026-08-13
+    source_version: Google canarying, NIST controls, Anthropic agent change, and Slack deploy-safety sources reviewed 2026-09-01
+    reviewed_on: 2026-09-01
     volatility: medium
-    next_review: 2027-02-13
+    next_review: 2027-03-01
   - id: API-CONTRACTS
     owner: engineering
     source_version: HTTP and lifecycle RFCs; OpenAPI 3.2.0; Google AIPs for operations, fields, collections, values, compatibility, and batches; CloudEvents 1.0.2; JSON Schema 2020-12; Proto3; W3C Trace Context; Microsoft and OWASP API guidance; and Goedecke and Bloch API design essays reviewed 2026-08-16
@@ -35,16 +35,16 @@ documents:
     next_review: 2027-02-16
   - id: AI-AGENTS
     owner: ai
-    source_version: document source set reviewed 2026-08-13
-    reviewed_on: 2026-08-13
+    source_version: Anthropic, OpenAI, Scale AI, and Cognition sources for agent architecture, containment, evaluation, instructions, observability, and production monitoring reviewed 2026-09-01
+    reviewed_on: 2026-09-01
     volatility: high
-    next_review: 2027-02-13
+    next_review: 2026-12-01
   - id: DATA-DATABASE
     owner: data
-    source_version: document source set reviewed 2026-08-13
-    reviewed_on: 2026-08-13
+    source_version: PostgreSQL and MySQL engine guidance plus Stripe online-migration evidence reviewed 2026-09-01
+    reviewed_on: 2026-09-01
     volatility: medium
-    next_review: 2027-02-13
+    next_review: 2027-03-01
   - id: DATA-QUALITY
     owner: data
     source_version: UK Data Quality Framework, W3C PROV-O, and NIST SP 1800-25 reviewed 2026-08-13
@@ -59,10 +59,16 @@ documents:
     next_review: 2026-11-17
   - id: ENGINEERING-QUALITY
     owner: engineering
-    source_version: NIST SSDF 1.1, SLSA 1.0, and CISA Secure by Design reviewed 2026-08-13
-    reviewed_on: 2026-08-13
+    source_version: NIST SSDF 1.1, SLSA 1.0, CISA Secure by Design, and GitHub developer-workflow evidence reviewed 2026-09-01
+    reviewed_on: 2026-09-01
     volatility: medium
-    next_review: 2027-02-13
+    next_review: 2027-03-01
+  - id: ENGINEERING-TESTING
+    owner: engineering
+    source_version: Google SRE testing, canary, and data-pipeline guidance; Google SMURF and Test Sizes; GitHub flaky-build reduction; Uber E2E shift-left; Meta autonomous and predictive testing; Netflix automated canary analysis; Spotify selective builds; Stripe test clocks; AWS chaos engineering; GitLab quarantine process; and NIST SSDF 1.1 reviewed 2026-08-30
+    reviewed_on: 2026-08-30
+    volatility: medium
+    next_review: 2027-02-28
   - id: ENGINEERING-CODE-REMOVAL
     owner: engineering
     source_version: Knip first-cleanup, project-file, production, workspace, issue-resolution, auto-fix, and CI guidance; Ruff configuration, linter, F401, and F841 documentation; deptry rules and configuration; Vulture 2.16; Python import reference; and PyPA entry-point specification reviewed 2026-08-17
@@ -123,6 +129,12 @@ documents:
     reviewed_on: 2026-08-13
     volatility: high
     next_review: 2026-11-13
+  - id: MARKETING-PROJECT-SHOWCASE
+    owner: marketing
+    source_version: Raintree internal project-record contract plus GitHub README, W3C clear-content, and Schema.org SoftwareApplication references reviewed 2026-09-01
+    reviewed_on: 2026-09-01
+    volatility: medium
+    next_review: 2027-03-01
   - id: SALES-REVENUE-OPERATIONS
     owner: revenue-operations
     source_version: current FTC comparative-advertising, DOJ antitrust, and SEC marketing guidance reviewed 2026-08-13
@@ -143,10 +155,10 @@ documents:
     next_review: 2026-11-13
   - id: OPERATIONS-RELIABILITY
     owner: operations
-    source_version: NIST CSF 2.0, SP 800-61r3, SP 800-161r1, and Google SRE reviewed 2026-08-13
-    reviewed_on: 2026-08-13
+    source_version: NIST CSF 2.0, SP 800-61r3, SP 800-161r1, Google SRE, and AWS Well-Architected Reliability reviewed 2026-09-01
+    reviewed_on: 2026-09-01
     volatility: medium
-    next_review: 2027-02-13
+    next_review: 2027-03-01
   - id: OPERATIONS-LOGGING
     owner: engineering
     source_version: Pino 10.3.1 API, asynchronous, browser, bundling, child logger, LTS, redaction, transport, and web framework documentation; current Node.js async context, process, and stream documentation; OpenTelemetry logs data model and service semantic conventions; OWASP Logging Cheat Sheet; and W3C Trace Context reviewed 2026-08-17
@@ -161,8 +173,8 @@ documents:
     next_review: 2027-02-13
   - id: SEO-FOUNDATIONS
     owner: seo
-    source_version: document source set reviewed 2026-08-13
-    reviewed_on: 2026-08-13
+    source_version: Google Search and AI-search guidance; Microsoft; IETF HTTP, robots, Markdown media type, and Web Linking; llms.txt proposal v2; OpenAI publisher crawler guidance; and Marketing Skills seo-audit 2.0.0, ai-seo 2.2.0, and schema 2.0.0 at e55de886, reviewed 2026-09-01
+    reviewed_on: 2026-09-01
     volatility: high
     next_review: 2026-11-13
   - id: WEB-QUALITY
@@ -173,10 +185,16 @@ documents:
     next_review: 2026-11-13
   - id: DESIGN-INTERACTION
     owner: design
-    source_version: WCAG 2.2, USWDS, and Apple HIG reviewed 2026-08-13
-    reviewed_on: 2026-08-13
+    source_version: WCAG 2.2, USWDS, and Apple HIG reviewed 2026-08-13; Emil Kowalski design-engineering guidance; Linear design guidance; Apple fluid-interface and typography sessions; Google animation guidance; Vercel agent-design evaluation guidance; Anthropic and OpenAI agent-evaluation guidance; Playwright visual-comparison guidance; W3C accessibility-evaluation guidance; GOV.UK Design System contribution criteria; and Design Tokens Format Module 2025.10 reviewed 2026-09-01
+    reviewed_on: 2026-09-01
     volatility: medium
-    next_review: 2027-02-13
+    next_review: 2027-03-01
+  - id: PLAYBOOK-AGENT-DESIGN-GUIDANCE
+    owner: design
+    source_version: Vercel design.md and product-design evaluation guidance; Anthropic and OpenAI agent-evaluation guidance; Playwright visual-comparison guidance; W3C accessibility-evaluation guidance; GOV.UK Design System contribution criteria; and Design Tokens Format Module 2025.10 reviewed 2026-09-01
+    reviewed_on: 2026-09-01
+    volatility: high
+    next_review: 2026-12-01
   - id: AGENT-VERIFICATION
     owner: standards
     source_version: document source set reviewed 2026-08-13
@@ -197,10 +215,10 @@ documents:
     next_review: 2027-02-13
   - id: WRITING-FUNCTIONAL
     owner: content
-    source_version: document source set reviewed 2026-08-13
-    reviewed_on: 2026-08-13
+    source_version: document source set plus Simon Willison's LLM cliché highlighter pattern catalog reviewed 2026-08-28
+    reviewed_on: 2026-08-28
     volatility: medium
-    next_review: 2027-02-13
+    next_review: 2027-02-28
   - id: PRIVACY-DATA
     owner: privacy
     source_version: document source set reviewed 2026-08-13
@@ -225,6 +243,12 @@ documents:
     reviewed_on: 2026-08-16
     volatility: high
     next_review: 2026-11-16
+  - id: INTEGRATIONS-VENDOR
+    owner: platform
+    source_version: NIST SP 800-161r1, NIST SP 800-53 Revision 5 Update 1, and CISA Secure by Design cross-provider controls reviewed 2026-09-01; provider facts remain owned by integration playbooks
+    reviewed_on: 2026-09-01
+    volatility: medium
+    next_review: 2027-03-01
   - id: PLAYBOOK-STRIPE
     owner: payments
     source_version: Stripe payment, key, idempotency, webhook, Connect, Billing, Tax, and launch guidance plus stripe:stripe-best-practices reviewed 2026-08-17

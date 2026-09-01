@@ -3,7 +3,7 @@ type: Roadmap
 title: Coverage roadmap
 description: Prioritized gaps and triggers for expanding the raintree.standards library.
 tags: [roadmap, coverage, governance]
-generated: { by: codex/gpt-5, at: "2026-08-17T17:08:47Z" }
+generated: { by: codex/gpt-5, at: "2026-08-30T21:20:00Z" }
 ---
 
 # Coverage roadmap
@@ -52,6 +52,7 @@ The draft standards, playbooks, profiles, and patterns listed in the catalog rem
 - [x] Server-side TypeScript structured logging with Pino — `OPERATIONS-LOGGING`
 - [x] Safe unused-code and dependency cleanup with TypeScript/JavaScript Knip plus Biome/Trellis, Python Ruff and deptry, contextual Vulture, and analyzer canaries — `ENGINEERING-CODE-REMOVAL` and `PROFILE-CODE-REMOVAL`
 - [x] Source-neutral external-platform requirements plus separate Stripe, Plaid, Vercel, Resend, Neon, and Cloudflare playbooks and manifest-backed review bundles — `INTEGRATIONS-VENDOR` and the six provider playbooks
+- [x] Risk- and architecture-based software testing, separate smoke, synthetic, and canary contracts, staged and selective gates, controlled time and version compatibility, test-size and suite-lifecycle controls, governed production-derived data, bounded shadow and fault-injection exercises, explicit canary promotion, rapid field guidance, situation recipes, copyable records, real-repository examples, machine routing, validation, and ordinary software-change routing — `ENGINEERING-TESTING`, `PLAYBOOK-TEST-STRATEGY`, and `PROFILE-SOFTWARE-CHANGE`
 
 All seven specialist extension standards, `PROFILE-SPECIALIST-MARKETING`, and
 `PROFILE-COMMERCIAL-EVIDENCE-REVIEW` remain drafts pending independent,
@@ -66,6 +67,7 @@ independent engineering review. The Redis standard and Redis-change profile requ
 independent data, engineering, operations, and security review.
 The external-platform standard and provider playbooks require independent platform,
 security, privacy, operations, and provider-domain review as applicable.
+The software-testing standard, test-strategy playbook, and software-change profile require independent engineering, quality, and operations review.
 
 ## Open extension queue
 

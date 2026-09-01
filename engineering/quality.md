@@ -12,7 +12,7 @@ stale_after: 2027-02-13
 applies_to: [software-change, service-change]
 tags: [engineering, architecture, testing, dependencies]
 depends_on: [FND-EVIDENCE, FND-CHANGE, AGENT-VERIFICATION]
-generated: { by: codex/gpt-5, at: "2026-08-17T06:11:16Z" }
+generated: { by: codex/gpt-5, at: "2026-08-30T20:00:00Z" }
 sources:
   - id: nist-ssdf-11
     resource: https://csrc.nist.gov/pubs/sp/800/218/final
@@ -26,6 +26,10 @@ sources:
     resource: https://www.cisa.gov/securebydesign
     title: Secure by Design
     author: organization:cisa
+  - id: github-deferred-compliance
+    resource: https://github.blog/engineering/making-github-ci-workflow-3x-faster/
+    title: Making GitHub CI workflow 3x faster
+    author: organization:github
 ---
 
 # Engineering quality
@@ -71,7 +75,7 @@ Give each component a focused responsibility, explicit interface, minimum requir
 **Level:** required  
 **Applies when:** A change creates or modifies behavior that can regress.
 
-Map material behavior and risk to deterministic unit, contract, integration, end-to-end, property, performance, security, or manual checks at the lowest layer that can prove the claim.
+Map material behavior and risk to deterministic checks at the lowest layer that can prove the claim. Apply `ENGINEERING-TESTING` for test-layer names, smoke-test scope, deterministic execution, failure coverage, fixtures, flake handling, and local through production evidence when that post-v1 draft is adopted by the project.
 
 **Why:** One test layer either misses integrated behavior or makes all feedback slow and fragile.
 
@@ -162,6 +166,39 @@ Run risk-matched checks on the final integrated artifact, inspect intended behav
 
 **Exceptions:** None for a production release; an emergency release follows the governed emergency process.
 
+### ENGINEERING-QUALITY-009 — Measure engineering friction with quality outcomes
+
+**Level:** required
+**Applies when:** Changing build, test, review, deployment, development-environment, documentation, or compliance workflows used repeatedly by engineers.
+
+Define the user task, population, baseline, wait and active time, failure and retry burden, machine cost, interruption, support load, and quality or risk outcome before optimization. Remove or defer a blocking step only when evidence shows it does not need to block that decision and an owned later gate detects, routes, and closes failures within a defined time. Measure missed defects, escaped incidents, mainline health, and adoption with speed and satisfaction.
+
+**Why:** Faster local feedback can transfer risk or work to another team, while indiscriminate blocking checks can waste substantial human and compute capacity without improving the release decision.
+
+**Verify:**
+
+- Observe representative engineers completing the workflow and compare telemetry with reported friction.
+- Trace each required step to a protected claim, defect class, or policy obligation and remove duplicate or obsolete gates.
+- For deferred checks, inject a failure and verify detection, ownership, notification, correction deadline, escalation, and prevention of an affected release where required.
+- Compare lead time, failure rate, escaped defects, support load, compute cost, and user experience before and after the change.
+
+**Exceptions:** A new high-consequence control can launch before a complete baseline when its obligation and owner are explicit; measure burden and effectiveness after adoption and refine without weakening the protected outcome.
+
+## Operational coverage
+
+Use this standard as the engineering release backbone, then add the domain standard for the affected surface.
+
+| Change class | Required quality route | Completion evidence |
+|---|---|---|
+| Internal refactor | Preserved contract, characterization where behavior is unclear, focused tests, dependency and dead-path review | Before/after behavior, changed boundaries, test selection rationale, and final diff inspection |
+| Public contract or compatibility change | Version and consumer inventory, compatibility window, migration path, deprecation, and rollback | Contract tests across supported versions, consumer evidence, release notes, telemetry, and retirement criteria |
+| Build or dependency change | Pinned inputs, provenance, reproducible artifact, license and vulnerability review, upgrade and rollback path | Lockfile or manifest diff, clean build, artifact identity, source and integrity data, and environment comparison |
+| Performance or reliability change | Workload model, baseline, budget, saturation and failure scenarios, observability, and capacity assumptions | Repeatable benchmark, variance, resource profile, production-shaped trial, and regression threshold |
+| Security, privacy, or high-impact change | Threat and data-flow review, independent reviewer, abuse and failure cases, authorization, and recovery | Reviewer identity and scope, findings, mitigations, residual risk, and approval or explicit block |
+| Removal or simplification | Reachability and runtime evidence, owner and consumer check, staged removal, and recovery route | Search and analyzer results, usage telemetry, canary outcome, final artifact inspection, and deleted-path inventory |
+
+No route can rely on source appearance alone. Inspect the built, packaged, deployed, or otherwise final artifact that users and dependent systems receive.
+
 ## Guidance
 
 Prefer the simplest design that meets measured needs. Add abstraction only when it removes current duplication, isolates a real boundary, or enables an explicit requirement. Treat generated code and AI-authored changes as authored work subject to the same review and evidence.
@@ -179,3 +216,4 @@ Compliant: Compare the existing capability and candidate package, inspect the re
 - National Institute of Standards and Technology, [Secure Software Development Framework Version 1.1](https://csrc.nist.gov/pubs/sp/800/218/final). Reviewed August 13, 2026.
 - Open Source Security Foundation, [Supply-chain Levels for Software Artifacts 1.0](https://slsa.dev/spec/v1.0/). Reviewed August 13, 2026.
 - Cybersecurity and Infrastructure Security Agency, [Secure by Design](https://www.cisa.gov/securebydesign). Reviewed August 13, 2026.
+- GitHub, [Making GitHub CI workflow 3x faster](https://github.blog/engineering/making-github-ci-workflow-3x-faster/). Reviewed September 1, 2026.

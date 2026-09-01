@@ -1,0 +1,141 @@
+version: 1
+updated: 2026-08-30
+standard: ENGINEERING-TESTING
+profile: PROFILE-SOFTWARE-CHANGE
+documents:
+  field_guide: testing/field-guide.md
+  recipes: testing/recipes.md
+  templates: templates/testing-records.md
+  examples: testing/worked-examples.md
+
+rule_index:
+  ENGINEERING-TESTING-001: testing/field-guide.md#thirty-second-decision-path
+  ENGINEERING-TESTING-002: testing/field-guide.md#test-type-cards
+  ENGINEERING-TESTING-003: testing/field-guide.md#test-type-cards
+  ENGINEERING-TESTING-004: testing/field-guide.md#resource-size-declaration
+  ENGINEERING-TESTING-005: testing/field-guide.md#frequent-decisions
+  ENGINEERING-TESTING-006: testing/field-guide.md#smoke-synthetic-shadow-and-canary
+  ENGINEERING-TESTING-007: testing/field-guide.md#test-type-cards
+  ENGINEERING-TESTING-008: testing/field-guide.md#frequent-decisions
+  ENGINEERING-TESTING-009: testing/field-guide.md#smoke-synthetic-shadow-and-canary
+  ENGINEERING-TESTING-010: testing/field-guide.md#frequent-decisions
+  ENGINEERING-TESTING-011: testing/field-guide.md#anti-pattern-lookup
+  ENGINEERING-TESTING-012: testing/field-guide.md#anti-pattern-lookup
+  ENGINEERING-TESTING-013: testing/field-guide.md#test-type-cards
+  ENGINEERING-TESTING-014: testing/field-guide.md#execution-stages
+  ENGINEERING-TESTING-015: testing/field-guide.md#what-a-passing-result-does-not-prove
+  ENGINEERING-TESTING-016: testing/field-guide.md#resource-size-declaration
+  ENGINEERING-TESTING-017: testing/field-guide.md#frequent-decisions
+  ENGINEERING-TESTING-018: testing/field-guide.md#frequent-decisions
+  ENGINEERING-TESTING-019: testing/field-guide.md#portfolio-design
+  ENGINEERING-TESTING-020: testing/field-guide.md#frequent-decisions
+  ENGINEERING-TESTING-021: testing/field-guide.md#frequent-decisions
+  ENGINEERING-TESTING-022: testing/field-guide.md#frequent-decisions
+  ENGINEERING-TESTING-023: testing/field-guide.md#smoke-synthetic-shadow-and-canary
+  ENGINEERING-TESTING-024: testing/field-guide.md#smoke-synthetic-shadow-and-canary
+  ENGINEERING-TESTING-025: testing/field-guide.md#frequent-decisions
+
+stages:
+  - local
+  - presubmit
+  - post-submit
+  - release-qualification
+  - deployment-gate
+  - post-deployment
+
+test_types:
+  unit:
+    rules: [ENGINEERING-TESTING-002, ENGINEERING-TESTING-003, ENGINEERING-TESTING-004]
+    stages: [local, presubmit]
+  component:
+    rules: [ENGINEERING-TESTING-002, ENGINEERING-TESTING-003, ENGINEERING-TESTING-013]
+    stages: [local, presubmit]
+  contract:
+    rules: [ENGINEERING-TESTING-002, ENGINEERING-TESTING-008, ENGINEERING-TESTING-022]
+    stages: [presubmit, post-submit, release-qualification]
+  integration:
+    rules: [ENGINEERING-TESTING-002, ENGINEERING-TESTING-005, ENGINEERING-TESTING-007, ENGINEERING-TESTING-016]
+    stages: [presubmit, post-submit]
+  end-to-end:
+    rules: [ENGINEERING-TESTING-007, ENGINEERING-TESTING-009, ENGINEERING-TESTING-015]
+    stages: [presubmit, post-submit, release-qualification]
+  regression:
+    rules: [ENGINEERING-TESTING-001, ENGINEERING-TESTING-008, ENGINEERING-TESTING-025]
+    stages: [presubmit, post-submit, release-qualification]
+  acceptance:
+    rules: [ENGINEERING-TESTING-001, ENGINEERING-TESTING-007, ENGINEERING-TESTING-015]
+    stages: [presubmit, release-qualification]
+  smoke:
+    rules: [ENGINEERING-TESTING-006, ENGINEERING-TESTING-014, ENGINEERING-TESTING-016]
+    stages: [release-qualification, deployment-gate]
+  synthetic:
+    rules: [ENGINEERING-TESTING-002, ENGINEERING-TESTING-009, ENGINEERING-TESTING-014]
+    stages: [deployment-gate, post-deployment]
+  shadow-dry-run:
+    rules: [ENGINEERING-TESTING-018, ENGINEERING-TESTING-023]
+    stages: [release-qualification, deployment-gate, post-deployment]
+  canary:
+    rules: [ENGINEERING-TESTING-014, ENGINEERING-TESTING-018, ENGINEERING-TESTING-024]
+    stages: [deployment-gate]
+  performance:
+    rules: [ENGINEERING-TESTING-002, ENGINEERING-TESTING-014, ENGINEERING-TESTING-016]
+    stages: [post-submit, release-qualification]
+  resilience:
+    rules: [ENGINEERING-TESTING-005, ENGINEERING-TESTING-014, ENGINEERING-TESTING-023]
+    stages: [post-submit, release-qualification, post-deployment]
+  security:
+    rules: [ENGINEERING-TESTING-001, ENGINEERING-TESTING-005, ENGINEERING-TESTING-009, ENGINEERING-TESTING-012]
+    stages: [presubmit, post-submit, release-qualification]
+  accessibility:
+    rules: [ENGINEERING-TESTING-001, ENGINEERING-TESTING-007, ENGINEERING-TESTING-015]
+    stages: [presubmit, release-qualification]
+
+situations:
+  bug-fix:
+    recipe: bug-fix
+    rules: [ENGINEERING-TESTING-001, ENGINEERING-TESTING-003, ENGINEERING-TESTING-005, ENGINEERING-TESTING-012, ENGINEERING-TESTING-015]
+    templates: [behavior-to-evidence-map]
+  api-service-change:
+    recipe: api-or-service-change
+    rules: [ENGINEERING-TESTING-001, ENGINEERING-TESTING-005, ENGINEERING-TESTING-008, ENGINEERING-TESTING-014, ENGINEERING-TESTING-016, ENGINEERING-TESTING-022]
+    templates: [behavior-to-evidence-map, test-size-declaration, version-compatibility-matrix]
+  ui-behavior:
+    recipe: ui-behavior
+    rules: [ENGINEERING-TESTING-003, ENGINEERING-TESTING-007, ENGINEERING-TESTING-013, ENGINEERING-TESTING-016]
+    templates: [behavior-to-evidence-map, test-size-declaration]
+  public-website-release:
+    recipe: public-website-release
+    rules: [ENGINEERING-TESTING-006, ENGINEERING-TESTING-007, ENGINEERING-TESTING-008, ENGINEERING-TESTING-014, ENGINEERING-TESTING-016]
+    templates: [suite-inventory, smoke-test-contract, execution-stage-map]
+  provider-integration:
+    recipe: provider-integration
+    rules: [ENGINEERING-TESTING-004, ENGINEERING-TESTING-005, ENGINEERING-TESTING-008, ENGINEERING-TESTING-009, ENGINEERING-TESTING-010, ENGINEERING-TESTING-013]
+    templates: [behavior-to-evidence-map, production-derived-data-record, quarantine-record]
+  database-migration:
+    recipe: database-migration
+    rules: [ENGINEERING-TESTING-005, ENGINEERING-TESTING-008, ENGINEERING-TESTING-014, ENGINEERING-TESTING-022]
+    templates: [behavior-to-evidence-map, version-compatibility-matrix, execution-stage-map]
+  time-dependent-behavior:
+    recipe: scheduled-or-time-dependent-behavior
+    rules: [ENGINEERING-TESTING-004, ENGINEERING-TESTING-005, ENGINEERING-TESTING-021]
+    templates: [behavior-to-evidence-map]
+  flaky-test:
+    recipe: flaky-test-investigation
+    rules: [ENGINEERING-TESTING-010, ENGINEERING-TESTING-015, ENGINEERING-TESTING-017, ENGINEERING-TESTING-025]
+    templates: [quarantine-record, test-retirement-record]
+  smoke-suite-redesign:
+    recipe: smoke-suite-redesign
+    rules: [ENGINEERING-TESTING-006, ENGINEERING-TESTING-008, ENGINEERING-TESTING-014, ENGINEERING-TESTING-016]
+    templates: [suite-inventory, smoke-test-contract, execution-stage-map]
+  canary-deployment:
+    recipe: canary-deployment
+    rules: [ENGINEERING-TESTING-014, ENGINEERING-TESTING-018, ENGINEERING-TESTING-024]
+    templates: [canary-decision-record, execution-stage-map]
+  high-fidelity-exercise:
+    recipe: shadow-dry-run-or-fault-injection-exercise
+    rules: [ENGINEERING-TESTING-009, ENGINEERING-TESTING-018, ENGINEERING-TESTING-023]
+    templates: [production-derived-data-record, high-fidelity-exercise-record]
+  test-retirement:
+    recipe: test-retirement
+    rules: [ENGINEERING-TESTING-010, ENGINEERING-TESTING-017, ENGINEERING-TESTING-020, ENGINEERING-TESTING-025]
+    templates: [test-retirement-record]
