@@ -162,6 +162,21 @@ Compare outcomes and guardrails with the predeclared baseline, document limitati
 
 **Exceptions:** None; the review may conclude that more evidence is needed with a new bounded deadline.
 
+## Operational coverage
+
+Use a complete product record from problem selection through adoption, operation, and retirement.
+
+| Decision stage | Required questions | Required evidence |
+|---|---|---|
+| Problem discovery | Whose problem, in what context, how often, with what consequence, and what do people do now? | Research plan, participant and segment rationale, observations, negative cases, existing alternatives, and uncertainty |
+| Opportunity and portfolio choice | Why now, what outcome, what displacement or opportunity cost, what constraint, and what would change the priority? | Comparable options, strategic fit, capacity and dependency view, risk-adjusted value, and accountable decision |
+| Solution and risky-assumption test | Which behavior, desirability, usability, feasibility, viability, trust, or operational assumption could invalidate the work? | Ranked assumptions, cheapest valid tests, prototypes or spikes, observed behavior, and updated decision |
+| Release readiness | Can eligible users discover, understand, complete, recover, receive support, and obtain the promised value? | End-to-end journey, accessibility and policy checks, operational readiness, instrumentation, support material, and stop plan |
+| Adoption and value | Did the intended population reach durable value, who did not, why, and at what service or support cost? | Cohort outcomes, denominators, time-to-value, qualitative follow-up, support burden, and guardrails |
+| Pricing, handoff, or retirement | Are commitments, billing, data, access, migration, communication, and ownership complete? | Commercial and operational sign-off, affected-user inventory, migration result, final-state checks, and retained obligations |
+
+Delivery success is not feature shipment. It is a supported, measurable user outcome with known operating cost and an owned path for correction or retirement.
+
 ## Guidance
 
 Discovery and delivery are continuous risk reduction, not separate ceremonies. Use qualitative evidence to understand needs and mechanisms and quantitative evidence to estimate prevalence and outcomes. Do not convert roadmap confidence into factual certainty.

@@ -162,6 +162,21 @@ Provide detection, quarantine, stop, replay or correction, consumer notification
 
 **Exceptions:** None for high-impact data products.
 
+## Operational coverage
+
+Define quality at the decision boundary, not only at ingestion. Preserve the expected arrival pattern, correction behavior, and semantic owner with each check.
+
+| Data pattern | Minimum checks | Required evidence |
+|---|---|---|
+| Batch or warehouse table | Completeness, uniqueness, validity, referential integrity, freshness, partition coverage, and rerun behavior | Contract version, query results, rejected rows, late-arrival window, backfill result, and owner disposition |
+| Stream or event flow | Duplicate, loss, order, event time versus processing time, watermark, replay, schema skew, and poison message | Producer and consumer versions, lag distribution, replay ledger, dead-letter state, and reconciled totals |
+| Sampled or probabilistic data | Sampling frame, weights, coverage error, confidence or credible interval, drift, and minimum detectable change | Sampling method, seed or draw, effective sample size, uncertainty, excluded population, and sensitivity analysis |
+| Derived metric or semantic layer | Definition, grain, filters, time zone, currency, slowly changing dimensions, attribution, and dependent assets | Versioned definition, lineage, comparison to source facts, consumer inventory, and coordinated migration result |
+| ML label, feature, or score | Label timing, leakage, missingness, population drift, calibration, feedback loop, and correction propagation | Dataset and feature versions, slice results, leakage review, delayed-label analysis, and downstream invalidation |
+| External or manually maintained data | Provider authority, contractual meaning, change notice, entry validation, reconciliation, and exit route | Source snapshot, ingestion receipt, human change log, discrepancy queue, and provider incident record |
+
+An aggregate pass rate does not override a failed critical invariant or a harmed subgroup. Report both record-level defects and decision-level consequences.
+
 ## Guidance
 
 Quality is fitness for a declared use, not perfection in the abstract. Keep raw evidence where justified, but prevent unreviewed raw data from becoming an authoritative decision source. Treat inferred and modeled attributes as data products with provenance and uncertainty.

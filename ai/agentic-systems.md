@@ -74,6 +74,14 @@ sources:
     resource: https://docs.devin.ai/work-with-devin/testing-and-recordings
     title: Testing and Video Recordings
     author: organization:cognition
+  - id: openai-in-house-data-agent
+    resource: https://openai.com/index/inside-our-in-house-data-agent/
+    title: Inside OpenAI's in-house data agent
+    author: organization:openai
+  - id: openai-coding-agent-monitoring
+    resource: https://openai.com/index/how-we-monitor-internal-coding-agents-misalignment/
+    title: How we monitor internal coding agents for misalignment
+    author: organization:openai
 ---
 
 # Agentic systems
@@ -423,6 +431,24 @@ Place durable project-wide guidance in the repository's governed instruction or 
 
 **Exceptions:** One-time task detail can remain in the task record when it has no expected reuse.
 
+### AI-AGENTS-021 — Join offline evaluation with production detection and response
+
+**Level:** required
+**Applies when:** An agentic system is released for recurring internal or external use.
+
+Map each release evaluation claim and known failure class to a production signal, sampling or review method, severity, owner, response time, and containment or rollback action. Monitor task outcomes, tool and authority violations, loops, overrides, unusual access, cost and latency, refusals, user corrections, and distribution drift without collecting unnecessary sensitive data. Feed confirmed incidents, near misses, appeals, and representative production failures into a reviewed regression set while preserving held-out evaluation integrity.
+
+**Why:** Offline suites cannot anticipate every deployed context, and monitoring without a response contract only records harm after it occurs.
+
+**Verify:**
+
+- Inject or replay each known failure class and confirm detection, severity, routing, containment, and accountable closure within the stated objective.
+- Compare monitored and unmonitored traffic, tools, environments, and user populations and record material coverage gaps.
+- Sample successful and failed trajectories for outcome correctness and control behavior, then calibrate automated detectors against qualified human review.
+- Trace production-derived regression cases to privacy review, de-identification or protected access, contamination control, fix evidence, and later recurrence measurement.
+
+**Exceptions:** A bounded prototype with no consequential authority may use manual review when every run is retained within an approved protected environment, the reviewer and response time are explicit, and no production-reliability claim is made.
+
 ## Guidance
 
 Treat the model, harness, instructions, tools, context, environment, guardrails, and evaluations as one system. A model leaderboard does not predict performance on a different tool set, repository, policy, or scaffold.
@@ -470,3 +496,5 @@ Compliant: The suite includes real successes, failures, refusals, ambiguous inpu
 - Cognition, [Creating Playbooks](https://docs.devin.ai/product-guides/creating-playbooks). Reviewed August 13, 2026.
 - Cognition, [Knowledge](https://docs.devin.ai/product-guides/knowledge). Reviewed August 13, 2026.
 - Cognition, [Testing and Video Recordings](https://docs.devin.ai/work-with-devin/testing-and-recordings). Reviewed August 13, 2026.
+- OpenAI, [Inside OpenAI's in-house data agent](https://openai.com/index/inside-our-in-house-data-agent/). Reviewed September 1, 2026.
+- OpenAI, [How we monitor internal coding agents for misalignment](https://openai.com/index/how-we-monitor-internal-coding-agents-misalignment/). Reviewed September 1, 2026.

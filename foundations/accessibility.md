@@ -150,6 +150,19 @@ Combine automated checks, manual interaction checks, accessibility-tree inspecti
 
 **Exceptions:** Early prototypes may defer human evaluation when no release claim is made and the review is scheduled before commitment.
 
+## Operational coverage
+
+Use the declared accessibility target to select the applicable route. Preserve the tested platform, assistive technology, input method, content state, locale, and result in the release evidence.
+
+| Route | Minimum scenarios | Required evidence | Escalation owner |
+|---|---|---|---|
+| Web document or application | Keyboard-only operation, screen-reader navigation, 200% and 400% zoom or reflow, forced colors, reduced motion, errors, and session timeout | Conformance target, automated findings, manual task results, accessibility-tree inspection, browser and assistive-technology versions, and unresolved limitations | Accessibility and web owners |
+| Native mobile or desktop application | Platform screen reader, switch or keyboard navigation, large text, high contrast, orientation or window resizing, gestures, notifications, and permissions | Platform audit output, representative task recordings or notes, supported OS and device matrix, and human evaluation for high-impact flows | Accessibility and platform owners |
+| Document, media, or communication | Heading and reading order, link purpose, table structure, text alternatives, captions, transcripts, color independence, and exported-format behavior | Source and final-format inspection, caption or transcript review, document checker output, and correction record | Content, media, and accessibility owners |
+| Novel or consequential interaction | Enrollment, payment, identity, health, safety, employment, legal, or agent-mediated tasks across success, error, interruption, and recovery | Representative user evaluation, qualified review, severity-ranked findings, remediation disposition, and approved exceptions | Accountable product owner and qualified accessibility reviewer |
+
+Automated checks can support every route, but they cannot replace task completion with supported input and assistive configurations. A route passes only when the final rendered artifact preserves equivalent meaning and operation.
+
 ## Guidance
 
 Use WCAG as the web baseline and current platform guidance for native applications. Platform guidance can strengthen a target but does not replace applicable law or a declared conformance standard. Include disability and assistive-technology perspectives during design, not only after implementation.

@@ -20,7 +20,7 @@ Guidance identified in [`error-messages.md`](error-messages.md) as drawing on th
 
 ## Marketing Skills
 
-The task taxonomy in [`marketing/coverage.md`](marketing/coverage.md) is adapted from [Marketing Skills for AI Agents](https://github.com/coreyhaines31/marketingskills) by Corey Haines and contributors, published under the MIT License. The Raintree map classifies tasks; it does not copy the skill instructions or treat them as normative authority.
+The task taxonomy in [`marketing/coverage.md`](marketing/coverage.md) is adapted from [Marketing Skills for AI Agents at commit `e55de886`](https://github.com/coreyhaines31/marketingskills/tree/e55de886fe7580ec75cdb7ded5092b33f7d4ed58) by Corey Haines and contributors, published under the MIT License. The Raintree map classifies tasks; it does not copy the skill instructions or treat them as normative authority.
 
 ## HIG Doctor and Apple guidance
 

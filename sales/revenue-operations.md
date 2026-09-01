@@ -147,6 +147,21 @@ Use least privilege, field and action ownership, protected exports, validation, 
 
 **Exceptions:** Emergency correction follows the governed change and incident process.
 
+## Operational coverage
+
+Treat sales operations as a controlled record of claims, commitments, access, and forecast uncertainty across the full customer lifecycle.
+
+| Route | Required scenarios | Completion evidence |
+|---|---|---|
+| Qualification and routing | Duplicate lead, existing account, territory conflict, partner source, protected or sensitive attribute, stale owner, and disqualification | Source and purpose, routing version, assignment history, override authority, response timing, and fairness review |
+| Discovery and solution claim | Standard need, unsupported request, regulated context, competitor comparison, roadmap question, security claim, and pricing exception | Call or note provenance, approved claim source, qualification, material limitation, specialist review, and correction record |
+| Proposal and commitment | Discount, custom term, service level, implementation date, data use, renewal, cancellation, and non-standard dependency | Approved quote and terms, authority chain, profitability or cost basis, delivery-owner acceptance, and customer-facing record |
+| Forecast and pipeline | Stage entry, stalled deal, split credit, expansion, churn risk, slipped date, manual override, and model prediction | Stage definitions, timestamped history, denominator, probability basis, calibration, scenario range, and override rationale |
+| Handoff and implementation | Closed-won, partial signature, failed payment, missing prerequisite, scope change, delay, and customer cancellation | Contract and commitment extract, accountable owners, acceptance criteria, risk and dependency register, and acknowledged handoff |
+| Access and automation | Joiner, mover, leaver, bulk export, enrichment, AI drafting, automated field update, and vendor compromise | Effective roles, data minimization, action logs, approval limits, revocation exercise, and reconciled system state |
+
+Revenue pressure does not authorize an unsupported claim, unowned commitment, misleading forecast, or excessive access. Escalate the decision instead of converting uncertainty into certainty.
+
 ## Guidance
 
 Keep one semantic contract even when multiple systems store the lifecycle. Do not use activity volume as a substitute for customer value or pipeline quality. High-stakes financial, employment, competition, and regulated-sales decisions require qualified review.

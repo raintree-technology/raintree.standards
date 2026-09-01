@@ -1,6 +1,7 @@
 # Marketing standards
 
 * [Marketing Skills coverage map](coverage.md) - Exact v1 and post-v1 draft routes for the external task inventory.
+* [SEO and Marketing Skills coverage review](seo-coverage-review-2026-09-01.md) - Bounded source and route review against Marketing Skills version 2.11.0.
 * [Direct outreach](direct-outreach.md) - Prospecting, channel permission, identity, suppression, data sourcing, and outreach operations.
 * [Distribution](distribution.md) - Directory listings, lead assets, referrals, incentives, contests, and distribution programs.
 * [Public project showcase](project-showcase.md) - Truthful, useful project records across portfolios, repositories, and profiles.

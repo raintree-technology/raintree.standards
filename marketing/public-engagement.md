@@ -147,6 +147,21 @@ Stop further distribution, preserve evidence, assess affected audiences and down
 
 **Exceptions:** Sensitive correction detail may be limited to prevent additional harm, with the limitation approved and recorded.
 
+## Operational coverage
+
+Assign a named public owner, moderation route, disclosure state, and correction path before publishing or inviting participation.
+
+| Route | Required scenarios | Completion evidence |
+|---|---|---|
+| Owned social account | Routine post, scheduled post, reply, deletion, account compromise, employee departure, and breaking event | Account authority, approval tier, source and claim record, archive, access review, and correction exercise |
+| Community or forum | Welcome, disagreement, harassment, misinformation, self-harm or safety signal, appeal, moderator abuse, and shutdown | Published rules, moderation log, escalation time, participant notice, appeal result, moderator access, and retention decision |
+| Reviews and testimonials | Organic review, solicited review, incentive, employee or insider, negative review, suspected fabrication, and removal request | Source and material connection, typicality or limitation, platform rule, moderation rationale, response, and preserved original record |
+| Creator, ambassador, or partner | Payment or gift, creative independence, prohibited claim, rights, disclosure failure, conduct issue, and contract end | Contract and brief, disclosure sample, claim evidence, rights scope, monitoring, correction, and asset retirement |
+| Event, live stream, or public question | Registration, recording, accessibility, live moderation, hostile question, privacy request, cancellation, and post-event reuse | Participant notice, consent or rights basis, moderator plan, accessible format, incident record, and retained or removed assets |
+| Crisis or material correction | Unverified report, fast-changing fact, safety issue, legal hold, executive statement, impersonation, and multilingual update | Source confidence, approval and escalation log, timestamped statement, channel inventory, correction linkage, and follow-up owner |
+
+Do not remove criticism merely because it is unfavorable. Moderate against published rules, preserve material corrections, and distinguish safety or legal action from reputation management.
+
 ## Guidance
 
 Community and public relations work creates durable relationships, not only impressions. Avoid metrics that reward outrage, unsafe disclosure, manufactured reach, or moderation delay. Apply current platform rules in addition to this standard.

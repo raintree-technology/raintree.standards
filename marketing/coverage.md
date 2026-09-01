@@ -3,10 +3,10 @@ type: Reference
 title: Marketing Skills coverage map
 description: Maps the Marketing Skills task inventory to the bounded Raintree v1 corpus and governed post-v1 extension drafts.
 tags: [marketing, coverage, skills, v1]
-generated: { by: codex/gpt-5, at: "2026-08-13T20:57:53Z" }
+generated: { by: codex/gpt-5, at: "2026-09-01T12:10:24-07:00" }
 sources:
   - id: marketing-skills
-    resource: https://github.com/coreyhaines31/marketingskills
+    resource: https://github.com/coreyhaines31/marketingskills/tree/e55de886fe7580ec75cdb7ded5092b33f7d4ed58
     title: Marketing Skills for AI Agents
     author: human:corey-haines
 ---
@@ -22,7 +22,7 @@ This map uses the MIT-licensed Marketing Skills repository as a task inventory. 
 | `ab-testing` | `PROFILE-GROWTH-EXPERIMENT` |
 | `ad-creative` | `MARKETING-PAID-MEDIA`, `MEDIA-PRODUCTION-RIGHTS` |
 | `ads` | `MARKETING-PAID-MEDIA` plus current platform policies |
-| `ai-seo` | `SEO-FOUNDATIONS`, `FND-EVIDENCE`; volatile claims require current primary evidence |
+| [`ai-seo`](https://github.com/coreyhaines31/marketingskills/blob/e55de886fe7580ec75cdb7ded5092b33f7d4ed58/skills/ai-seo/SKILL.md) | `SEO-FOUNDATIONS`, `FND-EVIDENCE`; volatile claims require current primary evidence |
 | `analytics` | `ANALYTICS-MEASUREMENT`; `PLAYBOOK-GA4` when applicable |
 | `aso` | `DISCOVERY-APP-STORES` |
 | `attribution` | `ANALYTICS-MEASUREMENT`, `FND-EVIDENCE`, `MARKETING-LIFECYCLE-008` |
@@ -39,6 +39,7 @@ This map uses the MIT-licensed Marketing Skills repository as a task inventory. 
 | `customer-research` | `MARKETING-LIFECYCLE-002`, `FND-EVIDENCE`, `PRIVACY-DATA` |
 | `directory-submissions` | `MARKETING-DISTRIBUTION` |
 | `emails` | Core lifecycle route through `PROFILE-MARKETING-LIFECYCLE`; channel law and policy remain conditional |
+| `events` | `PROFILE-SPECIALIST-MARKETING`, `MARKETING-PUBLIC-ENGAGEMENT`, `MARKETING-DISTRIBUTION`; activate `MEDIA-PRODUCTION-RIGHTS`, `PRIVACY-DATA`, and `PROFILE-PUBLIC-WEB-PAGE` when their conditions apply |
 | `free-tools` | `PROFILE-PRODUCT-FEATURE`, `PROFILE-PUBLIC-WEB-PAGE`, `MARKETING-LIFECYCLE` |
 | `image` | `MEDIA-PRODUCTION-RIGHTS` |
 | `influencer-marketing` | `MARKETING-PUBLIC-ENGAGEMENT`, `MEDIA-PRODUCTION-RIGHTS` when media is produced |
@@ -55,16 +56,16 @@ This map uses the MIT-licensed Marketing Skills repository as a task inventory. 
 | `popups` | `PROFILE-UI-FEATURE`, `FND-ACCESSIBILITY`, `FND-TRUST` |
 | `pricing` | `MARKETING-LIFECYCLE`, `FND-EVIDENCE`, `FND-TRUST`; qualified legal and financial review as applicable |
 | `product-marketing` | `MARKETING-LIFECYCLE-001`, `PRODUCT-DELIVERY`, `FND-EVIDENCE` |
-| `programmatic-seo` | `SEO-FOUNDATIONS`, `PROFILE-PUBLIC-WEB-PAGE`, `DATA-QUALITY` |
+| [`programmatic-seo`](https://github.com/coreyhaines31/marketingskills/blob/e55de886fe7580ec75cdb7ded5092b33f7d4ed58/skills/programmatic-seo/SKILL.md) | `SEO-FOUNDATIONS`, `PROFILE-PUBLIC-WEB-PAGE`, `DATA-QUALITY` |
 | `prospecting` | `MARKETING-DIRECT-OUTREACH`, `SALES-REVENUE-OPERATIONS` |
 | `public-relations` | `MARKETING-PUBLIC-ENGAGEMENT` |
 | `referrals` | `MARKETING-DISTRIBUTION`, `MARKETING-PUBLIC-ENGAGEMENT` when partners or endorsements apply |
 | `revops` | `SALES-REVENUE-OPERATIONS` |
 | `sales-enablement` | `SALES-REVENUE-OPERATIONS`, `PROFILE-FUNCTIONAL-WRITING` |
-| `schema` | `SEO-FOUNDATIONS-006`, `PROFILE-PUBLIC-WEB-PAGE` |
-| `seo-audit` | `SEO-FOUNDATIONS`, `PROFILE-PUBLIC-WEB-PAGE`, `PLAYBOOK-GSC` |
+| [`schema`](https://github.com/coreyhaines31/marketingskills/blob/e55de886fe7580ec75cdb7ded5092b33f7d4ed58/skills/schema/SKILL.md) | `SEO-FOUNDATIONS-006`, `PROFILE-PUBLIC-WEB-PAGE` |
+| [`seo-audit`](https://github.com/coreyhaines31/marketingskills/blob/e55de886fe7580ec75cdb7ded5092b33f7d4ed58/skills/seo-audit/SKILL.md) | `SEO-FOUNDATIONS`, `PROFILE-PUBLIC-WEB-PAGE`, `PLAYBOOK-GSC` |
 | `signup` | `MARKETING-LIFECYCLE`, `PROFILE-UI-FEATURE`, `PRODUCT-DELIVERY` |
-| `site-architecture` | `SEO-FOUNDATIONS`, `DESIGN-INTERACTION`, `PROFILE-PUBLIC-WEB-PAGE` |
+| [`site-architecture`](https://github.com/coreyhaines31/marketingskills/blob/e55de886fe7580ec75cdb7ded5092b33f7d4ed58/skills/site-architecture/SKILL.md) | `SEO-FOUNDATIONS`, `DESIGN-INTERACTION`, `PROFILE-PUBLIC-WEB-PAGE` |
 | `sms` | `MARKETING-DIRECT-OUTREACH` plus current jurisdiction and channel rules |
 | `social` | `MARKETING-PUBLIC-ENGAGEMENT` |
 | `video` | `MEDIA-PRODUCTION-RIGHTS` |
@@ -75,4 +76,4 @@ This map uses the MIT-licensed Marketing Skills repository as a task inventory. 
 
 ## Source
 
-- Corey Haines and contributors, [Marketing Skills for AI Agents](https://github.com/coreyhaines31/marketingskills). MIT-licensed task inventory reviewed August 13, 2026.
+- Corey Haines and contributors, [Marketing Skills for AI Agents at commit `e55de886`](https://github.com/coreyhaines31/marketingskills/tree/e55de886fe7580ec75cdb7ded5092b33f7d4ed58). MIT-licensed task inventory, version 2.11.0, reviewed September 1, 2026. This source supplies an informative task taxonomy, not binding search-engine behavior or policy.

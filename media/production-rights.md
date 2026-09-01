@@ -151,6 +151,21 @@ Bind each derivative to its source, rights, approval, accessibility assets, clai
 
 **Exceptions:** Archival retention requires a documented purpose, access control, and prevention of active reuse.
 
+## Operational coverage
+
+Create an asset-level rights record before production or acquisition. Do not infer rights for one use, territory, person, or medium from a different agreement.
+
+| Route | Required scenarios | Completion evidence |
+|---|---|---|
+| Original commissioned production | Employee, contractor, volunteer, minor, bystander, location, prop, music, and later edit | Brief, creator and participant agreements, location and property releases, rights owner, territory, term, media, and revocation conditions |
+| Licensed stock, archive, music, or font | Editorial versus commercial use, attribution, seat or impression limit, modification, sublicensing, territory, and license termination | Original asset and source, license text and date, invoice, restrictions, attribution, derivative linkage, and expiration alert |
+| User-generated or community media | Upload authority, identifiable third party, embedded music, incentive, moderation, withdrawal, and account deletion | Submission terms shown, affirmative grant, provenance, safety review, takedown route, and downstream deletion result |
+| Synthetic or materially edited media | Generated person or voice, cloned likeness, composite event, deceptive context, disclosure, model restriction, and source dispute | Inputs and tool version, authority for source material, edit log, disclosure decision, claim review, watermark or metadata state, and escalation |
+| Accessible media | Caption, transcript, audio description, flashing, meaningful on-screen text, translation, and player controls | Caption and transcript review, timing and speaker labels, audio-description decision, flashing check, accessible player test, and locale result |
+| Distribution and retirement | Broadcast, social crop, paid placement, partner reuse, archive, rights expiration, complaint, and legal hold | Channel inventory, asset derivatives, territory and term check, takedown test, preserved evidence, and confirmed downstream removal |
+
+Possession of a file is not evidence of permission. Preserve the license or grant, the covered asset and derivative relationship, and the exact allowed use.
+
 ## Guidance
 
 Rights vary by jurisdiction and asset type; this standard is not a legal determination. Prefer original or clearly licensed work and make accessibility part of the production budget. Generated media requires the same claim, identity, privacy, and distribution controls as captured media.

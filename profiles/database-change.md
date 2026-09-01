@@ -51,6 +51,7 @@ The front-matter `depends_on` list is the authoritative machine-readable route. 
 - `DATA-DATABASE-010` and `FND-CHANGE-005` — Deferred contraction, monitoring, stop conditions, and promotion decisions have named owners.
 - `DATA-DATABASE-011` — Concurrency evidence covers conflicts, retries, isolation, and external side effects where shared records can be updated concurrently.
 - `DATA-DATABASE-012` and `FND-CHANGE-007` — Effective privileges, change authorization, operator identity, and removal of temporary access are recorded.
+- `DATA-DATABASE-013` for phased migrations — Every reachable phase records source of truth, readers, writers, comparison, stop, recovery, observation window, and contraction evidence.
 - `FND-CHANGE-008` — Post-change evidence confirms intended state, monitoring health, and closure or ownership of temporary conditions.
 - `AGENT-VERIFICATION-002` and `AGENT-VERIFICATION-005` — The final database state or closest safe representation was inspected and the handoff records checks, outcomes, and limitations.
 - When `PRIVACY-DATA` is active, `PRIVACY-DATA-001`, `PRIVACY-DATA-008`, `PRIVACY-DATA-009`, `PRIVACY-DATA-014`, and `PRIVACY-DATA-015` — The processing map, retention or deletion exercise, correction behavior, non-production controls, and released data flow cover every material copy.

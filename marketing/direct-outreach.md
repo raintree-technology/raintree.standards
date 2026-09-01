@@ -147,6 +147,21 @@ Measure qualified outcomes, complaints, refusals, invalid contacts, reputation, 
 
 **Exceptions:** None for performance systems affecting compensation or automated optimization.
 
+## Operational coverage
+
+Classify each message by channel, purpose, recipient relationship, automation, and jurisdiction. Apply the strictest applicable rule when one campaign crosses routes.
+
+| Route | Required scenarios | Completion evidence |
+|---|---|---|
+| Commercial email | Existing customer, prospect, purchased or enriched address, forwarded contact, role account, unsubscribe, and bounced or reassigned address | Authority and provenance, sender identity, content classification, jurisdiction route, suppression result, vendor controls, and delivery log |
+| Calls and voicemail | Live call, automated dialer, artificial or prerecorded voice, do-not-call request, reassigned number, time-zone boundary, and recorded call | Consent or other authority, number provenance, registry and suppression check, script, recording notice, attempt ledger, and revocation result |
+| SMS or messaging application | Transactional versus promotional purpose, short code or sender ID, quiet hours, keyword opt-out, group message, and cross-border recipient | Channel-specific consent, sender identity, message and cadence, opt-out processing, carrier or platform rule, and delivery receipt |
+| Social or platform direct message | Connection context, community rule, automated personalization, multiple accounts, blocked recipient, and platform enforcement | Platform authority, identity, message source, frequency cap, block and suppression behavior, and account ownership |
+| Sales-assisted sequence | Research, enrichment, personalization, handoff, reply, objection, meeting, disqualification, and vendor failure | Prospect source, approved claim, bounded sequence, human owner, state transition, suppression across tools, and retained commitments |
+| High-risk audience or topic | Minor, patient, employee, debtor, job seeker, vulnerable person, or sensitive inferred need | Necessity and harm review, qualified legal or policy route, prohibited targeting controls, human approval, and audit sample |
+
+A reply, open, or meeting does not prove valid authority or recipient benefit. Measure complaints, blocks, suppression failures, and downstream fit alongside response.
+
 ## Guidance
 
 Treat laws and platform rules as jurisdiction- and channel-specific. This standard sets a protective baseline but does not decide whether a particular list, message, or call is lawful. Obtain qualified review before launch and whenever recipients or channels change.

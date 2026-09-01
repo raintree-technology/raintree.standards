@@ -147,6 +147,21 @@ Pause all placements and automated variants, revoke obsolete audiences and acces
 
 **Exceptions:** Evergreen campaigns require a current owner, evidence review, and recurring expiration check.
 
+## Operational coverage
+
+Create a platform annex for each live ad system. Record the policy version, account structure, optimization behavior, data flows, and emergency controls without treating the platform rule as universal law.
+
+| Route | Required scenarios | Completion evidence |
+|---|---|---|
+| Search or shopping ads | Query mismatch, dynamic text, price or inventory change, trademark term, location expansion, and unavailable destination | Search-term and feed review, rendered ads, claim substantiation, destination parity, exclusions, and feed retirement |
+| Social, display, or video ads | Audience expansion, sensitive proxy, frequency, placement adjacency, truncated disclosure, comments, and remixing | Audience and placement settings, creative renders, disclosure review, frequency and harm measures, and moderation route |
+| Creator or sponsored content | Compensation, gifted product, editorial control, affiliate link, reused asset, live format, and changed opinion | Contract, material-connection disclosure, claim briefing, approval boundary, rights, monitoring, and correction record |
+| Retargeting or customer-list ads | Source permission, audience minimum, match partner, cross-device expansion, suppression, deletion, and consent withdrawal | Data-flow record, upload receipt, platform settings, matched-audience handling, suppression test, and deletion confirmation |
+| Automated bidding or creative | Budget acceleration, weak proxy metric, generated claim, new placement, learning reset, and unavailable operator | Automation scope, hard caps, approved inputs, preview samples, anomaly alert, pause exercise, and change history |
+| Regulated or restricted category | Age, geography, eligibility, protected class, vulnerability, required disclaimer, and prohibited optimization | Qualified review, platform authorization, audience restrictions, rendered disclosures, delivery audit, and residual risk |
+
+Do not launch until the platform annex and campaign contract agree. Revalidate both after a material platform, policy, creative, offer, or audience change.
+
 ## Guidance
 
 Treat platform recommendations as vendor proposals, not policy. Pin the applicable platform-policy version in the campaign record and revalidate it before launch. Separate creative exploration from authorization to publish or spend.
