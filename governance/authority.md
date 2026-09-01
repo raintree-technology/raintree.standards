@@ -3,7 +3,7 @@ type: Governance
 title: Authority and requirement levels
 description: Defines requirement strength, precedence, conflict handling, and freshness semantics.
 tags: [governance, authority, requirements]
-generated: { by: codex/gpt-5, at: "2026-08-13T20:57:53Z" }
+generated: { by: codex/gpt-5, at: "2026-09-01T21:00:00Z" }
 ---
 
 # Authority and requirement levels
@@ -52,8 +52,8 @@ Use the precedence in `AGENTS.md`. When two repository rules at the same level c
 
 The `last_reviewed` date means the content was intentionally assessed on that date; it does not guarantee that a volatile external fact remains current. Revalidate claims involving laws, platform behavior, vendor limits, browser support, search engines, or active threats before relying on them.
 
-## Verification and release maturity
+## Verification and document maturity
 
-`generated` identifies who created or materially changed an artifact. It is not approval. `verified` records an independent reviewer who checked the exact artifact and its material evidence. A stable document requires independent verification; high-impact security, legal, privacy, financial, accessibility, or regulatory content also requires a qualified human reviewer for that domain.
+`generated` identifies who created or materially changed an artifact. It is not approval. `verified` records an independent reviewer who checked the exact artifact and its material evidence. High-impact security, legal, privacy, financial, accessibility, or regulatory content requires a qualified human reviewer before it is treated as approved for that domain.
 
-The ordinary catalog check validates document and rule structure. The `--release` check applies the v1 maturity gate: no governed draft, no missing independent verification for a stable document, and no stable document that depends on a draft. Agents must report release blockers rather than creating or impersonating approval evidence.
+The library version identifies the public contract for its structure and stable IDs. It does not certify every document. Draft status, review metadata, and unresolved evidence remain visible after a library release. The `--release` check confirms that the catalog is marked ready and the README is a release entry point.

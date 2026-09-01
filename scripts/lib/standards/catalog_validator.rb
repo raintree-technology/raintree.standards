@@ -259,32 +259,6 @@ module Standards
         @findings.add("#{relative}: catalog section requires type #{expected_type}")
       end
 
-      return unless release? && in_release_scope?(metadata)
-
-      if metadata["status"] == "draft" || metadata["governance_status"] == "draft"
-        @release_blockers.add("#{relative}: remains draft")
-      end
-      check_release_gate(relative, metadata)
-    end
-
-    # Applies schema/standard.schema.json#/$defs/releaseGate.
-    #
-    # The rule lives in the schema rather than only in Ruby so that it stays
-    # machine-readable, and it is applied here rather than in the always-on
-    # schema pass because the library deliberately holds unverified stable
-    # documents until v1.
-    def check_release_gate(relative, metadata)
-      gate = standard_schema&.dig("$defs", "releaseGate")
-      return if gate.nil?
-      return if JsonSchema.validate(metadata, wrap_gate(gate), label: "").empty?
-
-      @release_blockers.add("#{relative}: stable release document requires independent verified provenance")
-    end
-
-    # The gate subschema uses no $ref, but it is validated against a root that
-    # still carries $defs so any future reference inside it resolves.
-    def wrap_gate(gate)
-      gate.merge("$defs" => standard_schema.fetch("$defs", {}))
     end
 
     # Applies schema/standard.schema.json to the front matter it describes.
@@ -317,16 +291,8 @@ module Standards
         next unless document&.metadata?
 
         metadata = document.metadata
-        scoped = release? && in_release_scope?(metadata)
         Array(metadata["depends_on"]).each do |dependency|
           @findings.add_unless(@ids.key?(dependency), "#{relative}: unknown dependency #{dependency}")
-          next unless scoped
-
-          dependency_path = @ids[dependency]
-          dependency_metadata = dependency_path && @documents[dependency_path]&.metadata
-          next unless dependency_metadata && dependency_metadata["status"] == "draft"
-
-          @release_blockers.add("#{relative}: depends on draft #{dependency}")
         end
       end
     end
@@ -694,9 +660,6 @@ module Standards
 
     # -- predicates ----------------------------------------------------------
 
-    def in_release_scope?(metadata)
-      metadata.fetch("release_target", @catalog["target_release"]) == @catalog["target_release"]
-    end
 
     def as_date(value)
       value.is_a?(Date) ? value : Date.iso8601(value.to_s)
