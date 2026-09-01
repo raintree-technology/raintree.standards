@@ -6,7 +6,7 @@ llms = File.read(File.join(root, "llms.txt"))
 
 required = [
   "<!-- project-record: raintree-standards -->",
-  "**Pre-1.0 open-source standards library",
+  "**Version 1 open-source standards library",
   "## Start with a task",
   "## Lifecycle and trust boundary",
   "## Raintree open-source system",

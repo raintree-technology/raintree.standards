@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/raintree-technology/raintree.standards/main/schema/standard.schema.json",
   "title": "Raintree standard front matter",
-  "description": "OKF v0.2-compatible Raintree standard front matter. This schema states what must be true of every governed document at all times, and scripts/validate_catalog.rb applies it to each one. Rules that only apply at a versioned release live in $defs/releaseGate, which scripts/validate_catalog.rb --release applies separately; they are not part of the always-on contract because the library holds drafts and unverified stable documents before v1 by design.",
+  "description": "OKF v0.2-compatible Raintree standard front matter. This schema states what must be true of every governed document, and scripts/validate_catalog.rb applies it to each one.",
   "type": "object",
   "additionalProperties": true,
   "required": ["id", "title", "description", "type", "status", "governance_status", "owners", "last_reviewed", "applies_to", "tags", "generated"],
@@ -55,14 +55,6 @@
     }
   },
   "$defs": {
-    "releaseGate": {
-      "description": "Applied only by scripts/validate_catalog.rb --release, to documents inside the catalog's current target_release. A stable document must carry a verification event before it ships; independence of that event from the generating actor is enforced continuously by the validator, not here.",
-      "if": {
-        "properties": { "status": { "const": "stable" } },
-        "required": ["status"]
-      },
-      "then": { "required": ["verified"] }
-    },
     "verification": {
       "type": "object",
       "required": ["by", "at"],

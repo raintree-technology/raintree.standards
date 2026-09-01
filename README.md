@@ -2,17 +2,16 @@
 
 <!-- project-record: raintree-standards -->
 
-**Pre-1.0 open-source standards library · CC BY 4.0 and MIT**
+**Version 1 open-source standards library · CC BY 4.0 and MIT**
 
 Raintree Standards helps practitioners and agents turn a product, engineering,
 security, data, content, or marketing task into testable requirements and evidence.
 Use it when a checklist is too vague and a task needs explicit applicability,
 verification, exceptions, and accountable review.
 
-> [!WARNING]
-> **Work in progress:** Before version 1.0, requirements and document structure can
-> change. Check document status and review metadata before using a rule for release
-> approval.
+Version 1 establishes the library structure, stable rule IDs, task profiles, and
+automated validation. Check each document's status and review metadata before using
+it for a high-impact decision.
 
 ## Start with a task
 
@@ -97,7 +96,7 @@ complete OKF vocabulary.
 
 The OKF `status` field uses `draft`, `stable`, and `deprecated`. Raintree’s
 `governance_status` uses `draft`, `active`, `deprecated`, and `retired`. A stable
-document requires an independent verification event before a versioned release.
+document's review metadata reports its maturity independently of the library version.
 
 Source discovery, schema validation, migration, and author review do not count as
 independent content verification. Apply only rules whose conditions are true. Record

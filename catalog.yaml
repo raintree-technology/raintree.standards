@@ -3,7 +3,7 @@ okf_version: "0.2"
 bundle_index: index.md
 updated: 2026-09-01
 target_release: "1.0.0"
-release_status: approval-pending
+release_status: ready
 
 reference_routes:
   testing: testing/routes.yaml

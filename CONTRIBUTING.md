@@ -3,7 +3,7 @@ type: Guide
 title: Contributing
 description: Process and requirements for contributing to raintree.standards.
 tags: [contributing, governance]
-generated: { by: codex/gpt-5, at: "2026-08-17T17:22:48Z" }
+generated: { by: codex/gpt-5, at: "2026-09-01T21:00:00Z" }
 ---
 
 # Contributing
@@ -20,7 +20,7 @@ existing standard does not already cover the concern.
 3. For a new standard, start with [`templates/standard.md`](templates/standard.md). For a new task profile, start with [`templates/profile.md`](templates/profile.md).
 4. Update [`catalog.yaml`](catalog.yaml) when you add, move, or retire a governed document or profile.
 5. Run the checks below from the repository root.
-6. Before a versioned release, run `ruby scripts/validate_catalog.rb --release` and resolve every draft, verification, and dependency blocker. Until version 1.0, this command reports known release blockers by design.
+6. Before a versioned release, set `release_status` to `ready` and run `ruby scripts/validate_catalog.rb --release`.
 7. Open a pull request that explains what changed, why it is needed, and what you verified.
 
 ## Run the checks

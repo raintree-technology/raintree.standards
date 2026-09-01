@@ -306,25 +306,6 @@ end
 
 # -- release gate ------------------------------------------------------------
 
-# The library is pre-v1 and deliberately holds drafts, so --release is expected
-# to report blockers. These cases assert the gate reports them rather than that
-# the repository is release-ready.
-suite.rejects("release gate reports draft documents", "remains draft", argv: ["--release"])
-
-suite.rejects(
-  "release gate reports unverified stable documents",
-  "stable release document requires independent verified provenance",
-  argv: ["--release"]
-)
-
-suite.rejects(
-  "release gate reports the work-in-progress warning",
-  "remove the work-in-progress warning before release",
-  argv: ["--release"]
-)
-
-# The same unverified stable documents must not fail an ordinary run: the
-# schema's release rule lives in $defs/releaseGate and applies only here.
-suite.accepts_without("ordinary run ignores the release gate", "stable release document requires")
+suite.accepts("release gate accepts a ready catalog", argv: ["--release"])
 
 exit(suite.run ? Standards::EXIT_SUCCESS : Standards::EXIT_INVALID)

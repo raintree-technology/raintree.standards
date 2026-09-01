@@ -13,7 +13,7 @@ options = Standards::CLI.parse(
   banner: "Usage: ruby scripts/validate_catalog.rb [options]",
   description: "Validates the OKF bundle, the governed catalog, and the source register."
 ) do |parser, parsed|
-  parser.on("--release", "Also apply the pre-release gate (drafts, verification, dependencies)") do
+  parser.on("--release", "Also check that the catalog is ready for a public release") do
     parsed[:release] = true
   end
 end

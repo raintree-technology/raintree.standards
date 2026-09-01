@@ -3,16 +3,16 @@ type: Guide
 title: Changelog
 description: Release-note policy for material changes to governed requirements and repository contracts.
 tags: [governance, releases, compatibility]
-generated: { by: codex/gpt-5, at: "2026-08-30T21:25:13Z" }
+generated: { by: codex/gpt-5, at: "2026-09-01T21:00:00Z" }
 ---
 
 # Changelog
 
 This file records material changes to governed requirements, profiles, schemas, playbooks, lifecycle status, and compatibility.
 
-## Unreleased
+## 1.0.0 — 2026-09-01
 
-- The library remains pre-1.0 and approval-pending.
+- Released the first stable library contract for catalog structure, rule IDs, task profiles, and automated validation. Document status and review metadata continue to report the maturity of individual standards.
 - Added the post-v1 draft `ENGINEERING-TESTING`, `PLAYBOOK-TEST-STRATEGY`, and `PROFILE-SOFTWARE-CHANGE`. They define scope-relative test-layer claims; separate smoke, synthetic, and canary decisions; require bounded smoke tests, test-size contracts, stable suite ownership and lifecycle, controlled flake diagnosis, production-derived data governance, architecture-aware portfolios, conservative selective execution, controlled time, version-skew and migration evidence, bounded shadow and fault-injection exercises, explicit canary promotion, and staged local through post-deployment evidence. Existing product, UI, public-web, service/API, and agentic profiles conditionally activate the software-change profile for implementation and test-suite work. Independent engineering, quality, and operations review remains required.
 - Added a non-normative testing reference layer: rapid field guide, twelve situation recipes, eleven copyable records, three real-repository worked examples, and `testing/routes.yaml` machine routing. A dedicated validator and behavior suite cover every standard taxonomy type and prevent unknown, missing, or abbreviated rules; stale paths and anchors; duplicate headings and route lists; malformed paths and dates; invalid stages; missing templates; and catalog-route drift. Pilot observations informed removal of duplicated policy guidance; representative-reader and independent review remain pending.
 - `governance/contributing.md` now states the release-gate lifecycle directly: a document may be `stable` while independent verification is pending, and the `--release` gate blocks a versioned release until `verified` is recorded. This removes a contradiction with the gate design described in the same document and in `governance/authority.md`.

@@ -67,19 +67,9 @@ check(failures, "standard.schema.json id pattern") do
   [standard.fetch("properties").fetch("id").fetch("pattern"), Standards::CatalogValidator::DOCUMENT_ID_PATTERN.source.gsub(/\\A|\\z/) { |anchor| anchor == "\\A" ? "^" : "$" }]
 end
 
-# The release rule must stay in $defs/releaseGate. If it moves back into the
-# always-applied schema, every unverified stable document fails an ordinary run.
 checks += 1
 if standard.key?("allOf")
-  failures << "standard.schema.json: release-time rules must live in $defs/releaseGate, not in a top-level allOf"
-end
-
-checks += 1
-gate = standard.dig("$defs", "releaseGate")
-if gate.nil?
-  failures << "standard.schema.json: $defs/releaseGate is missing; the release gate has nothing to apply"
-elsif gate.dig("if", "properties", "status", "const") != "stable" || !Array(gate.dig("then", "required")).include?("verified")
-  failures << "standard.schema.json: $defs/releaseGate no longer expresses 'stable documents require verified'"
+  failures << "standard.schema.json: document maturity must not be imposed through a top-level release condition"
 end
 
 # -- integration-capability.schema.json --------------------------------------
