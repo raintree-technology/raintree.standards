@@ -95,6 +95,7 @@ choose a profile under **Task profiles**.
 * [Error messages](error-messages.md) - User-facing failure content and review criteria.
 * [Functional writing](writing/functional.md) - Clear, consistent, actionable documentation, explanations, summaries, interface text, reports, and messages.
 * [Growth experiments](growth/experiments.md) - Hypotheses, assignment, guardrails, stopping, and learning.
+* [Apple platform interaction](design/apple-platforms.md) - Platform-specific navigation, input, presentation, system integration, adaptation, and verification across Apple platforms.
 * [Interface and interaction design](design/interaction.md) - Product-specific visual quality, complete flows, responsive behavior, design systems, and anti-slop review.
 * [Interface content](content/interface.md) - Labels, guidance, states, confirmations, inclusive language, and localization.
 * [Organizational knowledge systems](knowledge/organizational-knowledge.md) - Source authority, provenance, authorization, lifecycle, retrieval, answers, evaluation, and operation for company-brain systems.
@@ -117,6 +118,7 @@ choose a profile under **Task profiles**.
 * [Secrets management with Infisical](security/secrets-management.md) - Infisical authority, hierarchy, identity, delivery, rotation, detection, control-plane operation, recovery, and migration.
 * [External platform integrations](integrations/vendor-platforms.md) - Shared design, release, operation, recovery, and exit requirements for material providers.
 * [Public web quality](web/quality.md) - Accessibility, performance, resilience, security, and agent readiness.
+* [WebMCP tools for agent-accessible web applications](web/webmcp.md) - Progressive enhancement, tool contracts, authority, user control, origin exposure, and lifecycle verification for WebMCP.
 
 ## Patterns
 

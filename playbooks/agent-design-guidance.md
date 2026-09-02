@@ -12,8 +12,12 @@ stale_after: 2026-12-01
 applies_to: [agent-design-guidance, design-md, design-skill, agent-interface-evaluation]
 tags: [playbook, design, agents, evaluation, design-system, anti-slop]
 depends_on: [DESIGN-INTERACTION, AI-AGENTS, ENGINEERING-TESTING, FND-EVIDENCE, FND-TRUST, AGENT-VERIFICATION]
-generated: { by: codex/gpt-5, at: "2026-09-01T00:00:00-07:00" }
+generated: { by: codex/gpt-5, at: "2026-09-01T21:18:44-07:00" }
 sources:
+  - id: chimala-world-class-ai-designer
+    resource: https://www.lennysnewsletter.com/p/how-to-turn-your-ai-into-a-world
+    title: How to turn your AI into a world-class designer
+    author: human:anshu-chimala
   - id: vercel-design-md-evaluation
     resource: https://vercel.com/blog/how-our-agents-build-on-brand-pages-with-design-md
     title: How our agents build on-brand pages with design.md
@@ -64,6 +68,16 @@ Keep four concerns distinct:
 4. **Evaluation and checks** test routing, behavior, rendering, regression, and final quality with the grader suited to each claim.
 
 Do not copy component contracts, accessibility requirements, or policy into `design.md` when another governed source owns them. Route to the canonical source and record its version.
+
+## Formative design loop
+
+Use these optional techniques while the direction remains exploratory. They help an agent widen and refine the design space, but they do not replace the product rationale, evaluation suite, accessibility evidence, or independent human approval required elsewhere in this playbook.
+
+1. **Explore distinct directions.** Start from the audience, task, content, product character, and platform constraints. Generate several directions that differ on named structural, behavioral, or visual axes before polishing one. When repeated attempts collapse into the same familiar composition, introduce a bounded external stimulus such as a recorded random seed string, an unrelated visual reference, or an alternate spatial metaphor. Use the stimulus to widen the search, not as the final rationale. Record it when another person must reproduce or evaluate the exploration. A design owner must select a direction because it serves the product context, not because it is random, novel, or visually intense.
+2. **Run a bounded fresh-context critique.** Give a separate critic the rendered artifact, product brief, review rubric, representative content and states, and any licensed reference set needed to judge the intended result. Withhold implementation detail and earlier rationale when doing so reduces anchoring, but do not withhold facts needed to evaluate task fit, truthfulness, accessibility, or system state. Set the iteration count, cost or time limit, stopping conditions, and escalation path before the loop begins. Treat a model score as advisory evidence only. A model critic must not approve the work, and a fixed score such as `9/10` must not replace the release criteria or independent human review.
+3. **Use generated media only when it has a job.** Consider generated imagery or motion when it improves product identity, comprehension, evidence, feedback, or spatial continuity. Prefer governed components, platform behavior, or existing approved assets when they serve the same purpose with less complexity. Route produced or licensed images, audio, and video through `MEDIA-PRODUCTION-RIGHTS` for the media contract, provenance, authority, accessibility, truthfulness, distribution, and retirement requirements. Apply `DESIGN-INTERACTION-013` to motion and verify performance, reduced-motion behavior, fallbacks, interruption, and frame-by-frame continuity. Deliver provider credentials through the approved `SECURITY-SECRETS` path; never place secret values in prompts, agent instructions, source control, or generated artifacts.
+
+After selecting a direction, remove elements that do not support hierarchy, identity, feedback, comprehension, or the task. Apply `DESIGN-INTERACTION-011` and `DESIGN-INTERACTION-017`; do not equate subtraction with an empty or capability-poor interface.
 
 ## Procedure
 
@@ -190,6 +204,7 @@ A shared instruction says to make reports “clean and executive-friendly.” Di
 
 ## Sources
 
+- Anshu Chimala, [How to turn your AI into a world-class designer](https://www.lennysnewsletter.com/p/how-to-turn-your-ai-into-a-world), September 1, 2026. Reviewed September 1, 2026.
 - Vercel, [How our agents build on-brand pages with design.md](https://vercel.com/blog/how-our-agents-build-on-brand-pages-with-design-md). Reviewed September 1, 2026.
 - Vercel, [Teaching agents product design at Vercel](https://vercel.com/blog/teaching-agents-product-design-at-vercel). Reviewed September 1, 2026.
 - Anthropic, [Demystifying evals for AI agents](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents). Reviewed September 1, 2026.

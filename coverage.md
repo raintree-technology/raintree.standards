@@ -3,7 +3,7 @@ type: Reference
 title: Version 1 coverage matrix
 description: Maps the bounded Raintree v1 task surface to governed standards, profiles, playbooks, and remaining approval work.
 tags: [coverage, v1, standards, profiles]
-generated: { by: codex/gpt-5, at: "2026-08-30T21:20:00Z" }
+generated: { by: codex/gpt-5, at: "2026-09-01T21:33:16-07:00" }
 ---
 
 # Version 1 coverage matrix
@@ -21,7 +21,7 @@ routes exist; it does not mean that independent or qualified approval is complet
 | Product delivery | `PRODUCT-DELIVERY`, product-feature profile; `ENGINEERING-JS-QUALITY` for JavaScript and TypeScript | Trellis for JavaScript and TypeScript; vendored anti-slop through Oxlint for TypeScript | Authored; qualified review pending |
 | Ordinary software changes and test strategy | `ENGINEERING-QUALITY`, `ENGINEERING-TESTING`, software-change profile; `ENGINEERING-JS-QUALITY` for JavaScript and TypeScript | Testing field guide, recipes, records, and test-strategy playbook; Trellis for JavaScript and TypeScript; vendored anti-slop through Oxlint for TypeScript | Post-v1 draft; representative-reader and independent engineering, quality, and operations review pending |
 | Universal UI and content | `DESIGN-INTERACTION`, `FND-ACCESSIBILITY`, `CONTENT-INTERFACE`, UI-feature profile; `ENGINEERING-JS-QUALITY` for JavaScript and TypeScript | Trellis for JavaScript and TypeScript; vendored anti-slop through Oxlint for TypeScript | Authored; accessibility review pending |
-| Apple interfaces | Universal UI corpus and Apple-interface profile | Apple HIG audit | Authored; platform review pending |
+| Apple interfaces | `APPLE-PLATFORM-INTERACTION`, universal UI corpus, and Apple-interface profile | Apple HIG audit | Post-v1 platform draft; independent Apple-platform and accessibility review pending |
 | Public web and search | `WEB-QUALITY`, `SEO-FOUNDATIONS`, public-web profile; `ENGINEERING-JS-QUALITY` for JavaScript and TypeScript | Trellis for JavaScript and TypeScript; vendored anti-slop through Oxlint for TypeScript; Search Console | Authored; source and accessibility review pending |
 | Analytics and experiments | `ANALYTICS-MEASUREMENT`, `GROWTH-EXPERIMENTS`, growth-experiment profile | GA4 | Authored; analytics and privacy review pending |
 | Core lifecycle marketing | `MARKETING-LIFECYCLE`, marketing-lifecycle profile | GA4 and Search Console when applicable | Authored; marketing, privacy, and legal review pending |

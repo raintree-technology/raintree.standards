@@ -183,6 +183,12 @@ documents:
     reviewed_on: 2026-08-13
     volatility: high
     next_review: 2026-11-13
+  - id: WEB-WEBMCP
+    owner: web
+    source_version: WebMCP Draft Community Group Report dated 2026-08-26, WebMCP explainer, declarative API explainer, security and privacy self-review, Chrome documentation updated 2026-08-07, W3C TAG design review 1238, Mozilla standards position 1412, and WebKit standards position 670; reviewed 2026-09-01
+    reviewed_on: 2026-09-01
+    volatility: high
+    next_review: 2026-12-01
   - id: DESIGN-INTERACTION
     owner: design
     source_version: WCAG 2.2, USWDS, and Apple HIG reviewed 2026-08-13; Emil Kowalski design-engineering guidance; Linear design guidance; Apple fluid-interface and typography sessions; Google animation guidance; Vercel agent-design evaluation guidance; Anthropic and OpenAI agent-evaluation guidance; Playwright visual-comparison guidance; W3C accessibility-evaluation guidance; GOV.UK Design System contribution criteria; and Design Tokens Format Module 2025.10 reviewed 2026-09-01
@@ -191,7 +197,7 @@ documents:
     next_review: 2027-03-01
   - id: PLAYBOOK-AGENT-DESIGN-GUIDANCE
     owner: design
-    source_version: Vercel design.md and product-design evaluation guidance; Anthropic and OpenAI agent-evaluation guidance; Playwright visual-comparison guidance; W3C accessibility-evaluation guidance; GOV.UK Design System contribution criteria; and Design Tokens Format Module 2025.10 reviewed 2026-09-01
+    source_version: Anshu Chimala's agent-design exploration, critique, generated-media, and subtractive-polish guidance published 2026-09-01; Vercel design.md and product-design evaluation guidance; Anthropic and OpenAI agent-evaluation guidance; Playwright visual-comparison guidance; W3C accessibility-evaluation guidance; GOV.UK Design System contribution criteria; and Design Tokens Format Module 2025.10 reviewed 2026-09-01
     reviewed_on: 2026-09-01
     volatility: high
     next_review: 2026-12-01
@@ -305,10 +311,16 @@ documents:
     next_review: 2026-11-16
   - id: PLAYBOOK-APPLE-HIG
     owner: design
-    source_version: current Apple HIG and documented HIG Doctor 2.0.0 / snapshot 2025-02-02 reviewed 2026-08-13
-    reviewed_on: 2026-08-13
+    source_version: current Apple HIG rechecked 2026-09-01; documented HIG Doctor 2.0.0 / snapshot 2025-02-02 retained from the 2026-08-13 tool review
+    reviewed_on: 2026-09-01
     volatility: high
-    next_review: 2026-11-13
+    next_review: 2026-12-01
+  - id: APPLE-PLATFORM-INTERACTION
+    owner: apple-platforms
+    source_version: Apple HIG design principles, platform design pages for iOS, iPadOS, macOS, tvOS, watchOS, and visionOS, accessibility, layout, color, and right-to-left guidance reviewed 2026-09-01
+    reviewed_on: 2026-09-01
+    volatility: high
+    next_review: 2026-12-01
   - id: PLAYBOOK-GA4
     owner: analytics
     source_version: current Google Analytics 4 documentation reviewed 2026-08-13

@@ -6,13 +6,13 @@ type: playbook
 status: draft
 governance_status: draft
 owners: [design, apple-platforms, accessibility, engineering]
-last_reviewed: 2026-08-13
-review_by: 2026-11-13
-stale_after: 2026-11-13
+last_reviewed: 2026-09-01
+review_by: 2026-12-01
+stale_after: 2026-12-01
 applies_to: [apple-interface, apple-platform]
 tags: [playbook, apple, hig, audit]
-depends_on: [DESIGN-INTERACTION, FND-ACCESSIBILITY, CONTENT-INTERFACE]
-generated: { by: codex/gpt-5, at: "2026-08-13T20:57:53Z" }
+depends_on: [APPLE-PLATFORM-INTERACTION, DESIGN-INTERACTION, FND-ACCESSIBILITY, CONTENT-INTERFACE]
+generated: { by: codex/gpt-5, at: "2026-09-01T21:33:16-07:00" }
 sources:
   - id: apple-hig
     resource: https://developer.apple.com/design/human-interface-guidelines
@@ -34,7 +34,7 @@ sources:
 
 # Apple HIG interface audit
 
-Use this playbook for Apple-platform work after applying the universal interaction, accessibility, content, trust, and product standards. Apple documentation is canonical for Apple HIG guidance. Automated HIG Doctor findings are supporting evidence, not proof of conformance or design quality.
+Use this playbook to collect the evidence required by `APPLE-PLATFORM-INTERACTION` after applying the universal interaction, accessibility, content, trust, and product standards. Apple documentation is canonical for Apple HIG guidance. Automated HIG Doctor findings are supporting evidence, not proof of conformance or design quality.
 
 ## Version record
 
@@ -42,14 +42,14 @@ At the August 13, 2026 review, the HIG Doctor repository documented JSON schema 
 
 ## Procedure
 
-1. **Declare platform scope.** Record iOS, iPadOS, macOS, watchOS, tvOS, or visionOS versions, devices, window modes, orientations, inputs, accessibility settings, locales, and Apple technologies in scope.
-2. **Review current canonical guidance.** Read the current Apple HIG foundations, applicable components, patterns, inputs, platform conventions, and technology guidance. Record page titles and review date.
-3. **Walk the complete task.** Inspect hierarchy, navigation, controls, content, status, errors, permissions, destructive actions, interruption, restoration, and platform integration using realistic data.
-4. **Exercise adaptation.** Cover Dynamic Type, VoiceOver, Voice Control where supported, keyboard or focus navigation, increased contrast, reduced motion, dark appearance, localization, right-to-left layout, rotation, multitasking, and resizable windows as applicable.
+1. **Declare platform scope.** Create the environment matrix required by `APPLE-PLATFORM-INTERACTION-001`, including versions, devices, display and window modes, orientations, inputs, accessibility settings, locales, and Apple technologies.
+2. **Review current canonical guidance.** For `APPLE-PLATFORM-INTERACTION-008`, read the current Apple HIG foundations, applicable components, patterns, inputs, platform conventions, and technology guidance. Record page titles, URLs, review date, deployment targets, availability assumptions, and fallbacks.
+3. **Walk the complete task.** Inspect the task adaptation, hierarchy, navigation, controls, content, status, errors, permissions, destructive actions, interruption, restoration, windowing, and platform integration required by Rules 002, 006, and 007 using realistic data.
+4. **Exercise adaptation and input.** For Rules 003 through 005, cover text scaling, VoiceOver, Voice Control where supported, keyboard or focus navigation, pointer, remote, controller, Crown, gaze, gesture, increased contrast, reduced motion, reduced transparency, dark appearance, localization, right-to-left layout, rotation, multitasking, and resizable windows as applicable.
 5. **Run optional automated evidence.** Run HIG Doctor against the final source with a pinned tool and rules version. Preserve JSON or SARIF, engine tiers, configuration, exclusions, suppressions, baseline, and warnings.
 6. **Review every material finding manually.** Confirm the cited current HIG page, inspect the actual rendered behavior, identify false positives and false negatives, and record the resolution or governed exception.
-7. **Inspect what automation cannot prove.** Review hierarchy, task coherence, platform fit, content quality, state transitions, visual relationships, runtime accessibility, gestures, animation purpose, data accuracy, and real-device behavior.
-8. **Retest the final artifact.** Verify resolved findings and representative flows on supported devices or closest justified environments, then bind approval to the exact build.
+7. **Inspect what automation cannot prove.** Review hierarchy, task coherence, platform fit, content quality, state transitions, visual relationships, runtime accessibility, gestures, animation purpose, data accuracy, real-device behavior, and shared-framework output under Rule 010.
+8. **Retest the final artifact.** Satisfy Rule 009 by verifying resolved findings and representative flows on supported devices or closest justified environments, then bind approval to the exact build.
 
 ## Tool boundaries
 
@@ -60,16 +60,16 @@ At the August 13, 2026 review, the HIG Doctor repository documented JSON schema 
 
 ## Completion evidence
 
-- Platform and environment matrix.
-- Current Apple HIG pages reviewed with dates.
-- Complete-flow and accessibility manual review results.
+- `APPLE-PLATFORM-INTERACTION-001` — Platform and environment matrix.
+- `APPLE-PLATFORM-INTERACTION-002` through `APPLE-PLATFORM-INTERACTION-007` — Complete-flow, adaptation, input, focus, navigation, system-integration, and accessibility review results.
+- `APPLE-PLATFORM-INTERACTION-008` — Current Apple HIG pages, deployment targets, availability assumptions, and fallbacks with dates.
 - Optional HIG Doctor versioned output and configuration.
 - Finding disposition, false-positive and false-negative review, exceptions, and retest evidence.
-- Final device or simulator inspection tied to the released build.
+- `APPLE-PLATFORM-INTERACTION-009` and `APPLE-PLATFORM-INTERACTION-010` — Final device or justified simulator inspection and shared-framework evidence tied to the released build.
 
 ## Sources
 
-- Apple, [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines). Reviewed August 13, 2026.
-- Apple, [Accessibility](https://developer.apple.com/design/human-interface-guidelines/accessibility). Reviewed August 13, 2026.
-- Apple, [Layout](https://developer.apple.com/design/human-interface-guidelines/layout). Reviewed August 13, 2026.
+- Apple, [Human Interface Guidelines](https://developer.apple.com/design/human-interface-guidelines). Reviewed September 1, 2026.
+- Apple, [Accessibility](https://developer.apple.com/design/human-interface-guidelines/accessibility). Reviewed September 1, 2026.
+- Apple, [Layout](https://developer.apple.com/design/human-interface-guidelines/layout). Reviewed September 1, 2026.
 - Raintree Technology, [HIG Doctor](https://github.com/raintree-technology/hig-doctor), used as versioned audit tooling and MIT-licensed structure rather than canonical Apple guidance. Reviewed August 13, 2026.

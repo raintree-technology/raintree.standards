@@ -78,6 +78,10 @@ standards:
     path: seo/foundations.md
   - id: WEB-QUALITY
     path: web/quality.md
+  - id: WEB-WEBMCP
+    path: web/webmcp.md
+  - id: APPLE-PLATFORM-INTERACTION
+    path: design/apple-platforms.md
   - id: DESIGN-INTERACTION
     path: design/interaction.md
   - id: AGENT-VERIFICATION

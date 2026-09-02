@@ -12,7 +12,7 @@ stale_after: 2027-03-01
 applies_to: [agentic-system]
 tags: [profile, ai, agents]
 depends_on: [AI-AGENTS, ENGINEERING-QUALITY, FND-EVIDENCE, FND-TRUST, FND-CHANGE, AGENT-VERIFICATION]
-generated: { by: codex/gpt-5, at: "2026-09-01T00:00:00-07:00" }
+generated: { by: codex/gpt-5, at: "2026-09-01T16:46:56-07:00" }
 ---
 
 # Agentic system profile
@@ -41,6 +41,7 @@ The front-matter `depends_on` list is the authoritative machine-readable route. 
 - User interface → `PROFILE-UI-FEATURE`; Apple-platform interface → `PROFILE-APPLE-INTERFACE`
 - Reusable agent guidance for interface generation or review → `PLAYBOOK-AGENT-DESIGN-GUIDANCE`
 - Browser interface or public agent surface → `WEB-QUALITY`
+- WebMCP tool registration, exposure, execution, consumption, permissions policy, or declarative form integration → `WEB-WEBMCP`
 - Service or API boundary → `PROFILE-SERVICE-API`
 - Production operation, reliability exercise, or incident response → `PROFILE-RELIABILITY-INCIDENT`
 - Database access or mutation → `DATA-DATABASE`
@@ -60,5 +61,6 @@ The front-matter `depends_on` list is the authoritative machine-readable route. 
 - `AI-AGENTS-018` — Traces, alerts, cost and latency limits, safety events, and operator stop controls work for representative runs.
 - `AI-AGENTS-021` for recurring released use — Offline claims map to production detection, monitoring coverage, response objectives, containment, and a privacy-controlled incident-to-regression loop.
 - `AI-AGENTS-019` when parallel or multi-agent — Scope isolation, conflicts, partial failure, synthesis, and measured benefit are recorded.
+- `WEB-WEBMCP-001` through `WEB-WEBMCP-015` when WebMCP is active — Compatibility, contract, input, authorization, user control, origin, untrusted-content, cancellation, accessibility, caller, output, declarative, localization, evolution, and lifecycle evidence cover the final running tool path.
 - `AGENT-VERIFICATION-005` — The handoff identifies the configuration, evaluation suite, released artifact, checks, outcomes, exceptions, and unresolved risks.
 - When a conditional standard is active, include its rule-level completion evidence before declaring the system complete.
