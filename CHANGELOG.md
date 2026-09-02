@@ -3,12 +3,18 @@ type: Guide
 title: Changelog
 description: Release-note policy for material changes to governed requirements and repository contracts.
 tags: [governance, releases, compatibility]
-generated: { by: codex/gpt-5, at: "2026-09-01T21:00:00Z" }
+generated: { by: codex/gpt-5, at: "2026-09-01T21:33:16-07:00" }
 ---
 
 # Changelog
 
 This file records material changes to governed requirements, profiles, schemas, playbooks, lifecycle status, and compatibility.
+
+## Unreleased
+
+- Added the post-v1 draft `APPLE-PLATFORM-INTERACTION`. Its ten rules require a declared Apple environment; task-level platform adaptation; native semantics and adaptive system resources; support for appearance, language, accessibility, display, and motion settings; platform input and focus behavior; platform-appropriate navigation, windows, and multitasking; complete system-experience lifecycle handling; dated Apple guidance and implementation assumptions; representative final-build verification; and native behavior through shared frameworks. `PROFILE-APPLE-INTERFACE` and `PLAYBOOK-APPLE-HIG` now route to the stable rule IDs. Apple's current Human Interface Guidelines remain canonical; HIG Doctor remains optional supporting evidence. Independent Apple-platform, design, engineering, accessibility, and representative-reader review remains required.
+- Expanded `PLAYBOOK-AGENT-DESIGN-GUIDANCE` with an optional formative loop for distinct design exploration, bounded fresh-context model critique, purposeful generated media, and subtractive polish. Random stimuli and model scores remain exploratory evidence rather than product rationale or release approval. Generated media now routes to `MEDIA-PRODUCTION-RIGHTS`, motion to `DESIGN-INTERACTION-013`, and provider credentials to `SECURITY-SECRETS`. Independent human review, accessibility evidence, and existing release criteria remain required.
+- Added the post-v1 draft `WEB-WEBMCP`. Its fifteen rules require progressive enhancement; exact and minimal tool contracts; control parity with human and service paths; explicit review for consequential actions; least-privilege origin exposure; trusted metadata boundaries; repeat-safe cancellation; accessible shared state; separate browser-agent and in-page-agent trust models; minimized, secret-free results; browser-bound declarative-form evidence; localized metadata and precise text limits; compatible contract evolution; and complete lifecycle verification. The agentic-system profile conditionally activates it for WebMCP work. The adoption guidance records the in-progress TAG review, Mozilla's neutral label, and WebKit's opposition. Independent web, AI, engineering, security, privacy, product, accessibility, and representative-reader review remains required; the source specification is a volatile W3C Community Group draft, not a W3C Standard.
 
 ## 1.0.0 — 2026-09-01
 

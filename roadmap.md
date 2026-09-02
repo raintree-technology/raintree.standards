@@ -3,7 +3,7 @@ type: Roadmap
 title: Coverage roadmap
 description: Prioritized gaps and triggers for expanding the raintree.standards library.
 tags: [roadmap, coverage, governance]
-generated: { by: codex/gpt-5, at: "2026-08-30T21:20:00Z" }
+generated: { by: codex/gpt-5, at: "2026-09-01T21:33:16-07:00" }
 ---
 
 # Coverage roadmap
@@ -53,6 +53,8 @@ The draft standards, playbooks, profiles, and patterns listed in the catalog rem
 - [x] Safe unused-code and dependency cleanup with TypeScript/JavaScript Knip plus Biome/Trellis, Python Ruff and deptry, contextual Vulture, and analyzer canaries — `ENGINEERING-CODE-REMOVAL` and `PROFILE-CODE-REMOVAL`
 - [x] Source-neutral external-platform requirements plus separate Stripe, Plaid, Vercel, Resend, Neon, and Cloudflare playbooks and manifest-backed review bundles — `INTEGRATIONS-VENDOR` and the six provider playbooks
 - [x] Risk- and architecture-based software testing, separate smoke, synthetic, and canary contracts, staged and selective gates, controlled time and version compatibility, test-size and suite-lifecycle controls, governed production-derived data, bounded shadow and fault-injection exercises, explicit canary promotion, rapid field guidance, situation recipes, copyable records, real-repository examples, machine routing, validation, and ordinary software-change routing — `ENGINEERING-TESTING`, `PLAYBOOK-TEST-STRATEGY`, and `PROFILE-SOFTWARE-CHANGE`
+- [x] WebMCP progressive enhancement, provider and consumer trust boundaries, tool contracts, input and result minimization, control parity, consequential-action review, origin and lifecycle boundaries, prompt-injection handling, cancellation, accessibility, declarative-form evidence, localization, contract evolution, adoption gates, and end-to-end verification — `WEB-WEBMCP`
+- [x] Apple-platform scope, task adaptation, native semantics, user-setting adaptation, input and focus, navigation and windowing, system experiences, current-source pinning, representative final-build evidence, and shared-framework behavior — `APPLE-PLATFORM-INTERACTION`
 
 All seven specialist extension standards, `PROFILE-SPECIALIST-MARKETING`, and
 `PROFILE-COMMERCIAL-EVIDENCE-REVIEW` remain drafts pending independent,
@@ -68,6 +70,8 @@ independent data, engineering, operations, and security review.
 The external-platform standard and provider playbooks require independent platform,
 security, privacy, operations, and provider-domain review as applicable.
 The software-testing standard, test-strategy playbook, and software-change profile require independent engineering, quality, and operations review.
+The WebMCP standard requires independent web, AI, engineering, security, privacy, product, accessibility, and representative-reader review. Its external source set remains highly volatile while WebMCP is a Community Group draft.
+The Apple-platform interaction standard requires independent Apple-platform, design, engineering, accessibility, and representative-reader review. Apple's live Human Interface Guidelines remain the canonical and highly volatile platform source.
 
 ## Open extension queue
 
