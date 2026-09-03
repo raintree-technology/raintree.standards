@@ -6,13 +6,13 @@ type: standard
 status: stable
 governance_status: active
 owners: [standards]
-last_reviewed: 2026-08-13
-review_by: 2027-02-13
-stale_after: 2027-02-13
+last_reviewed: 2026-09-02
+review_by: 2027-03-02
+stale_after: 2027-03-02
 applies_to: [all-agent-work]
 tags: [agents, testing, handoff]
 depends_on: [FND-EVIDENCE]
-generated: { by: codex/gpt-5, at: "2026-08-13T19:35:12Z" }
+generated: { by: codex/gpt-5, at: "2026-09-02T21:56:39-07:00" }
 sources:
   - id: google-sre-testing
     resource: https://sre.google/sre-book/testing-reliability/
@@ -82,21 +82,25 @@ Review the resulting artifact in its intended form. Successful generation, compi
 
 **Exceptions:** If the intended medium is unavailable, inspect the closest representation and report the difference.
 
-### AGENT-VERIFICATION-003 — Preserve unrelated user work
+### AGENT-VERIFICATION-003 — Preserve user work and edit authority
 
 **Level:** required  
 **Applies when:** Working in a mutable repository or shared system.
 
 Inspect current state before editing, distinguish pre-existing changes, and avoid overwriting, reverting, formatting, or including unrelated work.
 
-**Why:** A technically correct change is still harmful if it destroys or silently absorbs another person's work.
+Treat a request to review, assess, audit, diagnose, or recommend as read-only. Edit only when the user request or governing project instructions authorize edits, and keep changes within the authorized targets and purpose. A style, copy, or formatting edit must preserve meaning. If it would add, remove, contradict, or materially qualify a factual claim, leave the source unchanged and report the proposed factual change unless the task separately authorizes a factual update and adequate evidence supports it. Follow the precedence in `AGENTS.md` and the provenance requirements in `governance/authority.md` rather than duplicating them in a narrower standard.
+
+**Why:** A technically correct change is still harmful if it destroys or silently absorbs another person's work. Review authority does not imply permission to mutate the artifact, and a style request does not authorize an unreviewed factual change.
 
 **Verify:**
 
 - Compare the final change set with the initial state and requested scope.
 - Identify any overlapping pre-existing edits and how they were preserved.
+- Record whether the task authorized review only, meaning-preserving edits, or factual updates.
+- Flag every added, removed, contradicted, or materially qualified factual claim and trace an authorized factual update to its evidence.
 
-**Exceptions:** None without explicit authorization from the owner of the affected work.
+**Exceptions:** None without explicit authorization from the owner of the affected work. An explicitly authorized factual-update task can change a claim when the evidence and resulting qualification are recorded.
 
 ### AGENT-VERIFICATION-004 — Report residual uncertainty
 
@@ -264,6 +268,12 @@ Compliant: “The catalog validator passes for 16 governed documents. I inspecte
 Non-compliant: A slide deck export succeeds, so the task is declared complete.
 
 Compliant: The exported deck is opened and inspected for clipping, order, contrast, and missing assets; any unavailable playback check is reported.
+
+### Review and edit authority
+
+Non-compliant: A reviewer silently changes “Revenue increased 8%” to “Revenue increased 12%.”
+
+Compliant: The reviewer leaves the source unchanged and reports: “Proposed factual change: replace 8% with 12% after the finance owner confirms the cited report.”
 
 ## Sources
 
