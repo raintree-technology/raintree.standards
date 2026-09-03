@@ -6,13 +6,13 @@ type: standard
 status: stable
 governance_status: active
 owners: [content, standards]
-last_reviewed: 2026-08-13
-review_by: 2027-02-13
-stale_after: 2027-02-13
+last_reviewed: 2026-09-02
+review_by: 2027-03-02
+stale_after: 2027-03-02
 applies_to: [functional-writing]
 tags: [writing, documentation, communication, content]
 depends_on: [FND-EVIDENCE, FND-TRUST, FND-ACCESSIBILITY, AGENT-VERIFICATION]
-generated: { by: codex/gpt-5, at: "2026-08-13T20:57:53Z" }
+generated: { by: codex/gpt-5, at: "2026-09-02T21:56:39-07:00" }
 sources:
   - id: asd-ste100
     resource: https://asd-ste100.org/
@@ -54,6 +54,22 @@ sources:
     resource: https://tools.simonwillison.net/llm-cliche-highlighter
     title: LLM cliché highlighter
     author: human:simon-willison
+  - id: harper-lint-kinds
+    resource: https://github.com/Automattic/harper/blob/43745e24a6af0222d21ccd6fe1cc00570fe5e33c/harper-core/src/linting/lint_kind.rs
+    title: Harper lint kinds
+    author: organization:automattic
+  - id: harper-default-configuration
+    resource: https://github.com/Automattic/harper/blob/43745e24a6af0222d21ccd6fe1cc00570fe5e33c/harper-core/default_config.json
+    title: Harper default configuration
+    author: organization:automattic
+  - id: oxford-practical-english-usage
+    resource: https://www.oxfordlearnersdictionaries.com/us/about/practical-english-usage/introduction.html
+    title: About Practical English Usage
+    author: organization:oxford-university-press
+  - id: oxford-learner-grammar-contents
+    resource: https://www.oxfordlearnersdictionaries.com/us/grammar/online-grammar/table-of-contents
+    title: Learn and Practise Grammar contents
+    author: organization:oxford-university-press
 ---
 
 # Functional writing
@@ -131,6 +147,7 @@ State the result, decision, request, or main claim first. Start each paragraph w
 ### WRITING-FUNCTIONAL-005 — Write direct, complete sentences
 
 **Level:** recommended
+
 **Applies when:** Writing explanatory prose or instructions.
 
 Prefer short, common words, active voice, present tense, and explicit subjects. Keep one main instruction or claim in each sentence. Remove filler, unexplained idioms, figurative language, and unnecessary noun forms.
@@ -294,15 +311,15 @@ State the trigger and scope, desired outcome, prerequisites and required user in
 
 **Exceptions:** A one-time low-risk request can remain conversational when its outcome and limits are clear and no durable reuse is expected.
 
-### WRITING-FUNCTIONAL-015 — Review formulaic AI-writing patterns
+### WRITING-FUNCTIONAL-015 — Review style signals without treating preference as proof
 
 **Level:** recommended
 
-**Applies when:** Reviewing AI-assisted functional writing or prose whose authorship or quality needs evaluation.
+**Applies when:** Reviewing functional writing for style, quality, or possible AI assistance.
 
-Check the text for repeated rhetorical templates, inflated claims, vague attribution, promotional filler, chatbot artifacts, and vocabulary clusters associated with formulaic AI writing. Use Simon Willison's *LLM cliché highlighter* pattern catalog as a review aid. Treat matches as signals to inspect in context, not proof of AI authorship or defects. Rewrite a match only when it obscures meaning, weakens evidence, repeats a structure unnecessarily, or conflicts with another applicable rule.
+Treat style guides, pattern lists, detector results, personal taste, and authorship heuristics as review signals rather than proof of a defect. Check the text for repeated rhetorical templates, inflated claims, vague attribution, promotional filler, chatbot artifacts, and vocabulary clusters associated with formulaic AI writing. Use Simon Willison's *LLM cliché highlighter* pattern catalog as one review aid. Rewrite a match only when it obscures meaning, weakens evidence, repeats a structure unnecessarily, conflicts with the intended reader and purpose, or violates another applicable rule. Do not change accurate, effective text only to satisfy a style preference or make it appear more or less human-authored.
 
-**Why:** Formulaic patterns can make writing sound staged, vague, or promotional, but many also occur naturally in clear human prose. Contextual review improves the artifact without turning a heuristic into an unsupported authorship claim.
+**Why:** Formulaic patterns can make writing sound staged, vague, or promotional, but many also occur naturally in clear human prose. The [authority rules](../governance/authority.md#rule-construction) place broad advice in guidance rather than required rules. Contextual review can improve an artifact without turning preference or a heuristic into an unsupported defect or authorship claim.
 
 **Pattern catalog:**
 
@@ -345,13 +362,80 @@ Check the text for repeated rhetorical templates, inflated claims, vague attribu
 37. **Promotional boilerplate** — Brochure language such as “nestled in,” “in the heart of,” “hidden gem,” “boasts,” “breathtaking,” or “stunning views.”
 38. **Chatbot leftovers** — Model disclaimers, knowledge-cutoff language, citation debris, internal reference tokens, or tracking parameters copied from generated output.
 
+**Harper result mapping:**
+
+Harper is a useful English review aid, but its result categories do not share one requirement level. Map a result before deciding whether to change the text:
+
+| Harper kind or family | Review interpretation | Governing route |
+|---|---|---|
+| `Agreement`, `BoundaryError`, `Grammar`, `Typo`, `WordOrder` | Candidate correctness defect | Apply `WRITING-FUNCTIONAL-016`; verify the sentence in context. |
+| `Spelling`, `Capitalization`, `Punctuation`, `Formatting` | Candidate mechanics or exact-name defect | Apply `WRITING-FUNCTIONAL-003`, `WRITING-FUNCTIONAL-008`, or `WRITING-FUNCTIONAL-016`; protect literals, names, and medium conventions. |
+| `Eggcorn`, `Malapropism`, `Nonstandard`, `Usage`, `WordChoice` | Candidate meaning or conventional-usage defect | Compare the intended meaning, audience, source terminology, and accepted language variety before changing it. |
+| `Readability`, `Redundancy`, `Repetition` | Candidate clarity problem | Apply `WRITING-FUNCTIONAL-004` or `WRITING-FUNCTIONAL-005` only when the pattern delays, duplicates, or obscures useful meaning. |
+| `Enhancement`, `Style` | Preference or optional improvement | Keep advisory under this rule unless another applicable rule identifies reader harm. |
+| `Regionalism` | Audience and locale signal | Apply `WRITING-FUNCTIONAL-001` and, when localized, `WRITING-FUNCTIONAL-011`; do not label a valid dialect form as inherently wrong. |
+| `Miscellaneous` | Unclassified signal | Inspect the underlying rule and sentence; infer no requirement level from the category. |
+
+Harper's pinned default **Style and Redundancy** group also mixes different decisions:
+
+| Harper default rules | Review question | Treatment |
+|---|---|---|
+| `FillerWords`, `DiscourseMarkers`, `LongSentences`, `KindOf`, `WayTooAdjective` | Does the wording delay or blur the main claim? | Propose a change when it improves the reader's ability to understand or act. |
+| `Hedging` | Is the phrase empty caution, or does it preserve material uncertainty? | Remove empty qualification; retain or sharpen evidence-backed uncertainty under `WRITING-FUNCTIONAL-002`. |
+| `RepeatedWords` and `Redundant*` rules | Is the repetition accidental, or does it distinguish scope or add necessary emphasis? | Remove accidental duplication; preserve meaning-bearing repetition. |
+| `Excellent`, `FatalOutcome`, `Freezing`, `Starving`, `VeryUnique`, `WidelyAccepted` | Is the wording literal, supported, and appropriate to the reader? | Check evidence and trust before treating the result as style alone. |
+| `AvoidContractions`, `BoringWords` | Does an adopted product, legal, or repository convention require this choice? | These rules are disabled in Harper's pinned default configuration. Do not enforce them as general correctness rules. |
+| `Towards` and regional rules | Does the form match the intended language variety and local convention? | Prefer audience consistency; do not rewrite solely to impose another dialect. |
+
+Pin the Harper version or commit and record the enabled rules when its output supports a review. Rule names, group membership, defaults, and results can change between versions.
+
 **Verify:**
 
 - Review matches from the current pattern catalog, including rhetorical chains, repeated sentence structures, stock contrasts and reveals, vague authority claims, inflated significance, promotional language, and chatbot leftovers.
-- Inspect repeated or clustered matches before isolated matches, and record only changes that improve clarity, evidence, tone, or structure.
+- When Harper output is used, map each result through the tables above and record its version, configuration, dialect, and disposition.
+- Inspect repeated or clustered matches before isolated matches, and record only changes that improve clarity, evidence, tone, structure, or fitness for the intended reader.
+- Confirm that every proposed style change cites the reader need or applicable rule it serves rather than personal preference alone.
 - Confirm the review does not label a writer or passage as AI-generated solely because it matches a listed pattern.
 
 **Exceptions:** Preserve an exact quotation, required interface label, established term, or deliberate rhetorical device when it remains accurate and appropriate for the intended reader.
+
+### WRITING-FUNCTIONAL-016 — Use grammar and mechanics that preserve meaning
+
+**Level:** required
+
+**Applies when:** Creating, editing, or reviewing functional writing in English.
+
+Use grammatical structures and sentence mechanics that preserve the intended actors, actions, conditions, sequence, and scope. Check subject–verb and pronoun agreement; clear pronoun reference; verb form and tense; articles and prepositions; sentence boundaries; modifier placement; word order; possessives; spelling; capitalization; and meaning-bearing punctuation. Correct an error when it makes the sentence invalid, ambiguous, or materially harder for the intended reader to interpret.
+
+Use this matrix to review meaning-bearing grammar:
+
+| Area | Inspect | Common symptom |
+|---|---|---|
+| Agreement and reference | Subject–verb agreement; pronoun number, case, and antecedent | The reader cannot tell who or what acted, or a singular and plural form conflict. |
+| Time and verb form | Tense, aspect, participles, auxiliaries, and sequence of events | The text places an event at the wrong time or leaves completion and continuation unclear. |
+| Modality and obligation | `must`, `must not`, `can`, `cannot`, `may`, `might`, `should`, and negation scope | Permission sounds like obligation, advice sounds mandatory, or a prohibition has two readings. |
+| Nouns and quantity | Articles, determiners, countability, possessives, demonstratives, and quantifiers such as `each`, `every`, `few`, `less`, `fewer`, `much`, and `many` | The population, ownership, or amount is grammatically inconsistent or materially ambiguous. |
+| Conditions and clauses | Conditionals, exceptions, relative clauses, coordination, and clause attachment | A condition appears to govern the wrong action, or it is unclear which noun a clause modifies. |
+| Comparison and parallelism | Comparison basis, paired constructions, and parallel list or clause structure | The sentence compares unlike things or makes equivalent choices look unequal. |
+| Modifiers and word order | Modifier placement, adverb position, and natural order of complements | A modifier appears to describe the wrong actor, action, amount, or time. |
+| Usage and collocation | Prepositions, phrasal verbs, conventional word combinations, and register | The wording is grammatical in isolation but means something different or sounds inappropriate for the intended context. |
+| Mechanics | Sentence boundaries, possessives, spelling, capitalization, spacing, and meaning-bearing punctuation | A run-on, fragment, apostrophe, comma, or letter case changes the grouping or interpretation. |
+
+Treat grammar-checker output as candidate findings, not proof. Review each result in context, protect exact quotations, interface labels, code, names, and accepted language variation, and compare every correction with the source meaning and factual claims. For reproducible tool-assisted review, record the checker, version, configuration, language variety, ignored regions, and unresolved findings.
+
+For a disputed or unfamiliar English usage point, consult a named grammar or usage reference and record the exact entry or topic. Oxford's *Practical English Usage* is a useful reference because it covers grammar, vocabulary problems, formality, slang, standard English, and dialects through problem-focused explanations and examples. Oxford's learner-grammar contents also provide topic routes for tense and aspect, possessives, demonstratives, and quantifiers. These sources are descriptive references, not a universal product house style. Apply the intended audience's language variety and the artifact's adopted convention. When current authoritative references disagree materially, preserve the conflict under `FND-EVIDENCE-006` instead of declaring one variety universally correct.
+
+**Why:** A sentence can use concise words and still misstate who acted, when an action occurred, which condition applies, or what a pronoun refers to. Grammar tools can expose these defects, but their style and regional-preference findings do not establish incorrect grammar.
+
+**Verify:**
+
+- Inspect every applicable matrix row, including modality, quantity, conditions, comparison, and clause attachment in addition to sentence boundaries and word forms.
+- For bounded and extended artifacts, run a configured or proportionate English grammar checker when one is available, and adjudicate its findings in context. Treat this tool output as supporting evidence rather than a universal completion gate. When the tool check is applicable but omitted or unavailable, report it as `not run` or `not available` instead of claiming it passed.
+- Compare each accepted correction with the source to confirm that it preserves facts, requirements, qualifications, names, literal values, and intended emphasis.
+- For a disputed usage decision, record the reference, entry or topic, language variety, context, and reason for the selected form.
+- Keep Harper's `Enhancement`, `Readability`, `Regionalism`, and `Style` categories advisory under `WRITING-FUNCTIONAL-015`; do not treat them as grammar failures without an independent applicable rule.
+
+**Exceptions:** Headings, buttons, labels, table cells, commit subjects, conversational messages, and other constrained forms can use intentional fragments when their meaning remains clear in context. Preserve an exact quotation, interface label, code sample, proper name, or accepted dialect form unless the task authorizes changing it.
 
 ## Guidance
 
@@ -365,6 +449,18 @@ Use sentence case for titles and headings, the serial comma, and simple contract
 
 ## Examples
 
+### Reader and purpose
+
+Non-compliant: “This document explains the process.”
+
+Compliant: “This guide helps support engineers restore a failed customer import without losing submitted records.”
+
+### Accuracy over style
+
+Non-compliant: “The migration is safe.”
+
+Compliant: “The staging migration completed without data loss. Production lock behavior was not tested.”
+
 ### Consistent terms
 
 Non-compliant: “Sign in to the console. If you cannot log in, reset your password.”
@@ -377,11 +473,53 @@ Non-compliant: “Please make sure permissions are configured correctly and try 
 
 Compliant: “To import contacts, allow contact access in **Settings**. Then try the import again.”
 
+### Outcome before detail
+
+Non-compliant: “After reviewing the logs, deployment history, and alert timeline, we decided to roll back.”
+
+Compliant: “Roll back the release. The logs, deployment history, and alert timeline show that errors began with version 4.2.”
+
+### Direct sentence
+
+Non-compliant: “The completion of the configuration of access permissions should be performed prior to import initiation.”
+
+Compliant: “Configure access permissions before you start the import.”
+
 ### Change summary
 
 Non-compliant: “Added rate limiting to login.”
 
 Compliant: “Add rate limits to sign-in attempts”
+
+### Final-context review
+
+Non-compliant: “The Markdown source passed review, so the published page is correct.”
+
+Compliant: “The Markdown source passed its link check. The published page was not available for rendered review.”
+
+### Grammar and meaning
+
+Non-compliant: “The deployment logs shows the workers was stopped after the alert.”
+
+Compliant: “The deployment logs show that the workers were stopped after the alert.”
+
+### Modality and prohibition
+
+Non-compliant: “Users may not export these records.”
+
+Compliant when export is prohibited: “Users must not export these records.”
+
+### Modifier attachment
+
+Non-compliant: “After deleting the account, the confirmation email was sent.”
+
+Compliant: “After the administrator deleted the account, the system sent the confirmation email.”
+
+### Tool-assisted style review
+
+Non-compliant: “Harper flagged the contraction, so the sentence fails the writing standard.”
+
+Compliant: “Harper flagged ‘don’t’ as a style preference. The repository permits conversational contractions, and the sentence remains clear, so no change is proposed.”
 
 ## Sources
 
@@ -395,3 +533,7 @@ Compliant: “Add rate limits to sign-in attempts”
 - OpenAI, [Custom instructions with AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md). Reviewed August 13, 2026.
 - Cognition, [Creating Playbooks](https://docs.devin.ai/product-guides/creating-playbooks). Reviewed August 13, 2026.
 - Simon Willison, [LLM cliché highlighter](https://tools.simonwillison.net/llm-cliche-highlighter), pattern catalog. Reviewed August 28, 2026.
+- Automattic, [Harper lint kinds](https://github.com/Automattic/harper/blob/43745e24a6af0222d21ccd6fe1cc00570fe5e33c/harper-core/src/linting/lint_kind.rs), commit `43745e24a6af0222d21ccd6fe1cc00570fe5e33c`. Reviewed September 2, 2026.
+- Automattic, [Harper default configuration](https://github.com/Automattic/harper/blob/43745e24a6af0222d21ccd6fe1cc00570fe5e33c/harper-core/default_config.json), commit `43745e24a6af0222d21ccd6fe1cc00570fe5e33c`. Reviewed September 2, 2026.
+- Oxford University Press, [About *Practical English Usage*](https://www.oxfordlearnersdictionaries.com/us/about/practical-english-usage/introduction.html), grammar, usage, register, and dialect reference scope. Reviewed September 2, 2026.
+- Oxford University Press, [*Learn & Practise Grammar*: contents](https://www.oxfordlearnersdictionaries.com/us/grammar/online-grammar/table-of-contents), tense, aspect, possessive, demonstrative, and quantifier topic index. Reviewed September 2, 2026.

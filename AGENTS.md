@@ -3,7 +3,7 @@ type: Agent Instructions
 title: raintree.standards repository instructions
 description: Binding instructions for agents reading or maintaining the raintree.standards library.
 tags: [agents, governance, read-only]
-generated: { by: codex/gpt-5, at: "2026-08-17T17:16:31Z" }
+generated: { by: codex/gpt-5, at: "2026-09-02T21:56:39-07:00" }
 ---
 
 # raintree.standards repository instructions
@@ -22,6 +22,10 @@ This repository is the authoritative, read-only standards library for agents wor
 
 1. Identify the task profile in `profiles/` that most closely matches the work.
 2. Load every standard listed as required by that profile.
+   If a required dependency cannot be located, opened, or read completely, stop
+   the governed work and report the dependency ID, expected catalog path, and
+   failure. Do not substitute the profile's summary or remembered guidance for
+   the unavailable standard.
 3. Apply relevant cross-cutting standards from `foundations/` even when the profile does not mention them explicitly.
 4. Treat requirement levels according to `governance/authority.md`.
 5. Verify each applicable rule using its stated evidence before claiming completion.
@@ -62,4 +66,3 @@ When explicitly asked to maintain this repository:
 
 The standards owners maintain these instructions. Review them after a recurring agent
 failure, a change to repository governance, or a change to the standards-audit process.
-
