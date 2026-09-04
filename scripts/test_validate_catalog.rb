@@ -51,6 +51,15 @@ suite.accepts("unknown front-matter fields are preserved, not rejected") do |roo
   end
 end
 
+suite.accepts("installed plugin skills are outside the governed standards corpus") do |root|
+  skill_dir = File.join(root, "skills", "example")
+  FileUtils.mkdir_p(skill_dir)
+  File.write(
+    File.join(skill_dir, "SKILL.md"),
+    "---\nname: example\ndescription: Example installed skill.\n---\n\n# Example\n"
+  )
+end
+
 suite.accepts("a document may opt out of the current release scope") do |root|
   TestSupport.edit_front_matter(sample_document(root)) do |metadata|
     metadata["release_target"] = "v2"
