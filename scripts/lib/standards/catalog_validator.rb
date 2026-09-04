@@ -527,7 +527,9 @@ module Standards
     # -- bundle-wide Markdown ------------------------------------------------
 
     def check_markdown_bundle
-      files = Paths.glob(@root, "**/*.md").reject { |relative| relative.start_with?("plugin/") }
+      files = Paths.glob(@root, "**/*.md").reject do |relative|
+        relative.start_with?("plugin/", "skills/")
+      end
       @markdown_count = files.length
       @findings.add("index.md: bundle contains no Markdown files") if files.empty?
 

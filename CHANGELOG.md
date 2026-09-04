@@ -14,6 +14,13 @@ This file records material changes to governed requirements, profiles, schemas, 
 
 - No changes recorded yet.
 
+## 1.1.1 — 2026-09-04
+
+- Excluded installed Codex skill instructions from governed Markdown validation.
+  This keeps the generated plugin self-contained without treating its package
+  metadata as an OKF standards document. No governed rule or maturity status
+  changed.
+
 ## 1.1.0 — 2026-09-04
 
 - Demoted eight documents whose dependency closure includes draft material. The
