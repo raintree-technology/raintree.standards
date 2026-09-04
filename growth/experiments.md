@@ -3,8 +3,8 @@ id: GROWTH-EXPERIMENTS
 title: Growth experiments
 description: Requires growth experiments to produce trustworthy learning and durable user and business value.
 type: standard
-status: stable
-governance_status: active
+status: draft
+governance_status: draft
 owners: [growth, product, analytics]
 last_reviewed: 2026-08-13
 review_by: 2027-02-13

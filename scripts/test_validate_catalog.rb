@@ -9,6 +9,7 @@
 # document content, review dates, or provenance timestamps change.
 
 require_relative "lib/standards"
+require_relative "lib/standards/catalog_validator"
 require_relative "lib/standards/test_support"
 
 # Brings Findings, TestSupport, and the exit statuses into scope for this script.
@@ -115,6 +116,51 @@ end
 suite.rejects("duplicate catalog path", "catalog.yaml: duplicate path") do |root|
   TestSupport.edit_yaml(catalog(root)) do |document|
     document["governance"] << TestSupport.deep_copy(document["governance"][0])
+  end
+end
+
+suite.rejects("missing dependency", "unknown dependency FND-MISSING") do |root|
+  TestSupport.edit_front_matter(sample_document(root)) do |metadata|
+    metadata["depends_on"] = Array(metadata["depends_on"]) + ["FND-MISSING"]
+  end
+end
+
+suite.rejects("dependency cycle", "dependency cycle:") do |root|
+  first = TestSupport.first_entry(root, "foundations")
+  catalog_document = YAML.safe_load(File.read(catalog(root)), permitted_classes: [Date], aliases: false)
+  second = catalog_document.fetch("foundations").find { |entry| entry["id"] != first["id"] }
+  TestSupport.edit_front_matter(File.join(root, first.fetch("path"))) do |metadata|
+    metadata["depends_on"] = [second.fetch("id")]
+  end
+  TestSupport.edit_front_matter(File.join(root, second.fetch("path"))) do |metadata|
+    metadata["depends_on"] = [first.fetch("id")]
+  end
+end
+
+suite.rejects("stable document with transitive draft dependency", "depends on draft") do |root|
+  catalog_document = YAML.safe_load(File.read(catalog(root)), permitted_classes: [Date], aliases: false)
+  entries = Standards::CatalogValidator::GOVERNED_KEYS.flat_map { |section| catalog_document.fetch(section) }
+  indexed = entries.to_h { |entry| [entry.fetch("id"), entry] }
+  stable_ids = entries.filter_map do |entry|
+    metadata = YAML.safe_load(
+      File.read(File.join(root, entry.fetch("path")))[Standards::Document::FRONT_MATTER, 1],
+      permitted_classes: [Date, Time], aliases: false
+    )
+    entry.fetch("id") if metadata["status"] == "stable"
+  end
+  draft = entries.find do |entry|
+    metadata = YAML.safe_load(
+      File.read(File.join(root, entry.fetch("path")))[Standards::Document::FRONT_MATTER, 1],
+      permitted_classes: [Date, Time], aliases: false
+    )
+    metadata["status"] == "draft"
+  end
+  first, second = stable_ids.first(2)
+  TestSupport.edit_front_matter(File.join(root, indexed.fetch(first).fetch("path"))) do |metadata|
+    metadata["depends_on"] = [second]
+  end
+  TestSupport.edit_front_matter(File.join(root, indexed.fetch(second).fetch("path"))) do |metadata|
+    metadata["depends_on"] = [draft.fetch("id")]
   end
 end
 

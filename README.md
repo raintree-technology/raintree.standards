@@ -21,6 +21,13 @@ it for a high-impact decision.
 4. Collect the verification evidence required by each applicable rule.
 5. Report satisfied rules, approved exceptions, and unresolved gaps by stable rule ID.
 
+Codex users can install the generated plugin from the public Raintree marketplace:
+
+```bash
+codex plugin marketplace add raintree-technology/plugins
+codex plugin add raintree-standards@raintree
+```
+
 ```mermaid
 flowchart LR
   T[Task and outcome] --> P[Profile]
@@ -112,6 +119,7 @@ that boundary.
 ruby scripts/validate_catalog.rb
 ruby scripts/validate_integrations.rb
 ruby scripts/validate_testing_reference.rb
+ruby scripts/test_route_profile.rb
 ruby scripts/test_schema_drift.rb
 ruby scripts/test_workflows.rb
 ruby scripts/test_standards_lib.rb

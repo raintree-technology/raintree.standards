@@ -88,7 +88,7 @@ choose a profile under **Task profiles**.
 * [Database changes](data/database-changes.md) - Integrity, migration safety, query performance, and recovery.
 * [Data quality and lifecycle](data/quality.md) - Meaning, ownership, lineage, validation, reconciliation, and lifecycle.
 * [Redis design and operation](data/redis.md) - Workload contracts, memory, data models, clients, security, availability, recovery, and messaging.
-* [Engineering quality](engineering/quality.md) - Architecture, testing, dependencies, review, provenance, and release readiness.
+* [Engineering quality](engineering/quality.md) - Architecture, canonical ownership, generated projections, testing, dependencies, review, provenance, and release readiness.
 * [Software testing and verification](engineering/testing.md) - Risk-based test layers, bounded smoke tests, deterministic execution, failure coverage, fixtures, flakes, and release evidence.
 * [Safe code removal](engineering/code-removal.md) - Knip, Ruff, deptry, contextual Vulture, analyzer canaries, bounded deletion, and final graph verification.
 * [JavaScript and TypeScript quality with Biome, Trellis, and anti-slop](engineering/javascript-quality.md) - Shared Biome, Trellis, Oxlint, and anti-slop policy for repository scope, type evidence, continuous integration, suppressions, and agent handoffs.

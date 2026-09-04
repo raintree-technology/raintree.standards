@@ -13,7 +13,7 @@ stale_after: 2027-02-28
 applies_to: [software-change, bug-fix, refactor, maintenance, test-suite-change]
 tags: [profile, engineering, testing, software]
 depends_on: [ENGINEERING-QUALITY, ENGINEERING-TESTING, FND-CHANGE, FND-EVIDENCE, AGENT-VERIFICATION]
-generated: { by: codex/gpt-5, at: "2026-08-30T21:20:00Z" }
+generated: { by: codex/gpt-5, at: "2026-09-02T22:42:53-07:00" }
 ---
 
 # Software change profile
@@ -56,6 +56,7 @@ The front-matter `depends_on` list is the authoritative machine-readable route. 
 - `ENGINEERING-TESTING-008` through `ENGINEERING-TESTING-013` — Contract ownership, isolated data, flake handling, coverage interpretation, known-defect evidence, and fixtures are reviewable.
 - `ENGINEERING-TESTING-014` and `ENGINEERING-QUALITY-008` — Local through post-deployment evidence is correctly staged, deferred checks retain owners and release deadlines, and exact-artifact evidence binds to the release decision.
 - `ENGINEERING-QUALITY-009` when engineering workflow or gate behavior changes — Human wait and work, compute cost, support burden, escaped risk, and any deferred-check ownership are measured together.
+- `ENGINEERING-QUALITY-010` when material behavior, facts, configuration, or artifacts have multiple representations — The canonical owner, registered consumers, generation or direct-consumption path, drift check, supported runtime boundaries, and old-reference search are recorded.
 - `ENGINEERING-TESTING-015` — Representative failures identify the governed behavior and provide bounded, safe reproduction evidence.
 - `ENGINEERING-TESTING-016` through `ENGINEERING-TESTING-019` — Test resource contracts, stable ownership and health, production-derived data controls, and the architecture-aware test portfolio are recorded where applicable.
 - `ENGINEERING-TESTING-020` through `ENGINEERING-TESTING-025` — Selective execution, temporal behavior, compatibility windows, high-fidelity exercises, canary promotion, and test lifecycle decisions are controlled where applicable.

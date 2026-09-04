@@ -56,6 +56,9 @@ jobs:
       - name: Validate testing reference routes
         run: ruby scripts/validate_testing_reference.rb
 
+      - name: Test deterministic profile routing
+        run: ruby scripts/test_route_profile.rb
+
       - name: Check JSON Schemas against the handwritten validators
         run: ruby scripts/test_schema_drift.rb
 

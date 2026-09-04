@@ -3,8 +3,8 @@ id: CONTENT-ERRORS
 title: Error messages
 description: Defines actionable, safe, accessible, and technically honest user-facing failure messages.
 type: standard
-status: stable
-governance_status: active
+status: draft
+governance_status: draft
 owners: [content, product, design]
 last_reviewed: 2026-08-13
 review_by: 2027-02-13

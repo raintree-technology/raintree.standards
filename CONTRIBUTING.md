@@ -31,6 +31,7 @@ The validators use only the Ruby standard library. You do not need to install a 
 ruby scripts/validate_catalog.rb
 ruby scripts/validate_integrations.rb
 ruby scripts/validate_testing_reference.rb
+ruby scripts/test_route_profile.rb
 ruby scripts/test_schema_drift.rb
 ruby scripts/test_workflows.rb
 ruby scripts/test_standards_lib.rb

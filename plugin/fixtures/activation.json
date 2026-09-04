@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "skill": "standards-navigator",
+  "positive": [
+    "Which Raintree Standards profile applies to this database migration?",
+    "Give me the governed requirements and evidence for a software change."
+  ],
+  "negative": [
+    "Explain what a database migration is.",
+    "Format this JSON file."
+  ]
+}
