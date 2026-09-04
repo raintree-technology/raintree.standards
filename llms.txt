@@ -1,6 +1,6 @@
 # Raintree Standards
 
-> A pre-1.0 open-source standards library that turns product, engineering, security, data, content, and marketing tasks into testable requirements and evidence.
+> A version 1 open-source standards library that turns product, engineering, security, data, content, and marketing tasks into testable requirements and evidence.
 
 Every repository content page is available at its explicit `.md` source URL. `catalog.yaml` is the complete governed-document inventory, and the linked indexes cover supporting pages. This file is a discovery route, not a substitute for the governed documents, approval, or certification.
 

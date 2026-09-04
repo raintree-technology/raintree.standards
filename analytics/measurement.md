@@ -3,8 +3,8 @@ id: ANALYTICS-MEASUREMENT
 title: Product and growth measurement
 description: Defines decision-driven, interpretable, privacy-conscious product and growth instrumentation.
 type: standard
-status: stable
-governance_status: active
+status: draft
+governance_status: draft
 owners: [analytics, product]
 last_reviewed: 2026-08-13
 review_by: 2027-02-13

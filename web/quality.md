@@ -3,8 +3,8 @@ id: WEB-QUALITY
 title: Public web quality
 description: Defines accessible, performant, resilient, secure, private, and discoverable public web experiences.
 type: standard
-status: stable
-governance_status: active
+status: draft
+governance_status: draft
 owners: [web, design, security]
 last_reviewed: 2026-08-13
 review_by: 2026-11-13

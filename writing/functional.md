@@ -3,8 +3,8 @@ id: WRITING-FUNCTIONAL
 title: Functional writing
 description: Defines clear, consistent, actionable writing for documentation, explanations, summaries, change records, interface text, reports, and messages.
 type: standard
-status: stable
-governance_status: active
+status: draft
+governance_status: draft
 owners: [content, standards]
 last_reviewed: 2026-09-02
 review_by: 2027-03-02

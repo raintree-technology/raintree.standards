@@ -10,9 +10,9 @@ last_reviewed: 2026-08-13
 review_by: 2027-02-13
 stale_after: 2027-02-13
 applies_to: [software-change, service-change]
-tags: [engineering, architecture, testing, dependencies]
+tags: [engineering, architecture, testing, dependencies, canonical-sources, generated-artifacts]
 depends_on: [FND-EVIDENCE, FND-CHANGE, AGENT-VERIFICATION]
-generated: { by: codex/gpt-5, at: "2026-08-30T20:00:00Z" }
+generated: { by: codex/gpt-5, at: "2026-09-02T22:42:53-07:00" }
 sources:
   - id: nist-ssdf-11
     resource: https://csrc.nist.gov/pubs/sp/800/218/final
@@ -40,7 +40,7 @@ Software changes must have an explicit design boundary, evidence proportionate t
 
 ### ENGINEERING-QUALITY-001 — Record consequential design decisions
 
-**Level:** required  
+**Level:** required
 **Applies when:** A change introduces a durable boundary, dependency, data flow, failure mode, or operational commitment.
 
 Record the problem, constraints, considered options, decision, consequences, ownership, and conditions that would trigger reconsideration.
@@ -184,13 +184,31 @@ Define the user task, population, baseline, wait and active time, failure and re
 
 **Exceptions:** A new high-consequence control can launch before a complete baseline when its obligation and owner are explicit; measure burden and effectiveness after adoption and refine without weakening the protected outcome.
 
+### ENGINEERING-QUALITY-010 — Keep derived representations subordinate to one canonical owner
+
+**Level:** required
+**Applies when:** The same material behavior, fact, route inventory, schema, configuration, or artifact appears in more than one component, repository, package, generated output, or delivery surface.
+
+Assign one canonical owner and record every maintained consumer. Make each other representation consume the canonical interface directly or remain reproducibly generated from it. A change to the canonical source must update its derived representations in the same change or fail a deterministic drift check. Before moving or removing a canonical source, inspect registered consumers and unresolved references across the declared repository boundary.
+
+**Why:** A copied implementation or hand-maintained projection can continue to pass local checks while consumers, documentation, generated artifacts, and other repositories retain conflicting behavior or stale paths.
+
+**Verify:**
+
+- Trace each maintained representation to its canonical owner, transformation, consumer, and update path.
+- Change a representative canonical input and confirm that generation updates every registered projection or that the drift check rejects the stale state.
+- Exercise the representation through each supported runtime, package boundary, and final artifact that resolves it differently.
+- Search the declared repository boundary for old identifiers and paths after a move or removal.
+
+**Exceptions:** Independent implementations required for isolation, compatibility, or platform behavior may remain separate when their ownership and contract are explicit and contract checks detect divergence.
+
 ## Operational coverage
 
 Use this standard as the engineering release backbone, then add the domain standard for the affected surface.
 
 | Change class | Required quality route | Completion evidence |
 |---|---|---|
-| Internal refactor | Preserved contract, characterization where behavior is unclear, focused tests, dependency and dead-path review | Before/after behavior, changed boundaries, test selection rationale, and final diff inspection |
+| Internal refactor | Preserved contract, characterization where behavior is unclear, focused tests, dependency and dead-path review | Before/after behavior, changed boundaries, canonical and derived representation inventory, test selection rationale, and final diff inspection |
 | Public contract or compatibility change | Version and consumer inventory, compatibility window, migration path, deprecation, and rollback | Contract tests across supported versions, consumer evidence, release notes, telemetry, and retirement criteria |
 | Build or dependency change | Pinned inputs, provenance, reproducible artifact, license and vulnerability review, upgrade and rollback path | Lockfile or manifest diff, clean build, artifact identity, source and integrity data, and environment comparison |
 | Performance or reliability change | Workload model, baseline, budget, saturation and failure scenarios, observability, and capacity assumptions | Repeatable benchmark, variance, resource profile, production-shaped trial, and regression threshold |
@@ -210,6 +228,12 @@ Prefer the simplest design that meets measured needs. Add abstraction only when 
 Non-compliant: Add a large package because its API is convenient and rely on the package lock alone.
 
 Compliant: Compare the existing capability and candidate package, inspect the resolved graph and license, constrain its use behind the serialization boundary, test malformed data and upgrade behavior, and record the removal path.
+
+### Shared audit rules
+
+Non-compliant: Copy an audit engine into a website and compare only the number of rules in each copy.
+
+Compliant: Keep the engine in its package, import it through the package interface, generate demo data from that implementation, and fail validation when a registered projection is stale.
 
 ## Sources
 

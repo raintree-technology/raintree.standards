@@ -3,8 +3,8 @@ id: PROFILE-PRODUCT-FEATURE
 title: Product feature profile
 description: Routes user-facing feature work to trust, safe-change, evidence, and verification requirements.
 type: profile
-status: stable
-governance_status: active
+status: draft
+governance_status: draft
 owners: [product, design, engineering]
 last_reviewed: 2026-08-13
 review_by: 2027-02-13

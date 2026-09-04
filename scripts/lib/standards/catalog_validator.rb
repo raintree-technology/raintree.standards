@@ -285,16 +285,79 @@ module Standards
     end
 
     def check_dependencies
+      dependency_graph = {}
+
       @entries.each do |entry|
         relative = entry.fetch("path")
         document = @documents[relative]
         next unless document&.metadata?
 
         metadata = document.metadata
-        Array(metadata["depends_on"]).each do |dependency|
+        dependencies = Array(metadata["depends_on"])
+        dependency_graph[metadata["id"]] = dependencies
+        dependencies.each do |dependency|
           @findings.add_unless(@ids.key?(dependency), "#{relative}: unknown dependency #{dependency}")
         end
       end
+
+      check_dependency_cycles(dependency_graph)
+      check_stable_dependency_maturity(dependency_graph)
+    end
+
+    def check_dependency_cycles(graph)
+      state = {}
+      stack = []
+
+      visit = lambda do |id|
+        return if state[id] == :done
+        if state[id] == :visiting
+          start = stack.index(id) || 0
+          @findings.add("dependency cycle: #{(stack[start..] + [id]).join(' -> ')}")
+          return
+        end
+
+        state[id] = :visiting
+        stack << id
+        Array(graph[id]).sort.each { |dependency| visit.call(dependency) if graph.key?(dependency) }
+        stack.pop
+        state[id] = :done
+      end
+
+      graph.keys.sort.each { |id| visit.call(id) }
+    end
+
+    def check_stable_dependency_maturity(graph)
+      metadata_by_id = @entries.each_with_object({}) do |entry, index|
+        document = @documents[entry.fetch("path")]
+        index[entry["id"]] = document.metadata if document&.metadata?
+      end
+
+      metadata_by_id.keys.sort.each do |id|
+        next unless metadata_by_id.dig(id, "status") == "stable"
+
+        draft_paths = dependency_paths(id, graph, metadata_by_id).select do |path|
+          metadata_by_id.dig(path.last, "status") == "draft"
+        end
+        draft_paths.each do |path|
+          @findings.add("stable document #{id} depends on draft #{path.last} through #{path.join(' -> ')}")
+        end
+      end
+    end
+
+    def dependency_paths(root_id, graph, metadata_by_id)
+      results = []
+      walk = lambda do |id, path|
+        Array(graph[id]).sort.each do |dependency|
+          next unless metadata_by_id.key?(dependency)
+          next if path.include?(dependency)
+
+          next_path = path + [dependency]
+          results << next_path
+          walk.call(dependency, next_path)
+        end
+      end
+      walk.call(root_id, [root_id])
+      results
     end
 
     # Governed rules and profiles have semantic structure beyond front matter.
@@ -464,7 +527,7 @@ module Standards
     # -- bundle-wide Markdown ------------------------------------------------
 
     def check_markdown_bundle
-      files = Paths.glob(@root, "**/*.md")
+      files = Paths.glob(@root, "**/*.md").reject { |relative| relative.start_with?("plugin/") }
       @markdown_count = files.length
       @findings.add("index.md: bundle contains no Markdown files") if files.empty?
 

@@ -3,8 +3,8 @@ id: PROFILE-GROWTH-EXPERIMENT
 title: Growth experiment profile
 description: Routes growth experiments to evidence, measurement, trust, and safe-change requirements.
 type: profile
-status: stable
-governance_status: active
+status: draft
+governance_status: draft
 owners: [growth, product, analytics]
 last_reviewed: 2026-08-13
 review_by: 2027-02-13

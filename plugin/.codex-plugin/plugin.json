@@ -1,0 +1,30 @@
+{
+  "name": "raintree-standards",
+  "version": "1.1.0",
+  "description": "Route work through Raintree Standards while preserving maturity, evidence, review, and exception status.",
+  "author": {
+    "name": "Raintree Technology",
+    "email": "support@raintree.technology",
+    "url": "https://raintree.technology"
+  },
+  "homepage": "https://github.com/raintree-technology/raintree.standards",
+  "repository": "https://github.com/raintree-technology/raintree.standards",
+  "license": "MIT AND CC-BY-4.0",
+  "keywords": ["standards", "governance", "evidence", "profiles", "quality"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Raintree Standards",
+    "shortDescription": "Route tasks to governed requirements and evidence.",
+    "longDescription": "Raintree Standards selects a task profile and returns dependency-ordered requirements with maturity, review dates, exceptions, and unverified evidence. It does not claim certification.",
+    "developerName": "Raintree Technology",
+    "category": "Developer Tools",
+    "capabilities": ["List task profiles", "Resolve governed routes", "Preserve evidence status"],
+    "websiteURL": "https://github.com/raintree-technology/raintree.standards",
+    "brandColor": "#0F6B5D",
+    "defaultPrompt": [
+      "Route this task through Raintree Standards.",
+      "List the available Raintree task profiles.",
+      "Show the requirements and missing evidence for this profile."
+    ]
+  }
+}

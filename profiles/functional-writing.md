@@ -3,8 +3,8 @@ id: PROFILE-FUNCTIONAL-WRITING
 title: Functional writing profile
 description: Routes functional writing to clarity, evidence, trust, and final-artifact review requirements.
 type: profile
-status: stable
-governance_status: active
+status: draft
+governance_status: draft
 owners: [content, standards]
 last_reviewed: 2026-09-02
 review_by: 2027-03-02
