@@ -12,7 +12,7 @@ stale_after: 2027-02-17
 applies_to: [public-web-page, landing-page, marketing-site]
 tags: [profile, web, seo]
 depends_on: [WEB-QUALITY, SEO-FOUNDATIONS, DESIGN-INTERACTION, FND-ACCESSIBILITY, FND-TRUST, FND-EVIDENCE, AGENT-VERIFICATION]
-generated: { by: codex/gpt-5, at: "2026-09-01T12:55:52-07:00" }
+generated: { by: codex/gpt-6, at: "2026-09-08T12:00:00-07:00" }
 ---
 
 # Public web page profile
@@ -87,3 +87,5 @@ The front-matter `depends_on` list is the authoritative machine-readable route. 
 - When a provider playbook is active, include its manifest, zero-gap surface classification, selected capability IDs and authority classes, exact skill route or gap, dated official-source review, workflow and evaluation results, released configuration, browser and callback boundaries, privacy-safe telemetry, failure behavior, recovery, and exit evidence.
 - `AGENT-VERIFICATION-002` and `AGENT-VERIFICATION-005` — The final page was inspected in its intended medium and the handoff records checks, results, exceptions, and limitations.
 - When a conditional standard is active, include its rule-level completion evidence before declaring the page complete.
+
+For a requested SEO or GEO audit, use the [reusable audit procedure](../seo/foundations.md#reusable-seo-and-geo-audit). Record score coverage and unresolved deductions separately from search outcomes and required-rule verification.
