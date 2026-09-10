@@ -12,8 +12,12 @@ stale_after: 2026-11-13
 applies_to: [public-web-page, seo-migration, content-program]
 tags: [seo, crawling, indexing, content]
 depends_on: [FND-EVIDENCE, FND-TRUST]
-generated: { by: codex/gpt-5, at: "2026-09-01T12:55:52-07:00" }
+generated: { by: codex/gpt-6, at: "2026-09-08T12:00:00-07:00" }
 sources:
+  - id: geo-optimizer
+    resource: https://github.com/Auriti-Labs/geo-optimizer-skill
+    title: GEO Optimizer
+    author: organization:auriti-labs
   - id: google-crawling-indexing
     resource: https://developers.google.com/search/docs/crawling-indexing
     title: Crawling and indexing
@@ -441,6 +445,91 @@ For a standards or policy library, optimize for correct application rather than 
 
 Treat third-party SEO and agent-discovery guidance as informative until its factual claims are supported by current primary evidence. Google states that `llms.txt`, Markdown alternatives, and special AI markup do not affect visibility or ranking in Google Search. A publisher can still use them for other agents and direct retrieval, but must measure that purpose separately and must not describe Google indexing as evidence that the convention works.
 
+### Reusable SEO and GEO audit
+
+Use this procedure when auditing a public site's search and generative engine
+optimization (GEO) readiness. It is informative implementation guidance for
+`SEO-FOUNDATIONS-002`, `006`, `010`, and `013` through `019`.
+A tool score describes its rubric; it does not establish rankings, indexing,
+AI citations, or compliance with this standard.
+
+Use an existing `uvx` runtime or an existing installation. Keep the audit tool
+outside application dependencies. Resolve the canonical public domain from the
+project configuration, and exclude private or authenticated routes.
+
+1. Record the target, date, environment, tool version, configuration, and sitemap
+   inventory. Inspect the working tree before proposing source changes.
+2. Save a homepage baseline and a bounded sitemap report using the commands below.
+   Replace the example domain and use fresh output paths for each run.
+3. Compare discovered, attempted, successful, failed, and omitted URL counts.
+   Increase the cap for full-site coverage, or label the result as a sample.
+4. Verify each material finding against raw responses, rendered content where
+   needed, and the owning source files. Separate production from local behavior.
+5. Classify findings as confirmed defects, optional improvements, false positives,
+   or unresolved checks. Record affected URLs, evidence, consequence, and owner.
+6. When fixes are authorized, make the smallest justified changes and run focused
+   regression checks. Preserve existing product facts and crawler policy.
+7. Repeat the same audit version and scope after the changes. Verify deployed
+   responses only after deployment is authorized and completed.
+8. Report per-page scores, category deductions, penalties, unresolved dependencies,
+   fetch failures, coverage, and checks not performed. Keep the original reports.
+
+The comparison version for this procedure is 4.17.1. Inspect CLI help and release
+notes before changing versions; establish a new baseline when the rubric changes.
+
+```sh
+uvx --from 'geo-optimizer-skill==4.17.1' geo --version
+uvx --from 'geo-optimizer-skill==4.17.1' geo audit --url https://example.com --no-plugins --format json --output /tmp/geo-home-before.json
+uvx --from 'geo-optimizer-skill==4.17.1' geo audit --sitemap https://example.com/sitemap.xml --max-urls 100 --no-plugins --format json --output /tmp/geo-site-before.json
+```
+
+Inspect any report produced after a nonzero exit. Distinguish findings from tool
+errors or failed requests. Do not report a score without a valid report.
+Label direct library scoring, development-server checks, and manual reviews by
+method; they are not production CLI results.
+
+#### Findings to verify
+
+- Inspect status, redirects, robots directives, canonical URLs, sitemap membership,
+  metadata, headings, and essential content without JavaScript. A simulated user
+  agent does not prove access from a provider's actual network.
+- Compare structured data with visible content. Generate FAQs and their schema
+  from the same entries. Use Article only for actual articles, and verify author,
+  date, identity, service-area, and external-profile claims from maintained facts.
+- Generate discovery files from existing content and route inventories. Keep the
+  required concise route index useful; link a full export when a consumer needs it.
+  Avoid filler or duplicated content systems to satisfy word-count thresholds.
+- Treat `llms-full.txt`, `/.well-known/ai.txt`, `/ai/summary.json`, `/ai/faq.json`,
+  `/ai/service.json`, and feeds as optional additions for identified consumers.
+  Missing optional files alone do not establish a search defect.
+- For adopted discovery endpoints, verify status, content type, parsing, source
+  parity, and public access. Test unknown document names. Feeds need real content
+  entries, truthful update dates, and an advertised feed link.
+- Review repetition, numeric-placement, heading, author, and schema-type heuristics
+  in context. Preserve accessibility text and legal qualifications. Never invent
+  statistics, profiles, reviewers, or claims to recover points.
+
+#### Score targets and completion
+
+A requested raw 100/100 means every in-scope page earns 100 under the unchanged
+rubric, with complete coverage and no fetch failures. A site average cannot
+substitute for per-page results. Do not remove useful pages from the sitemap,
+change weights, or count accepted exceptions as a perfect raw score.
+
+When a truthful page cannot satisfy a heuristic, record the missing points and
+reason. For example, retain product-page schema when Article markup would be
+misleading. Treat an unverified external identity profile as unresolved rather
+than fabricating a link. A lower score can remain after all justified fixes.
+
+Keep Search Console indexing, Core Web Vitals, backlinks, corroborated crawler
+logs, and observed AI citations separate from static readiness checks.
+Report each as measured, not run, or unavailable. A local pass does not establish
+production behavior or satisfy `SEO-FOUNDATIONS-018` retrieval testing.
+
+An audit alone does not authorize automatic fixes, paid citation queries,
+recurring monitoring, CI changes, publication, or broader crawler access.
+Use the project's existing authorization and release process for those actions.
+
 ## Examples
 
 ### Retired page
@@ -473,3 +562,5 @@ Compliant: Only curated category combinations with distinct demand and content a
 - Jeremy Howard, [The `llms.txt` file proposal](https://llmstxt.org/), version 2, modified August 10, 2026. Reviewed September 1, 2026. This is an emerging proposal, not a ratified web standard or ranking signal.
 - Corey Haines and contributors, Marketing Skills [`seo-audit`](https://github.com/coreyhaines31/marketingskills/blob/e55de886fe7580ec75cdb7ded5092b33f7d4ed58/skills/seo-audit/SKILL.md) version 2.0.0, [`ai-seo`](https://github.com/coreyhaines31/marketingskills/blob/e55de886fe7580ec75cdb7ded5092b33f7d4ed58/skills/ai-seo/SKILL.md) version 2.2.0, and [`schema`](https://github.com/coreyhaines31/marketingskills/blob/e55de886fe7580ec75cdb7ded5092b33f7d4ed58/skills/schema/SKILL.md) version 2.0.0, commit `e55de886`, reviewed September 1, 2026. These MIT-licensed skills are informative audit procedures; primary platform and web specifications remain authoritative.
 - OpenAI, [Publishers and Developers FAQ](https://help.openai.com/en/articles/12627856-publishers-and-developers-faq), reviewed September 1, 2026. OpenAI documents separate search-discovery and potential-training controls; apply this source only to OpenAI clients and revalidate current identifiers and semantics before use.
+
+- Auriti Labs, [GEO Optimizer](https://github.com/Auriti-Labs/geo-optimizer-skill), CLI comparison version 4.17.1. Procedure added September 8, 2026. Informative tool reference; its score is not platform evidence.

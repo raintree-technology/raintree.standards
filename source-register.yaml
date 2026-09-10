@@ -173,7 +173,7 @@ documents:
     next_review: 2027-02-13
   - id: SEO-FOUNDATIONS
     owner: seo
-    source_version: Google Search and AI-search guidance; Microsoft; IETF HTTP, robots, Markdown media type, and Web Linking; llms.txt proposal v2; OpenAI publisher crawler guidance; and Marketing Skills seo-audit 2.0.0, ai-seo 2.2.0, and schema 2.0.0 at e55de886, reviewed 2026-09-01
+    source_version: Google Search and AI-search guidance; Microsoft; IETF HTTP, robots, Markdown media type, and Web Linking; llms.txt proposal v2; OpenAI publisher crawler guidance; and Marketing Skills seo-audit 2.0.0, ai-seo 2.2.0, and schema 2.0.0 at e55de886, reviewed 2026-09-01; GEO Optimizer CLI 4.17.1 procedure added 2026-09-08
     reviewed_on: 2026-09-01
     volatility: high
     next_review: 2026-11-13
