@@ -12,7 +12,12 @@ This file records material changes to governed requirements, profiles, schemas, 
 
 ## Unreleased
 
-- No changes recorded yet.
+- Added eight cleanup skills and a `cleanup-all` pipeline under `plugin/skills/`:
+  unused code, dependency cycles, duplication, type consolidation, weak types,
+  defensive catches, legacy paths, and comment slop. The skills leave changes
+  uncommitted, skip files that already have changes, and verify with each
+  project's own CI gates. `cleanup-unused` and `cleanup-legacy` apply
+  `ENGINEERING-CODE-REMOVAL`. No governed rule or maturity status changed.
 
 ## 1.1.1 — 2026-09-04
 
