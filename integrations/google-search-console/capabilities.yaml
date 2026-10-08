@@ -283,8 +283,8 @@ capabilities:
       privacy_suppression: ["No absence claim may override documented privacy suppression or property-boundary behavior"]
       aggregation: ["Preserve the interface output grain and documented grouping semantics"]
       completeness: ["Treat output as bounded by eligibility, availability, provider processing, and the declared limitations"]
-      operational: ["Google is rolling the control out to a subset of website owners", "The named affected Search experiences can change"]
-    limitations: ["UI absence can mean rollout ineligibility rather than an authorization failure", "The setting does not replace Google-Extended, robots controls, or noindex"]
+      operational: ["Google states the control rolled out to all websites worldwide on 2026-08-31", "The named affected Search experiences can change"]
+    limitations: ["Visible settings vary by property and permissions, so UI absence is not by itself an authorization failure", "The setting does not replace Google-Extended, robots controls, or noindex"]
     verification: ["Record the property, parent chain, visible selection, inheritance state, rollout availability, and observation timestamp"]
     idempotency: "Repeat-safe read"
     rollback: "Not applicable"
@@ -307,7 +307,7 @@ capabilities:
       privacy_suppression: ["No absence claim may override documented privacy suppression or property-boundary behavior"]
       aggregation: ["Preserve the interface output grain and documented grouping semantics"]
       completeness: ["Treat output as bounded by eligibility, availability, provider processing, and the declared limitations"]
-      operational: ["Google is rolling the control out to a subset of website owners", "Exclusion normally propagates after the setting goes live and caches can delay complete effect"]
+      operational: ["Google states the control rolled out to all websites worldwide on 2026-08-31", "Exclusion normally propagates after the setting goes live and caches can delay complete effect"]
     limitations: ["This is not an AI-training control and does not override participation choices in other Google services", "A child override or parent change can make the effective state differ across related properties"]
     verification: ["Re-read the persisted selection and inheritance state", "After the documented propagation window, review eligible performance and representative Search behavior without claiming exhaustive visibility"]
     idempotency: "Repeat-safe only when setting the same approved target on the same exact property"
@@ -1075,12 +1075,12 @@ capabilities:
       privacy_suppression: ["No absence claim may override documented privacy suppression or property-boundary behavior"]
       aggregation: ["Preserve the interface output grain and documented grouping semantics"]
       completeness: ["Treat output as bounded by eligibility, availability, provider processing, and the declared limitations"]
-      operational: ["Eligibility, country, and feature availability vary"]
+      operational: ["Eligibility, country, and feature availability vary", "The setting requires an associated Merchant Center account"]
     limitations: ["Search Console is not the authoritative legal or commerce policy source"]
     verification: ["Reconcile every setting with visible policy and authoritative commerce configuration"]
     idempotency: "Repeat-safe read"
     rollback: "Not applicable"
-    sources: [GSC-SRC-SETTINGS, GSC-SRC-REPORTS]
+    sources: [GSC-SRC-SETTINGS, GSC-SRC-REPORTS, GSC-SRC-SHOPPING]
 
   - id: GSC-CAP-SHIPPING-RETURNS-MANAGE
     name: Change shipping or return settings
@@ -1099,12 +1099,12 @@ capabilities:
       privacy_suppression: ["No absence claim may override documented privacy suppression or property-boundary behavior"]
       aggregation: ["Preserve the interface output grain and documented grouping semantics"]
       completeness: ["Treat output as bounded by eligibility, availability, provider processing, and the declared limitations"]
-      operational: ["Eligibility and precedence with other Google data sources vary"]
+      operational: ["Eligibility and precedence with other Google data sources vary", "The setting requires an associated Merchant Center account"]
     limitations: ["Propagation is not immediate and downstream appearance is not guaranteed"]
     verification: ["Re-read settings and inspect supported Search appearance after propagation"]
     idempotency: "Repeat-safe only against an explicit desired configuration"
     rollback: "Restore the last approved configuration and reconcile every other policy source"
-    sources: [GSC-SRC-SETTINGS]
+    sources: [GSC-SRC-SETTINGS, GSC-SRC-SHOPPING]
 
   - id: GSC-CAP-BULK-EXPORT-CONFIGURE
     name: Start, stop, or restart BigQuery bulk export
@@ -1339,7 +1339,7 @@ capabilities:
       privacy_suppression: ["No absence claim may override documented privacy suppression or property-boundary behavior"]
       aggregation: ["Preserve the interface output grain and documented grouping semantics"]
       completeness: ["Treat output as bounded by eligibility, availability, provider processing, and the declared limitations"]
-      operational: ["Limited rollout and minimum impression eligibility apply", "The usual Search performance time and 1,000-row UI limits apply", "Search Labs experiments are excluded"]
+      operational: ["Google states the report rolled out to all websites worldwide on 2026-08-31; minimum generative AI impression eligibility still applies", "The usual Search performance time and 1,000-row UI limits apply", "Search Labs experiments are excluded"]
     limitations: ["The documented included feature list can change", "Impressions do not describe grounding use without a visible link or prove downstream value", "Downloaded values shown as unavailable or non-numeric in the UI can become zero and must not be treated as measured zero without preserved display state"]
     verification: ["Record rollout eligibility, included feature definition, filters, grain, preliminary dates, and comparison with the corresponding Web performance scope"]
     idempotency: "Repeat-safe read for a fixed mature date range"
@@ -1363,7 +1363,7 @@ capabilities:
       privacy_suppression: ["No absence claim may override documented privacy suppression or property-boundary behavior"]
       aggregation: ["Preserve the interface output grain and documented grouping semantics"]
       completeness: ["Treat output as bounded by eligibility, availability, provider processing, and the declared limitations"]
-      operational: ["Limited rollout and minimum impression eligibility apply", "The usual Discover performance time and 1,000-row UI limits apply", "Search Labs experiments are excluded"]
+      operational: ["Google states the report rolled out to all websites worldwide on 2026-08-31 but also says not all properties have access yet; minimum generative AI impression eligibility applies", "The usual Discover performance time and 1,000-row UI limits apply", "Search Labs experiments are excluded"]
     limitations: ["Daily values below a threshold can be omitted while contributing to totals", "The documented included feature list can change", "Downloaded values shown as unavailable or non-numeric in the UI can become zero and must not be treated as measured zero without preserved display state"]
     verification: ["Record rollout eligibility, property, filter, aggregation, threshold behavior, and corresponding Discover performance context"]
     idempotency: "Repeat-safe read for a fixed mature date range"

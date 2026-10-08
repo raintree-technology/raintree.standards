@@ -99,7 +99,7 @@ concepts:
     sources: [GSC-SRC-DATA, GSC-SRC-PERFORMANCE]
   - id: GSC-DATA-GENERATIVE-AI-PERFORMANCE
     name: Generative AI performance scope
-    definition: The limited-rollout Search and Discover reports count impressions under surface-specific rules for the documented generative AI features and use different aggregation behavior.
+    definition: The Search and Discover generative AI performance reports count impressions under surface-specific rules for the documented generative AI features and use different aggregation behavior.
     cautions: ["Preserve Search versus Discover scope and aggregation", "Do not infer invisible grounding, training use, clicks, conversions, or total AI exposure from impression rows", "Feature membership and rollout eligibility can change"]
     sources: [GSC-SRC-GENERATIVE-AI-SEARCH, GSC-SRC-GENERATIVE-AI-DISCOVER, GSC-SRC-GENERATIVE-AI-CONTROL]
   - id: GSC-DATA-EXPORT-SENTINELS

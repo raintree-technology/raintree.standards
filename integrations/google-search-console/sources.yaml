@@ -1,6 +1,6 @@
 version: 1
 integration: google-search-console
-reviewed_on: 2026-08-13
+reviewed_on: 2026-10-08
 scope: >-
   Current official Google Search Console reports, settings, APIs, BigQuery export,
   notifications, and directly adjacent Google tools required to interpret or act on
@@ -8,7 +8,7 @@ scope: >-
   defines an operational boundary used by this bundle.
 freshness:
   cadence_days: 31
-  next_review: 2026-09-13
+  next_review: 2026-11-08
   event_triggers:
     - Google changes the Reports at a glance, property settings, shopping, or platform-property inventories.
     - An API discovery document, OAuth scope, permission matrix, quota, field, enum, or deprecation changes.
@@ -128,6 +128,18 @@ sources:
     title: About Search Console data
     url: https://support.google.com/webmasters/answer/96568
     topic: data-semantics
+    authority: provider_documentation
+    volatility: high
+  - id: GSC-SRC-PERFORMANCE-DIMENSIONS
+    title: "Performance report (Search results): Dimensions and data groupings"
+    url: https://support.google.com/webmasters/answer/17011259
+    topic: search-appearance-inventory
+    authority: provider_documentation
+    volatility: high
+  - id: GSC-SRC-DATA-ANOMALIES
+    title: Data anomalies in Search Console
+    url: https://support.google.com/webmasters/answer/6211453
+    topic: data-anomalies
     authority: provider_documentation
     volatility: high
   - id: GSC-SRC-PERFORMANCE
@@ -295,16 +307,16 @@ sources:
 
 change_watch:
   - id: GSC-WATCH-FAQ-APPEARANCE-DEPRECATION
-    status: announced_deprecation
-    effective: "2026-08"
-    affected_capabilities: [GSC-CAP-SEARCH-ANALYTICS-QUERY, GSC-CAP-RICH-RESULTS]
-    action: Stop depending on FAQ search-appearance output, confirm the field's current API behavior before querying it, and retain historical meaning in stored data.
-    sources: [GSC-SRC-SEARCH-ANALYTICS-METHOD]
+    status: provider_change
+    effective: "2026-05-07"
+    affected_capabilities: [GSC-CAP-SEARCH-ANALYTICS-QUERY, GSC-CAP-RICH-RESULTS, GSC-CAP-BIGQUERY-QUERY]
+    action: FAQ rich results no longer appear in Google Search from 2026-05-07 and FAQ is listed as a deprecated search appearance; do not depend on new FAQ search-appearance output, treat recent bulk-export is_tpf_faq values as NULL rather than zero, and retain historical meaning in stored data.
+    sources: [GSC-SRC-PERFORMANCE-DIMENSIONS, GSC-SRC-DATA-ANOMALIES, GSC-SRC-RICH-RESULTS, GSC-SRC-SEARCH-ANALYTICS-METHOD]
   - id: GSC-WATCH-GENERATIVE-AI-ROLLOUT
-    status: limited_rollout
-    effective: rolling
+    status: provider_change
+    effective: "2026-08-31"
     affected_capabilities: [GSC-CAP-GENERATIVE-AI-CONTROL-REVIEW, GSC-CAP-GENERATIVE-AI-CONTROL-MANAGE, GSC-CAP-GENERATIVE-AI-PERFORMANCE-SEARCH, GSC-CAP-GENERATIVE-AI-PERFORMANCE-DISCOVER]
-    action: Re-read the control and both report sources before use; record UI availability, included features, inherited state, and eligibility instead of treating absence as an error.
+    action: Google states the control and both reports rolled out to all websites worldwide on 2026-08-31, while the Discover report still says not all properties have access; re-read the sources before use and record included features, inherited state, and impression eligibility instead of treating report absence as an error.
     sources: [GSC-SRC-GENERATIVE-AI-CONTROL, GSC-SRC-GENERATIVE-AI-SEARCH, GSC-SRC-GENERATIVE-AI-DISCOVER]
   - id: GSC-WATCH-PLATFORM-PROPERTY-ROLLOUT
     status: limited_rollout
@@ -405,7 +417,7 @@ coverage:
   - surface: shipping-and-returns
     classification: mapped
     capabilities: [GSC-CAP-SHIPPING-RETURNS-REVIEW, GSC-CAP-SHIPPING-RETURNS-MANAGE]
-    sources: [GSC-SRC-SETTINGS]
+    sources: [GSC-SRC-SETTINGS, GSC-SRC-SHOPPING]
   - surface: shopping-rich-reports-and-merchant-opportunities
     classification: mapped
     capabilities: [GSC-CAP-RICH-RESULTS, GSC-CAP-MERCHANT-OPPORTUNITIES]
