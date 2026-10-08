@@ -9,3 +9,12 @@ plugin root to list profiles. Resolve one route with
 
 Routes preserve maturity, governance status, review dates, exceptions, and
 unverified evidence. They do not certify conformance.
+
+## Skills
+
+- `standards-navigator` routes a task to a profile and its standards.
+- `cleanup-all` runs the eight cleanup skills in order: `cleanup-unused`,
+  `cleanup-cycles`, `cleanup-dedupe`, `cleanup-types`, `cleanup-weak-types`,
+  `cleanup-defensive`, `cleanup-legacy`, and `cleanup-slop`. Each skill leaves
+  its changes uncommitted and verifies with the target project's own CI gates.
+  `cleanup-unused` and `cleanup-legacy` apply `ENGINEERING-CODE-REMOVAL`.
