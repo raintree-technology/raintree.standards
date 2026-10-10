@@ -21,12 +21,9 @@ it for a high-impact decision.
 4. Collect the verification evidence required by each applicable rule.
 5. Report satisfied rules, approved exceptions, and unresolved gaps by stable rule ID.
 
-Codex users can install the generated plugin from the public Raintree marketplace:
-
-```bash
-codex plugin marketplace add raintree-technology/plugins
-codex plugin add raintree-standards@raintree
-```
+Read the profiles and standards directly from this repository. The shared Codex
+marketplace was retired on October 10, 2026. The [profile router](scripts/route_profile.rb)
+remains available from a local checkout.
 
 ```mermaid
 flowchart LR
