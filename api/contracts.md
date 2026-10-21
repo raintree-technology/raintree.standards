@@ -6,13 +6,13 @@ type: standard
 status: draft
 governance_status: draft
 owners: [engineering, platform, security]
-last_reviewed: 2026-08-16
+last_reviewed: 2026-10-13
 review_by: 2027-02-16
 stale_after: 2027-02-16
 applies_to: [api-change, service-change, library-api-change]
 tags: [api, design, contracts, compatibility]
 depends_on: [FND-EVIDENCE, FND-CHANGE, SECURITY-APPLICATION, CONTENT-ERRORS]
-generated: { by: codex/gpt-5, at: "2026-08-16T23:36:18Z" }
+generated: { by: claude/claude-opus-5-5, at: "2026-10-13T11:05:39-07:00" }
 sources:
   - id: rfc-9110
     resource: https://www.rfc-editor.org/rfc/rfc9110.html
@@ -134,7 +134,7 @@ sources:
 
 # API design and contracts
 
-APIs must preserve defined meaning across clients, versions, retries, failures, and changing load. This standard applies to HTTP, RPC, event, library, SDK, command, and comparable programmatic contracts. Use the map below for orientation. A rule's `Applies when` statement determines whether it governs a specific change, and protocol- or language-specific behavior must be verified against its authoritative specification.
+APIs must preserve defined meaning across clients, versions, retries, failures, and changing load. This standard applies to HTTP, RPC, event, library, SDK, command, and comparable programmatic contracts. Use the map below for orientation. A rule's `Applies when` statement determines whether it governs a specific change, and protocol- or language-specific behavior must be verified against its authoritative specification. A rule's `Level` applies to public interfaces; the [exposure tiers](#exposure-tiers) table sets its level for partner and first-party interfaces.
 
 ## Applicability map
 
@@ -148,6 +148,53 @@ APIs must preserve defined meaning across clients, versions, retries, failures, 
 | Capacity, authorization, or distributed operation | `API-CONTRACTS-007`, `API-CONTRACTS-008`, `API-CONTRACTS-010`, `API-CONTRACTS-030`, `API-CONTRACTS-031` |
 | Asynchronous operations, events, or webhooks | `API-CONTRACTS-014`, `API-CONTRACTS-015` |
 | Libraries and SDKs | `API-CONTRACTS-018` through `API-CONTRACTS-022`, `API-CONTRACTS-027`, `API-CONTRACTS-029`, `API-CONTRACTS-032` |
+
+## Exposure tiers
+
+Classify an interface by its most exposed supported caller. If the tier is uncertain, use the more exposed tier.
+
+- **Public:** Callers outside the owning team's release control, such as third parties, customer integrations, published SDKs, and webhooks sent to consumer endpoints.
+- **Partner:** Internal callers that another team owns or that deploy independently of the interface.
+- **First-party:** Callers that the same team owns and releases together with the interface, such as a web app's backend-for-frontend routes.
+
+Installed mobile and desktop apps update independently, so they are partner callers even when the interface team owns them. Browser sessions opened before a deploy can still run the earlier build; `API-CONTRACTS-006` and `API-CONTRACTS-029` stay recommended for first-party interfaces to cover that skew.
+
+Every rule is `required` for public interfaces. The table below sets the level for the other tiers. A tier never makes a rule apply; the rule's `Applies when` condition still decides that. Treat `recommended` as defined in the [requirement levels](../governance/authority.md#requirement-levels): follow the rule or record a concrete reason for deviating.
+
+| Rule | Partner | First-party | Basis for the first-party and partner levels |
+|---|---|---|---|
+| `API-CONTRACTS-001` | required | recommended | Independent callers need a reviewable contract; a co-released caller changes with the code. |
+| `API-CONTRACTS-002` | required | required | Caches, retries, and monitoring act on protocol signals whoever the caller is. |
+| `API-CONTRACTS-003` | required | required | Error responses can leak secrets or internal detail to any client. |
+| `API-CONTRACTS-004` | required | required | Unbounded work exhausts resources whoever sends the request. |
+| `API-CONTRACTS-005` | required | required | A retried request can repeat a durable effect whoever sends it. |
+| `API-CONTRACTS-006` | required | recommended | Independently deployed callers break on incompatible changes. |
+| `API-CONTRACTS-007` | required | recommended | Independent callers can overload shared capacity; `API-CONTRACTS-004` still bounds first-party work. |
+| `API-CONTRACTS-008` | required | required | A reachable route can be called outside the intended client. |
+| `API-CONTRACTS-009` | required | recommended | Exposed internal structure becomes a compatibility obligation to independent callers. |
+| `API-CONTRACTS-010` | required | recommended | The rule serves independent adoption; a co-released caller shares the team's setup. |
+| `API-CONTRACTS-011` | required | recommended | Independent callers can trigger hidden fan-out that the owning team cannot coordinate. |
+| `API-CONTRACTS-012` | required | required | When multiple users edit shared records, a lost update destroys data regardless of exposure. |
+| `API-CONTRACTS-013` | required | required | A shared or cross-context cache can serve one user's authenticated response to another. |
+| `API-CONTRACTS-014` | required | recommended | Independent callers need a durable status contract; `API-CONTRACTS-005` still protects first-party retries. |
+| `API-CONTRACTS-015` | required | recommended | The rule governs delivery to endpoints that another party controls. |
+| `API-CONTRACTS-016` | required | required | A forgotten route stays reachable by anyone, whoever it was built for. |
+| `API-CONTRACTS-017` | recommended | recommended | Design quality; failure costs effort, not safety or compatibility. |
+| `API-CONTRACTS-018` | recommended | recommended | Design quality; failure costs effort, not safety or compatibility. |
+| `API-CONTRACTS-019` | required | recommended | Every exposed element becomes a permanent obligation to independent callers. |
+| `API-CONTRACTS-020` | required | required | Late validation can leave partial durable effects whoever sends the request. |
+| `API-CONTRACTS-021` | recommended | recommended | Design quality; failure costs effort, not safety or compatibility. |
+| `API-CONTRACTS-022` | required | recommended | Independent callers cannot read the implementation; a co-released caller can. |
+| `API-CONTRACTS-023` | required | required | An ambiguous omission in a partial update can erase stored data. |
+| `API-CONTRACTS-024` | required | recommended | Independent callers cannot see replication or cache design; the owning team can. |
+| `API-CONTRACTS-025` | required | recommended | Independent callers need explicit transitions; a co-released caller changes with them. |
+| `API-CONTRACTS-026` | required | recommended | Independent callers depend on query semantics; `API-CONTRACTS-008` still scopes first-party results. |
+| `API-CONTRACTS-027` | required | required | Lost precision in money, time, or identifiers corrupts stored values regardless of exposure. |
+| `API-CONTRACTS-028` | required | required | A retried batch without per-item results can repeat durable effects. |
+| `API-CONTRACTS-029` | required | recommended | Independently deployed callers receive data added after their release. |
+| `API-CONTRACTS-030` | required | required | Work that outlives the caller wastes capacity and invites duplicate effects. |
+| `API-CONTRACTS-031` | required | required | A trusted correlation identifier enables spoofing and duplicate effects regardless of exposure. |
+| `API-CONTRACTS-032` | required | recommended | The rule governs clients that callers install and upgrade independently. |
 
 ## Rules
 
