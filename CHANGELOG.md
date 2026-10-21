@@ -12,6 +12,14 @@ This file records material changes to governed requirements, profiles, schemas, 
 
 ## Unreleased
 
+- Added exposure tiers to `API-CONTRACTS`. Every rule stays `required` for
+  public interfaces. Partner interfaces relax `API-CONTRACTS-017`, `-018`, and
+  `-021` to `recommended`. First-party interfaces keep `-002` through `-005`,
+  `-008`, `-012`, `-013`, `-016`, `-020`, `-023`, `-027`, `-028`, `-030`, and
+  `-031` required and relax the other rules to `recommended`. Each rule's
+  `Level` line is unchanged and now applies to the public tier. Independent
+  engineering, platform, and security review remains pending.
+
 - Added eight cleanup skills and a `cleanup-all` pipeline under `plugin/skills/`:
   unused code, dependency cycles, duplication, type consolidation, weak types,
   defensive catches, legacy paths, and comment slop. The skills leave changes

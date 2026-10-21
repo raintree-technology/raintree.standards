@@ -46,6 +46,8 @@ The front-matter `depends_on` list is the authoritative machine-readable route. 
 
 ## Completion evidence
 
+Classify the interface by its `API-CONTRACTS` exposure tier first. Each `API-CONTRACTS` item below is required evidence only where the tier table in `API-CONTRACTS` marks that rule required for the interface's tier; for a recommended rule, record the evidence or the reason it was skipped.
+
 - `API-CONTRACTS-001`, `API-CONTRACTS-002`, and `API-CONTRACTS-003` — The versioned contract and exercised responses cover operations, semantics, errors, limits, and side effects.
 - `API-CONTRACTS-004`, `API-CONTRACTS-005`, and `API-CONTRACTS-007` — Bound, continuation, interruption, retry, deduplication, and throttling evidence covers expected load and failure.
 - `API-CONTRACTS-006` — Supported client versions pass and removal decisions use measured adoption.
